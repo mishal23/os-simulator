@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="cpu_scheduling">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="../javascripts/cpu_scheduling/cpu_scheduling.js"></script>
+</head>
+<body ng-controller="test">
+<p>Process Scheduling</p>
+
+<!--<input type="number" placeholder="Enter number of process" ng-model="number">
+{{number}}
+<div class="form-control" ng-repeat="n in [] | range:number">-->
+    <input type="number" placeholder="Arrival Time" ng-model="p.a1">
+    <input type="number" placeholder="Burst Time" ng-model="p.b1">
+    <br>
+<input type="number" placeholder="Arrival Time" ng-model="p.a2">
+<input type="number" placeholder="Burst Time" ng-model="p.b2">
+<br>
+<input type="number" placeholder="Arrival Time" ng-model="p.a3">
+<input type="number" placeholder="Burst Time" ng-model="p.b3">
+
+<button ng-click="submit()">Submit</button>
+
+<br>
+<pre>
+{{query}}
+    </pre>
+</body>
+<script src="../javascripts/test.js"></script>
+</html>

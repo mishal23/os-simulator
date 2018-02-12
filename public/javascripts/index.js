@@ -1,0 +1,1 @@
+console.log("JavaScript File for Home page");
