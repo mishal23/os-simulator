@@ -17,6 +17,8 @@
 - **Step7:-** Go to Command Prompt, type `npm -v` and then `node -v`, verify that installation is successful.
 
 ### How to Run?
+- git clone https://github.com/mishal23/os-simulator.git
+- cd os-simulator
 - `npm install` (To install all the dependency packages)
 - `npm start`
 - Go to Browser and type http://localhost:3000
