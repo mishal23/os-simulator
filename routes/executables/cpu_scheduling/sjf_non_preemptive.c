@@ -1,3 +1,4 @@
+//created by Palak Singhal
 #include <stdio.h>
 #include <limits.h>
 #include <stdlib.h>
@@ -65,13 +66,13 @@ int main(int argc, char const *argv[]) {
 	}
 
 	int tturn = 0, twait = 0;
-	printf("\nProcess ID\tArrival time\tBurst time\tTurnaround time \tCompletion time \tWaiting time");
+	//printf("\nProcess ID\tArrival time\tBurst time\tTurnaround time \tCompletion time \tWaiting time");
 	for(i = 0; i < n; ++i) {
 		tturn += p[i].turn;
 		twait += p[i].wait;
-		printf("\n%d\t\t%d\t\t%d\t\t%d\t\t\t%d\t\t\t%d", p[i].id, p[i].arrival, p[i].burst, p[i].turn, p[i].comp, p[i].wait);
+		printf("\n%d\t%d\t%d\t%d\t%d\t%d", p[i].id, p[i].arrival, p[i].burst, p[i].turn, p[i].comp, p[i].wait);
 	}
-	printf("\nAverage waiting time : %.2f\nAverage turnaround time : %.2f\n", (float)twait/n, (float)tturn/n);
+	printf("\n%.2f\n%.2f\n", (float)twait/n, (float)tturn/n);
 	
 	return 0;
 } 
