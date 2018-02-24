@@ -1,3 +1,7 @@
+/*
+	Mehnaz Yunus, 22/02/18
+*/	
+
 #include <stdio.h>
 #include <limits.h>
 #include <stdlib.h>
@@ -21,7 +25,7 @@ int main(int argc, char const *argv[]) {
 	struct process p[n];
 	
 	int  k = 0;
-	for(i = 2; i < argc-2; i += 4) {
+	for(i = 2; i <= argc-2; i += 4) {
 		p[k].id = atoi(argv[i]);
 		p[k].arrival = atoi(argv[i+1]);
 		p[k].burst = atoi(argv[i+2]);
@@ -67,13 +71,13 @@ int main(int argc, char const *argv[]) {
 	}
 
 	int tturn = 0, twait = 0;
-	printf("\nProcess ID\tArrival time\tBurst time\tTurnaround tie\tCompletion time\tWaiting time");
+	
 	for(i = 0; i < n; ++i) {
 		tturn += p[i].turn;
 		twait += p[i].wait;
-		printf("\n%d\t\t%d\t\t%d\t\t%d\t\t%d\t\t%d", p[i].id, p[i].arrival, p[i].burst, p[i].turn, p[i].comp, p[i].wait);
+		printf("\n%d\t%d\t%d\t%d\t%d\t%d", p[i].id, p[i].arrival, p[i].burst, p[i].turn, p[i].comp, p[i].wait);
 	}
-	printf("\nAverage waiting time : %.2f\nAverage turnaround time : %.2f", (float)twait/n, (float)tturn/n);
+	printf("%.2f\n%.2f", (float)twait/n, (float)tturn/n);
 	
 	return 0;
 }

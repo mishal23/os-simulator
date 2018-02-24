@@ -43,6 +43,10 @@ int main(int argc, char const *argv[]) {
 	int cur = -1;
 	int found = 0;
 	while(done < n) {
+		for(i = 0; i < n; ++i)
+			if(p[i].rem && p[i].arrival <= time && i != cur)
+				p[i].priority--;
+
 		for(i = 0; i < n; ++i) {
 			if(p[i].arrival <= time && p[i].rem && p[i].priority < minp) {
 				minp = p[i].priority;
