@@ -1,3 +1,39 @@
+/*
+Done By Mohit Bhasi 16CO126
+
+IO FORMAT
+
+
+For example if the input values are this:
+
+	number_of_processes=5
+	number_of_resources=3
+
+    maximum_resources_needed = {{7, 5, 3},
+			                     {3, 2, 2},
+			                     {9, 0, 2},
+			                     {2, 2, 2},
+			                     {4, 3, 3}};
+ 
+	avilable_resources = {3,3,2}
+
+    current_resource_allocation = {{0, 1, 0},
+			                      {2, 0, 0},
+			                      {3, 0, 2},
+			                      {2, 1, 1},
+			                      {0, 0, 2}};
+
+Command is executed as:
+./exe_file Number of processes Number of resources Available resource array Resource allocation matrix Maximum resource allocation matrix  
+
+which in this case is,
+./a.exe 5 3 3 3 2 0 1 0 2 0 0 3 0 2 2 1 1 0 0 2 7 5 3 3 2 2 9 0 2 2 2 2 4 3 3
+
+Output:
+Safe sequence: 1 3 4 0 2
+
+*/
+
 #include <stdio.h>
 #include <stdbool.h>
 int number_of_resources,number_of_processes;
@@ -99,35 +135,3 @@ int main(int argc, char **argv)
 	input(argv,available_resources,current_resource_allocation,maximum_resources_needed,needed_resources);
 	calculate_safety(available_resources,current_resource_allocation,maximum_resources_needed,needed_resources);
 }
-/*IO FORMAT
-
-
-For example if the input values are this:
-
-	number_of_processes=5
-	number_of_resources=3
-
-    maximum_resources_needed = {{7, 5, 3},
-			                     {3, 2, 2},
-			                     {9, 0, 2},
-			                     {2, 2, 2},
-			                     {4, 3, 3}};
- 
-	avilable_resources = {3,3,2}
-
-    current_resource_allocation = {{0, 1, 0},
-			                      {2, 0, 0},
-			                      {3, 0, 2},
-			                      {2, 1, 1},
-			                      {0, 0, 2}};
-
-Command is executed as:
-./exe_file Number of processes Number of resources Available resource array Resource allocation matrix Maximum resource allocation matrix  
-
-which in this case is,
-./a.exe 5 3 3 3 2 0 1 0 2 0 0 3 0 2 2 1 1 0 0 2 7 5 3 3 2 2 9 0 2 2 2 2 4 3 3
-
-Output:
-Safe sequence: 1 3 4 0 2
-
-*/
