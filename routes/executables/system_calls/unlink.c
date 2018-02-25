@@ -7,16 +7,16 @@
 #include <stdlib.h>
 #include <string.h>
 
-// Usage ./link oldpath newpath
+// Usage ./unlink path
 int main(int argc, char const *argv[])
 {
-	if(strcmp(argv[0],"./link")==0)
+	if(strcmp(argv[0],"./unlink")==0)
 		{
-			int linked = link(argv[1],argv[2]);
-	 		if(linked!=0)
+			int unlinked = unlink(argv[1]);
+	 		if(unlinked!=0)
 	 			perror("Error");
 			else
-	 			printf("Link created\n");
+	 			printf("Unlink successful\n");
 		}
 	
 }
