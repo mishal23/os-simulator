@@ -1,8 +1,106 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+@font-face {
+    font-family: "Ubuntu-L";
+    src: url("../fonts/Ubuntu-L.ttf");
 }
 
-a {
-  color: #00B7FF;
+body {
+	font-family: 'Ubuntu-L', Arial;
+	margin: 0;
+	padding: 0;
+	overflow: hidden; /* not to allow the window to scroll */
+}
+
+.top-navbar {
+	background-color: #514F48;
+	color: #f2f2f2;
+	font-size: 20px;
+	padding: 3px;
+	overflow: hidden;
+}
+.top-navbar .left {
+	float: left;
+} 
+
+.top-navbar .right {
+	float: right;
+}
+
+.top-navbar .right i {
+	padding-right: 2px;
+	padding-left: 2px;
+	font-size: 15px;
+}
+
+.top-navbar .right .language {
+	font-style: normal;
+	background-color: #f2f2f2;
+	color: #555;
+	font-size: 15px;
+	padding: 1px;
+	border-radius: 2px;
+	font-weight: bold;
+}
+
+.side-navbar {
+	background-color: #701057;
+	width: 4%;
+	float: left;
+	color: #FFF;
+	text-align: center;
+	font-size: 30px;
+}
+
+.side-navbar button {
+	background: none;
+	border: none;
+}
+
+.side-navbar button:focus{
+	border: none;
+	outline: none;
+} 
+.side-navbar button:active{
+	border: none;
+	outline: none;
+}
+.side-navbar button:hover {
+	border: none;
+	outline: none;
+}
+
+.side-navbar img {
+	width: 100%;
+	padding-top: 10px;
+}
+
+.side-navbar i {
+	display: block;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.side-navbar i.fa-firefox {
+	color: #e66000;
+}
+
+.side-navbar i.fa-folder {
+	color: #fbb034;
+}
+
+.side-navbar i.fa-cog {
+	color: #D3D3D3;
+}
+
+.fa-terminal {
+	background-color: #000; 
+	border-radius: 5px; 
+	border: 2px solid white; 
+	font-size: 20px;
+}
+
+.desktop {
+	background-image: url('/images/xerus_wallpaper.jpg');
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center;
 }

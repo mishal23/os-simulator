@@ -1,14 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>OS-Simulator</title>
+	<title>Ubuntu </title>
+	<script
+  		src="https://code.jquery.com/jquery-3.3.1.min.js"
+  		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  		crossorigin="anonymous"></script>
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script type="text/javascript" src="javascripts/index.js"></script>
+	<link rel="stylesheet" type="text/css" href="stylesheets/style.css">
 </head>
 <body>
-<p>Home Page</p>
-<a href="cpu_scheduling/index.html">CPU Scheduling</a>
-<br>
-<a href="team.html">Team</a>
+<div class="top-navbar">
+  <div class="left">
+    Ubuntu Simulator
+  </div>
+
+  <div class="right">
+    <i class="fa fa-wifi fa-fw" style="font-size: 18px;"></i>
+    <i class="language" style="font-size: 15px; padding: 2px 2px 2px 2px;">En</i>
+    <i class="fa fa-bluetooth" style="font-size: 18px;"></i>
+    <i class="fa fa-battery-three-quarters fa-fw" style="font-size: 18px;"></i>
+    <i class="fa fa-volume-up fa-fw" style="font-size: 18px;"></i>
+    <span class="time"></span>
+    <span class="am-pm"></span>
+    <i class="fa fa-power-off fa-fw" style="font-size: 18px;"></i>
+  </div>
+</div>
+
+<div class="side-navbar">
+
+  <button href="#" data-toggle="tooltip" title="Search your computer">
+    <img src="/images/logo-ubuntu.png">
+  </button>
+
+  <span data-toggle="tooltip" title="Files">
+    <i class="fa fa-folder" style="font-size: 50px;"></i>
+  </span>
+  <span data-toggle="tooltip" title="Firefox Web Browser">
+    <i class="fa fa-firefox" style="font-size: 50px;"></i>
+  </span>
+
+  <span data-toggle="tooltip" title="System Setting">
+    <i class="fa fa-cog" style="font-size: 50px;"></i>
+  </span>
+
+  <span data-toggle="tooltip" title="Terminal">
+    <i class="fa fa-terminal"></i>
+  </span>
+</div>
+
+<div class="desktop"></div>
 </body>
-<script src="javascripts/index.js"></script>
 </html>

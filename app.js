@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 // Call all the routes here
 var index = require('./routes/index');
 var users = require('./routes/users');
+var system_calls = require('./routes/system_calls');
 var cpu_scheduling = require('./routes/cpu_scheduling');
 
 
@@ -26,9 +27,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-// This API "/users" is waste, we will remove it
-app.use('/users', users);
-
+app.use('/system_calls',system_calls);
 app.use('/cpu_scheduling',cpu_scheduling);
 
 // catch 404 and forward to error handler
