@@ -30,4 +30,8 @@ $(document).ready(function() {
 	$('.side-navbar').height(height);
 	$('.desktop').height(height);
 
+/*	$('#shutdown-button').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+		console.log("HI");
+		$(this).removeClass("animated slideInUp");
+	});*/
 });
