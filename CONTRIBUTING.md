@@ -22,14 +22,17 @@
 ```
 
 2) APIs
+
 - System Calls
+
 <table>
     <tr>  
       <th>Process</th>
       <th>API</th>
     </tr>
     <tr>  
-
+        <td>Create</td>
+        <td>/system_calls/create</td>
     </tr>
 </table>
 
@@ -68,6 +71,7 @@
     <td>/cpu_scheduling/roundrobin</td>
   </tr>
 </table>
+
 - Bankers Algorithm
 <table>
     <tr>  
