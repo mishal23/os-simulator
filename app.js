@@ -7,7 +7,6 @@ var bodyParser = require('body-parser');
 
 // Call all the routes here
 var index = require('./routes/index');
-var users = require('./routes/users');
 var system_calls = require('./routes/system_calls');
 var cpu_scheduling = require('./routes/cpu_scheduling');
 var bankers = require('./routes/bankers');
