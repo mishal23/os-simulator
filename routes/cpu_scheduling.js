@@ -21,8 +21,8 @@ router.post('/fcfs', function(req, res) {
 });
 
 // SJF NonPremptive API call
-router.post('/sjfnonp', function(req,res){
-var input="";
+router.post('/sjf-nonpreemptive', function(req,res){
+	 var input="";
     console.log(req.body);
 	for(var i=0;i<req.body.length;i++)
 	{
@@ -30,7 +30,7 @@ var input="";
 	}
 	console.log(input);
 	
-	exec(__dirname + '/executables/cpu_scheduling/sjf_non_preemptive ' + input , function callback(error,stdout,stderr) {
+	exec(__dirname + '/executables/cpu_scheduling/sjf-nonpreemptive ' + input , function callback(error,stdout,stderr) {
 		console.log("hi" + stdout);
 		console.log(error);
 		res.send(stdout);
@@ -39,8 +39,8 @@ var input="";
 });
 
 // SJF Premptive API call
-router.post('/sjfp', function(req,res){
-var input="";
+router.post('/sjf-preemptive', function(req,res){
+	 var input="";
     console.log(req.body);
 	for(var i=0;i<req.body.length;i++)
 	{
@@ -48,7 +48,7 @@ var input="";
 	}
 	console.log(input);
 	
-	exec(__dirname + '/executables/cpu_scheduling/sjf_preemptive ' + input , function callback(error,stdout,stderr) {
+	exec(__dirname + '/executables/cpu_scheduling/sjf-preemptive ' + input , function callback(error,stdout,stderr) {
 		console.log("hi" + stdout);
 		console.log(error);
 		res.send(stdout);
@@ -58,7 +58,7 @@ var input="";
 
 // Priority Nonpremptive API call
 router.post('/priority-nonpreemptive', function(req,res){
-var input="";
+	 var input="";
     console.log(req.body);
 	for(var i=0;i<req.body.length;i++)
 	{
@@ -76,7 +76,7 @@ var input="";
 
 // Priority Premptive API call
 router.post('/priority-preemptive', function(req,res){
-var input="";
+	 var input="";
     console.log(req.body);
 	for(var i=0;i<req.body.length;i++)
 	{
@@ -94,7 +94,7 @@ var input="";
 
 // Priority Aging API call
 router.post('/priority-aging', function(req,res){
-var input="";
+	 var input="";
     console.log(req.body);
 	for(var i=0;i<req.body.length;i++)
 	{
@@ -112,7 +112,7 @@ var input="";
 
 // Round Robin API call
 router.post('/round_robin', function(req,res){
-var input="";
+	 var input="";
     console.log(req.body);
 	for(var i=0;i<req.body.length;i++)
 	{

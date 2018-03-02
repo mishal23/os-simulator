@@ -44,13 +44,13 @@ int main(int argc, char const *argv[])
 	struct process p[n];
 	
 	int  k = 0;
-	for(i = 2; i <= argc-2; i += 4) {
+	for(i = 2; i <= argc-2; i += 3) {
 		p[k].process_id = atoi(argv[i]);
 		p[k].arrival_time = atoi(argv[i+1]);
 		p[k].burst_time = atoi(argv[i+2]);
 		k++;
 	}
-	time_quantum=atoi(argv[i]);
+	time_quantum=atoi(argv[3*n+1]);
 
 	int time=0; 
 	int processes_left=n;   
@@ -105,14 +105,10 @@ int main(int argc, char const *argv[])
 			if(proc[j].arrival_time == time)	
 				push(j);
 	}
-
-	printf("\n");
-
-	printf("Process\t\tArrival Time\tBurst Time\tWaiting time\tTurn around time\n");
 	for(int i=0; i<n; i++)
 	{
-		printf("%d\t\t%d\t\t", proc[i].process_id, proc[i].arrival_time);
-		printf("%d\t\t%d\t\t%d\n", proc[i].burst_time, proc[i].waiting_time, proc[i].turn_around_time);
+		printf("%d\t%d\t", proc[i].process_id, proc[i].arrival_time);
+		printf("%d\t%d\t%d\n", proc[i].burst_time, proc[i].waiting_time, proc[i].turn_around_time);
 
 		tat += proc[i].turn_around_time;
 		wait_time_total += proc[i].waiting_time;

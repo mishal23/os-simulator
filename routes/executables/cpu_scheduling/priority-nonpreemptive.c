@@ -77,7 +77,7 @@ int main(int argc, char const *argv[]) {
 		twait += p[i].wait;
 		printf("\n%d\t%d\t%d\t%d\t%d\t%d", p[i].id, p[i].arrival, p[i].burst, p[i].turn, p[i].comp, p[i].wait);
 	}
-	printf("%.2f\n%.2f", (float)twait/n, (float)tturn/n);
+	printf("\n%.2f\n%.2f", (float)twait/n, (float)tturn/n);
 	
 	return 0;
 }
