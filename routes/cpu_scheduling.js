@@ -21,32 +21,110 @@ router.post('/fcfs', function(req, res) {
 });
 
 // SJF NonPremptive API call
-router.post('/sjfnonp', function(req,res){
+router.post('/sjf-nonpreemptive', function(req,res){
+	 var input="";
+    console.log(req.body);
+	for(var i=0;i<req.body.length;i++)
+	{
+		input+=req.body[i]+" ";
+	}
+	console.log(input);
+	
+	exec(__dirname + '/executables/cpu_scheduling/sjf-nonpreemptive ' + input , function callback(error,stdout,stderr) {
+		console.log("hi" + stdout);
+		console.log(error);
+		res.send(stdout);
+	});
 
 });
 
 // SJF Premptive API call
-router.post('/sjfp', function(req,res){
+router.post('/sjf-preemptive', function(req,res){
+	 var input="";
+    console.log(req.body);
+	for(var i=0;i<req.body.length;i++)
+	{
+		input+=req.body[i]+" ";
+	}
+	console.log(input);
+	
+	exec(__dirname + '/executables/cpu_scheduling/sjf-preemptive ' + input , function callback(error,stdout,stderr) {
+		console.log("hi" + stdout);
+		console.log(error);
+		res.send(stdout);
+	});
 
 });
 
 // Priority Nonpremptive API call
-router.post('/prioritynonp', function(req,res){
+router.post('/priority-nonpreemptive', function(req,res){
+	 var input="";
+    console.log(req.body);
+	for(var i=0;i<req.body.length;i++)
+	{
+		input+=req.body[i]+" ";
+	}
+	console.log(input);
+	
+	exec(__dirname + '/executables/cpu_scheduling/priority-nonpreemptive ' + input , function callback(error,stdout,stderr) {
+		console.log("hi" + stdout);
+		console.log(error);
+		res.send(stdout);
+	});
 
 });
 
 // Priority Premptive API call
-router.post('/priorityp', function(req,res){
+router.post('/priority-preemptive', function(req,res){
+	 var input="";
+    console.log(req.body);
+	for(var i=0;i<req.body.length;i++)
+	{
+		input+=req.body[i]+" ";
+	}
+	console.log(input);
+	
+	exec(__dirname + '/executables/cpu_scheduling/priority-preemptive ' + input , function callback(error,stdout,stderr) {
+		console.log("hi" + stdout);
+		console.log(error);
+		res.send(stdout);
+	});
 
 });
 
 // Priority Aging API call
-router.post('/priorityaging', function(req,res){
+router.post('/priority-aging', function(req,res){
+	 var input="";
+    console.log(req.body);
+	for(var i=0;i<req.body.length;i++)
+	{
+		input+=req.body[i]+" ";
+	}
+	console.log(input);
+	
+	exec(__dirname + '/executables/cpu_scheduling/priority-aging ' + input , function callback(error,stdout,stderr) {
+		console.log("hi" + stdout);
+		console.log(error);
+		res.send(stdout);
+	});
 
 });
 
 // Round Robin API call
-router.post('/roundrobin', function(req,res){
+router.post('/round_robin', function(req,res){
+	 var input="";
+    console.log(req.body);
+	for(var i=0;i<req.body.length;i++)
+	{
+		input+=req.body[i]+" ";
+	}
+	console.log(input);
+	
+	exec(__dirname + '/executables/cpu_scheduling/round_robin ' + input , function callback(error,stdout,stderr) {
+		console.log("hi" + stdout);
+		console.log(error);
+		res.send(stdout);
+	});
 
 });
 

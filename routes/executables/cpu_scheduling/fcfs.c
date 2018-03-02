@@ -1,5 +1,5 @@
-#include "stdio.h"
-#include "stdlib.h"
+#include <stdio.h>
+#include <stdlib.h>
 struct process
 {
 	int process_id;
@@ -16,7 +16,7 @@ int main(int argc, char const *argv[])
 	struct process p[n];
 	
 	int  k = 0;
-	for(i = 2; i <= argc-2; i += 4) {
+	for(i = 2; i <= argc-2; i += 3) {
 		p[k].process_id = atoi(argv[i]);
 		p[k].arrival_time = atoi(argv[i+1]);
 		p[k].burst_time = atoi(argv[i+2]);
@@ -39,8 +39,6 @@ int main(int argc, char const *argv[])
 	{
 		p[i].turn_around_time = p[i].burst_time + p[i].waiting_time;
 	}
-	printf("\n\n");
-	printf("Process\tBurst Time\tArrival Time\tWaiting Time\tTurn-Around Time\tCompletion Time\n");
 	int total_waiting_time=0,total_turn_around_time=0;
 	for(i=0;i<n;i++)
 	{
@@ -49,8 +47,8 @@ int main(int argc, char const *argv[])
 
 		int completion_time=p[i].turn_around_time + p[i].arrival_time;
 
-		printf("%d\t\t%d\t\t%d\t\t%d\t\t%d\t\t%d\n",p[i].process_id,p[i].burst_time, p[i].arrival_time, p[i].waiting_time,p[i].turn_around_time,completion_time);
+		printf("%d\t%d\t%d\t%d\t%d\t%d\n",p[i].process_id,p[i].burst_time, p[i].arrival_time, p[i].waiting_time,p[i].turn_around_time,completion_time);
 	}
-	printf("%f\n", (float)total_waiting_time/n);
-	printf("%f\n",(float)total_turn_around_time/n);
+	printf("\n%f\n", (float)total_waiting_time/n);
+	printf("\n%f\n",(float)total_turn_around_time/n);
 }
