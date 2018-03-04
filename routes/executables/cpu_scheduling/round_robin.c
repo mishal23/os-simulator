@@ -34,23 +34,20 @@ int pop()
 	return return_position;
 }
 
-int main(int argc, char const *argv[])
+int main(int argc,char const*argv[])
 {
 	float wait_time_total = 0.0, tat = 0.0;
-	int time_quantum;
-	int i;
-	int n = atoi(argv[1]);
-	
-	struct process p[n];
-	
-	int  k = 0;
-	for(i = 2; i <= argc-2; i += 3) {
-		p[k].process_id = atoi(argv[i]);
-		p[k].arrival_time = atoi(argv[i+1]);
-		p[k].burst_time = atoi(argv[i+2]);
+	int n=atoi(argv[1]);
+	int k=0;
+	for(int i=2; i<=argc-2; i+=3)
+	{
+		proc[k].process_id =atoi(argv[i]);
+		proc[k].arrival_time=atoi(argv[i+1]);
+		proc[k].burst_time=atoi(argv[i+2]);
+		proc[k].remaining_time = proc[k].burst_time;
 		k++;
 	}
-	time_quantum=atoi(argv[3*n+1]);
+	int time_quantum=atoi(argv[3*n+1]);
 
 	int time=0; 
 	int processes_left=n;   
@@ -105,6 +102,8 @@ int main(int argc, char const *argv[])
 			if(proc[j].arrival_time == time)	
 				push(j);
 	}
+
+	printf("\n");
 	for(int i=0; i<n; i++)
 	{
 		printf("%d\t%d\t", proc[i].process_id, proc[i].arrival_time);
@@ -119,5 +118,4 @@ int main(int argc, char const *argv[])
 
 	printf("\n%f",wait_time_total);
 	printf("\n%f\n", tat);
-	
 }
