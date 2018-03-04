@@ -1,0 +1,328 @@
+<!-- Load the JS and  -->
+<script type="text/javascript" src="../javascripts/base.js"></script>
+<link rel="stylesheet" type="text/css" href="../stylesheets/base.css">
+
+<!-- Top navbar starts -->
+<div class="top-navbar">
+  <div class="left">
+    OS Simulator
+  </div>
+
+  <div class="right">
+    <i class="fa fa-wifi fa-fw" style="font-size: 18px;"></i>
+    <i class="language" style="font-size: 15px; padding: 2px 2px 2px 2px;">En</i>
+    <i class="fa fa-bluetooth" style="font-size: 18px;"></i>
+    <i class="fa fa-battery-three-quarters fa-fw" style="font-size: 18px;"></i>
+    <i class="fa fa-volume-up fa-fw" style="font-size: 18px;"></i>
+    <span class="time"></span>
+    <span class="am-pm"></span>
+    <i class="fa fa-power-off fa-fw animated slideInUp" id="shutdown-button" style="font-size: 18px;"></i>
+  </div>
+</div>
+<!-- Top navbar ends here -->
+
+<!-- Side navbar starts here -->
+<div class="side-navbar">
+
+  <button href="#" data-toggle="tooltip" title="Search your computer">
+    <img src="/images/logo-ubuntu.png">
+  </button>
+
+  <span data-toggle="tooltip" title="Files">
+    <i class="fa fa-folder" style="font-size: 50px;" onclick="openFile()"></i>
+  </span>
+  <span data-toggle="tooltip" title="Firefox Web Browser">
+    <i class="fa fa-chrome" style="font-size: 50px;"></i>
+  </span>
+
+  <span data-toggle="tooltip" title="System Setting">
+    <i class="fa fa-cog" style="font-size: 50px;"></i>
+  </span>
+
+  <span data-toggle="tooltip" title="Terminal">
+    <i class="fa fa-terminal"></i>
+  </span>
+
+</div>
+<!-- Side navbar ends here -->
+
+<div class="row">
+    <div class="side-menu">
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+          <div class="brand-wrapper">
+            <div class="brand-name-wrapper">
+              <span class="navbar-brand" >
+                Files 
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="side-menu-container">
+          <ul class="nav navbar-nav">
+            <li><a class="nav-item nav-link active" data-toggle="tab" href="#socket"><span class="glyphicon glyphicon-comment"></span>Socket Programming</a></li>
+            <li><a class="nav-item nav-link" data-toggle="tab" href="#cpu"><span class="glyphicon glyphicon-tasks"></span>CPU Scheduling</a></li>
+            <li><a class="nav-item nav-link" data-toggle="tab" href="#psync"><span class="glyphicon glyphicon-refresh"></span>Process Synchronization</a></li>
+            <li><a class="nav-item nav-link" data-toggle="tab" href="#banker"><span class="glyphicon glyphicon-equalizer"></span>Bankers</a></li>
+            <li><a class="nav-item nav-link" data-toggle="tab" href="#pagerep"><span class="glyphicon glyphicon-duplicate"></span>Page Replacement</a></li>
+            <li><a class="nav-item nav-link" data-toggle="tab" href="#memalloc"><span class="glyphicon glyphicon-hdd"></span>Memory Allocation</a></li>
+            <li><a class="nav-item nav-link" data-toggle="tab" href="#disksc"><span class="glyphicon glyphicon-cd"></span>Disk Scheduling</a></li>
+            <li><a class="nav-item nav-link" data-toggle="tab" href="#filestruct"><span class="glyphicon glyphicon-file"></span>File Structure</a></li> 
+            <li><a class="nav-item nav-link" onclick="openFile()"><span class="glyphicon glyphicon-log-out"></span>Exit</a></li> 
+          </ul>
+        </div>
+        
+      </nav>
+    </div>
+
+    <div class="container-fluid">
+      
+      <div class="side-body">
+
+      <div class="tab-content">
+
+        <!-- Socket Programming tab -->
+        <div class="tab-pane active" id="socket"> 
+          <h1 style="padding-left: 10px;">Socket Programming</h1>
+          <i class="fa fa-file-text-o" data-toggle="modal" data-target="#socketwiki" style="font-size: 60px; padding-left: 50px;"></i>
+          <i class="fa fa-play" style="font-size: 60px; padding-left: 70px;"></i>
+          <br>
+          <span style="padding-left: 60px; font-size: 20px;">Wiki</span>
+          <span style="padding-left: 70px; font-size: 20px;">Demo</span>
+          
+          <div class="modal fade" id="socketwiki" role="dialog">
+            <div class="modal-dialog">
+    
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Socket Programming</h4>
+                </div>
+                <!-- Change content for Socket Programming here -->
+                <div class="modal-body">
+                  <p>Info about Socket Programming</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+      
+            </div>
+          </div>
+        </div>
+
+        <!-- CPU Scheduling Tab -->
+        <div class="tab-pane" id="cpu">
+          <h1 style="padding-left: 10px;">CPU Scheduling</h1>
+          <i class="fa fa-file-text-o" data-toggle="modal" data-target="#cpuwiki" style="font-size: 60px; padding-left: 50px;"></i>
+          <i class="fa fa-play" style="font-size: 60px; padding-left: 70px;"></i>
+          <br>
+          <span style="padding-left: 60px; font-size: 20px;">Wiki</span>
+          <span style="padding-left: 70px; font-size: 20px;">Demo</span>
+          
+          <div class="modal fade" id="cpuwiki" role="dialog">
+            <div class="modal-dialog">
+    
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">CPU Scheduling</h4>
+                </div>
+                <!-- Change content for CPU Scheduling here -->
+                <div class="modal-body">
+                  <p>Info about CPU Scheduling</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+      
+            </div>
+          </div>
+        </div>
+
+        <!-- Process Synchronization Tab -->
+        <div class="tab-pane" id="psync">
+         <h1 style="padding-left: 10px;">Process Synchronization</h1>
+          <i class="fa fa-file-text-o" data-toggle="modal" data-target="#processyncwiki" style="font-size: 60px; padding-left: 50px;"></i>
+          <i class="fa fa-play" style="font-size: 60px; padding-left: 70px;"></i>
+          <br>
+          <span style="padding-left: 60px; font-size: 20px;">Wiki</span>
+          <span style="padding-left: 70px; font-size: 20px;">Demo</span>
+          
+          <div class="modal fade" id="processyncwiki" role="dialog">
+            <div class="modal-dialog">
+    
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Process Synchronization</h4>
+                </div>
+                <!-- Change content for Process Synchronization here -->
+                <div class="modal-body">
+                  <p>Info about Process Synchronization</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+      
+            </div>
+          </div>
+        </div>
+
+        <!-- Bankers Algorithm Tab -->
+        <div class="tab-pane" id="banker">
+         <h1 style="padding-left: 10px;">Banker's Algorithm</h1>
+          <i class="fa fa-file-text-o" data-toggle="modal" data-target="#bankerwiki" style="font-size: 60px; padding-left: 50px;"></i>
+          <i class="fa fa-play" style="font-size: 60px; padding-left: 70px;"></i>
+          <br>
+          <span style="padding-left: 60px; font-size: 20px;">Wiki</span>
+          <span style="padding-left: 70px; font-size: 20px;">Demo</span>
+          
+          <div class="modal fade" id="bankerwiki" role="dialog">
+            <div class="modal-dialog">
+    
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Banker</h4>
+                </div>
+                <!-- Change content for Bankers Algorithm here -->
+                <div class="modal-body">
+                  <p>Info about Banker's algorithm</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+      
+            </div>
+          </div>
+        </div>
+
+        <!-- Page Replacement Tab -->
+        <div class="tab-pane" id="pagerep">
+          <h1 style="padding-left: 10px;">Page Replacement</h1>
+          <i class="fa fa-file-text-o" data-toggle="modal" data-target="#pagereplacewiki" style="font-size: 60px; padding-left: 50px;"></i>
+          <i class="fa fa-play" style="font-size: 60px; padding-left: 70px;"></i>
+          <br>
+          <span style="padding-left: 60px; font-size: 20px;">Wiki</span>
+          <span style="padding-left: 70px; font-size: 20px;">Demo</span>
+          
+          <div class="modal fade" id="pagereplacewiki" role="dialog">
+            <div class="modal-dialog">
+    
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Page Replacement</h4>
+                </div>
+                <!-- Change content for Page Replacement here -->
+                <div class="modal-body">
+                  <p>Info about Page Replacement</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+      
+            </div>
+          </div>
+        </div>
+
+        <!-- Memory Allocation Tab -->
+        <div class="tab-pane" id="memalloc">
+          <h1 style="padding-left: 10px;">Memory Allocation</h1>
+          <i class="fa fa-file-text-o" data-toggle="modal" data-target="#memallocwiki" style="font-size: 60px; padding-left: 50px;"></i>
+          <i class="fa fa-play" style="font-size: 60px; padding-left: 70px;"></i>
+          <br>
+          <span style="padding-left: 60px; font-size: 20px;">Wiki</span>
+          <span style="padding-left: 70px; font-size: 20px;">Demo</span>
+          
+
+          <div class="modal fade" id="memallocwiki" role="dialog">
+            <div class="modal-dialog">
+    
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Memory Allocation</h4>
+                </div>
+                <!-- Change content for Memory Allocation here -->
+                <div class="modal-body">
+                  <p>Info about Memory Allocation</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+      
+            </div>
+          </div>
+        </div>
+
+        <!-- Disk Scheduling Tab -->
+        <div class="tab-pane" id="disksc">
+          <div class="tab-pane" id="memalloc">
+          <h1 style="padding-left: 10px;">Disk Scheduling</h1>
+          <i class="fa fa-file-text-o" data-toggle="modal" data-target="#diskschwiki" style="font-size: 60px; padding-left: 50px;"></i>
+          <i class="fa fa-play" style="font-size: 60px; padding-left: 70px;"></i>
+          <br>
+          <span style="padding-left: 60px; font-size: 20px;">Wiki</span>
+          <span style="padding-left: 70px; font-size: 20px;">Demo</span>
+      
+          <div class="modal fade" id="diskschwiki" role="dialog">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Disk Scheduling</h4>
+                </div>
+                <!-- Change content for Disk Scheduling here -->
+                <div class="modal-body">
+                  <p>Info about Disk Scheduling</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+      
+            </div>
+          </div>
+          </div>
+        </div>
+
+        <!-- File structure Tab -->
+        <div class="tab-pane" id="filestruct">
+          <h1 style="padding-left: 10px;">File Structure</h1>
+          <i class="fa fa-file-text-o" data-toggle="modal" data-target="#filestructwiki" style="font-size: 60px; padding-left: 50px;"></i>
+          <i class="fa fa-play" style="font-size: 60px; padding-left: 70px;"></i>
+          <br>
+          <span style="padding-left: 60px; font-size: 20px;">Wiki</span>
+          <span style="padding-left: 70px; font-size: 20px;">Demo</span>
+          
+          <div class="modal fade" id="filestructwiki" role="dialog">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">File Structure</h4>
+                </div>
+                <!-- Change content for File Structure here -->
+                <div class="modal-body">
+                  <p>Info about File Structure</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+      
+            </div>
+          </div>
+        </div>
+
+      </div>
+      </div>
+    </div>
+  </div>
