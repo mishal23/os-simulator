@@ -48,27 +48,27 @@
   </tr>
   <tr>  
     <td>SJF NonPremptive</td>
-    <td>/cpu_scheduling/sjfnonp</td>
+    <td>/cpu_scheduling/sjf-nonpremptive</td>
   </tr>
   <tr>  
     <td>SJF Premptive</td>
-    <td>/cpu_scheduling/sjfp</td>
+    <td>/cpu_scheduling/sjf-preemptive</td>
   </tr>
   <tr>  
     <td>Priority Non-premptive</td>
-    <td>/cpu_scheduling/prioritynonp</td>
+    <td>/cpu_scheduling/priority-nonpreemptive</td>
   </tr>
   <tr>  
     <td>Priority Premptive</td>
-    <td>/cpu_scheduling/priorityp</td>
+    <td>/cpu_scheduling/priority-preemptive</td>
   </tr>
   <tr>  
     <td>Priority Aging</td>
-    <td>/cpu_scheduling/priority/aging</td>
+    <td>/cpu_scheduling/priority-aging</td>
   </tr>
   <tr>  
     <td>Round Robin</td>
-    <td>/cpu_scheduling/roundrobin</td>
+    <td>/cpu_scheduling/round_robin</td>
   </tr>
 </table>
 
