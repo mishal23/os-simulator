@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/cpu_scheduling.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script type="text/javascript" src="/javascripts/cpu_scheduling/cpu_scheduling.js"></script>
 </head>
@@ -21,8 +22,30 @@
 
 <!-- Do your changes from here -->
 <!-- Show the simulation here -->
-<div>
-    <p>CPU Scheduling</p>
+    <h2>CPU Scheduling</h2>
+<div class="container">
+  <form>
+    <div class="form-group">
+      <label for="sel1">Select process:</label>
+      <select class="form-control" id="sel1" onchange="SelectInput(this.value);">
+        <option value="fcfs">FCFS</option>
+        <option value="sjf">SJF</option>
+        <option value="priority">Priority</option>
+        <option value="priorityaging">Priority aging</option>
+        <option value="roundrobin">Round Robin</option>
+      </select>
+      <br>
+    </div>
+    <label class="radio-inline">
+      <input type="radio" name="optradio">Preemptive
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="optradio">Non preemptive
+    </label>  
+  </form><br>
+	<div id="wrapper"></div>
+	<div class="btn" onclick="AddInput()"><strong>Add Process</strong></div>
+	<div class="btn"><strong>Start</strong></div>
 </div>
 </body>
 </html>

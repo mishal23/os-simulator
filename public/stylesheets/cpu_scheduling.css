@@ -1,0 +1,18 @@
+.btn{
+	padding: 5px;
+	background-color: rgb(75,75,75);
+	color:white;
+	margin: 50px 50px 50px 0px;
+	float:right;
+	box-shadow: 0 9px #999;
+	border-radius: 10px;
+	width:100px;
+}
+.btn:hover{
+	background-color: rgb(100,100,100);
+}
+.btn:active{
+	background-color: rgb(100,100,100);
+	box-shadow: 0 5px #666;
+  	transform: translateY(4px);
+}
