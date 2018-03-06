@@ -1,0 +1,182 @@
+body {
+  background-color: #EDEBEE;
+  font-family: sans-serif;
+  font-size: 1.5em;
+  font-weight: 100;
+}
+
+.macbook {
+  width: 300px;
+  margin: 50px auto;
+}
+
+.macbook-lid {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.macbook-screen {
+  position: relative;
+  background-color: #353535;
+  margin: 0 auto;
+  padding: 3%;
+  border-radius: 5px 5px 0 0;
+}
+
+.macbook-content {
+  position: relative;
+  overflow: hidden;
+  background-color: #323C4D;
+  box-shadow: inset 0px 0px 6px #222;
+}
+.macbook-content:before {
+  display: block;
+  content: '';
+  width: 1px;
+  padding-top: 60%;
+  float: left;
+}
+
+.macbook-base {
+  width: 100%;
+  overflow: hidden;
+  background-color: #D3D1D2;
+  border-radius: 2px 2px 10px 10px;
+}
+.macbook-base:before {
+  display: block;
+  content: '';
+  width: 30%;
+  margin: 0 auto 1% auto;
+  padding-top: 1.5%;
+  background: #B0B0B0;
+  border-radius: 0 0 10px 10px;
+}
+
+#laptop1 {
+  position: absolute;
+  margin-left: 40vh;
+  margin-top: 38vh;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+/* 2nd Laptop*/
+.macbook1 {
+  width: 300px;
+  margin: 50px auto;
+}
+.macbook1-lid {
+  width: 80%;
+  margin: 0 auto;
+
+}
+
+.macbook1-screen {
+  position: relative;
+  background-color: #353535;
+  margin: 0 auto;
+  padding: 3%;
+  border-radius: 5px 5px 0 0;
+}
+
+.macbook1-content {
+  position: relative;
+  overflow: hidden;
+  background-color: #323C4D;
+  box-shadow: inset 0px 0px 6px #222;
+}
+.macbook1-content:before {
+  display: block;
+  content: '';
+  width: 1px;
+  padding-top: 60%;
+  float: left;
+}
+
+.macbook1-base {
+  width: 100%;
+  overflow: hidden;
+  background-color: #D3D1D2;
+  border-radius: 2px 2px 10px 10px;
+}
+.macbook1-base:before {
+  display: block;
+  content: '';
+  width: 30%;
+  margin: 0 auto 1% auto;
+  padding-top: 1.5%;
+  background: #B0B0B0;
+  border-radius: 0 0 10px 10px;
+}
+
+#laptop2 {
+  position: absolute;
+  margin-left: 160vh;
+  margin-top: 38vh;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.wifi-symbol{
+  position: absolute;
+  margin-top: 28vh;
+}
+.wifi1{
+  margin-left: 60vh;
+}
+.wifi2{
+  margin-left: 45vh;
+}
+.send-sim{
+  margin-top: 35vh;
+  position: absolute;
+  -webkit-animation: sendmessage 3s;  
+  -webkit-animation-fill-mode: forwards;
+  animation: sendmessage 3s;
+  animation-fill-mode: forwards;
+}
+@-webkit-keyframes sendmessage {
+    from {left: 50px;}
+    to {left: 180px; }
+}
+
+@keyframes sendmessage {
+    from {left: 350px;}
+    to {left: 1000px; }
+}
+
+.receive-sim{
+  margin-top: 37vh;
+  position: absolute;
+  -webkit-animation: receivemessage 3s;  
+  -webkit-animation-fill-mode: forwards;
+  animation: receivemessage 3s;
+  animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes receivemessage {
+    from {left: 50px;}
+    to {left: 180px; }
+}
+
+@keyframes receivemessage {
+    from {left: 1000px;}
+    to {left: 350px; }
+}
+
+.blink {
+    animation: blink 2s steps(5, start) infinite;
+    -webkit-animation: blink 1s steps(5, start) infinite;
+}
+
+@keyframes blink {
+  to {
+      visibility: hidden;
+  }
+}
+@-webkit-keyframes blink {
+  to {
+     visibility: hidden;
+  }
+}
