@@ -7,7 +7,7 @@ body {
 	font-family: 'Ubuntu-L', Arial;
 	margin: 0;
 	padding: 0;
-	overflow: hidden; /* not to allow the window to scroll */
+/*	overflow: hidden;  not to allow the window to scroll */
 }
 
 .top-navbar {

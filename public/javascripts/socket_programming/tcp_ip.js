@@ -108,5 +108,6 @@ $(document).ready(function() {
 
 	    $("#server-message").hide();
 	    $("#client-message").hide();
+        window.location.reload();
     });
 });
