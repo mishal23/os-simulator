@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bankers Algorithm</title>
+      <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/javascripts/bankers/bankers.js"></script>
+</head>
+<body>
+<!-- To load side and top navbar -->
+<!-- DO NOT CHANGE THIS -->
+<div id="side_top_navbar">
+
+</div>
+
+<!-- Do your changes from here -->
+<!-- Show the simulation here -->
+<div>
+    <h1 class='text-center'>Safety Sequence</h1>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div style="background-color: red;">
+      <form id="1" class="col-md-2">
+        <div id="c1" style="float:left;width: 80%">
+          <input id="np" placeholder="Enter number of processes"></input>
+          <br>
+          <br>
+          <input id="nr" placeholder="Enter number of resources"></input>
+        </div>
+
+        <div id="b1" style="float:right;width: 15%;"> 
+          <br>
+          Continue
+          <i style="margin-left: 20px;" class="fa fa-arrow-right"></i>
+        </div>
+      </form>
+
+
+      <form style="margin-top:-40px;display: none;" id="2" class="col-md-3">
+        <div id="c2" style="float:left;width: 80%">
+
+        </div>
+
+        <div id="b2" style="float:right;width: 20%;"> 
+          <br>
+          <br>
+          <br>
+          Continue
+          <i style="margin-left: 20px;" class="fa fa-arrow-right"></i>
+        </div>
+      </form>
+
+      <form style="margin-top:-40px;display: none;" id="3" class="col-md-3">
+        <div id="c3" style="float:left;width: 80%">
+
+        </div>
+
+        <div id="b3" style="float:right;width: 20%;"> 
+          <br>
+          <br>
+          <br>
+          Continue
+          <i style="margin-left: 20px;" class="fa fa-arrow-right"></i>
+        </div>
+      </form>
+
+      <div style="margin-top:-40px;" id="4" class="col-md-3">
+        <div id="c4" style="float:left;width: 80%">
+
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <button id="action" style="display: none;">
+          Find safe sequence
+        </button>
+      </div>
+    </div>
+    <div style="margin-top:200px;width:100%;background-color: yellow;">
+      <div id="result" style="display: none;">
+      </div>
+      <div id="is">
+        
+      </div>
+      <div class="text-center" id="bb" style="width: 10%;height: 20%; background-color: black">
+        <br>
+        <i class="fa fa-cog fa-spin" style="display:none;font-size:24px;color:white"></i>
+        <i class="fa fa-cog fa-spin" style="display:none;font-size:44px;margin-left: -10px;color:white;"></i>
+        <i id="cog1" class="fa fa-cog" style="font-size:24px;color:white"></i>
+        <i id="cog2" class="fa fa-cog" style="font-size:44px;margin-left: -10px;color:white;"></i>
+        <br>
+      </div>      
+      <div id="os">
+        
+      </div>
+    </div>
+</div>
+</body>
+</html>
