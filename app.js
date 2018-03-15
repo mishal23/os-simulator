@@ -10,6 +10,7 @@ var index = require('./routes/index');
 var system_calls = require('./routes/system_calls');
 var cpu_scheduling = require('./routes/cpu_scheduling');
 var bankers = require('./routes/bankers');
+var disk_scheduling = require('./routes/disk_scheduling');
 
 var app = express();
 
@@ -26,9 +27,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-app.use('/system_calls',system_calls);
-app.use('/cpu_scheduling',cpu_scheduling);
+app.use('/system_calls', system_calls);
+app.use('/cpu_scheduling', cpu_scheduling);
 app.use('/bankers', bankers);
+app.use('/disk_scheduling', disk_scheduling);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
