@@ -1,0 +1,28 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: rgb(233, 234, 237);
+}
+.head {
+    width: 100%;
+    padding: 2%;
+    padding-bottom: 10%;
+}
+.bar {
+    display: inline-block;
+    text-align: center;
+    color: white;
+    width: 0%;
+    -webkit-transition: width .3s ease-out;
+    -o-transition: width .3s ease-out;
+    transition: width .3s ease-out;
+}
+p{
+    text-align: left;
+    font-size: medium;
+}
+li{
+    text-align: left;
+    font-size: medium;
+    font-family: serif;
+}

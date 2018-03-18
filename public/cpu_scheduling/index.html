@@ -2,15 +2,23 @@
 <html>
 <head>
     <title>CPU Scheduling</title>
-      <script
-      src="https://code.jquery.com/jquery-3.3.1.min.js"
-      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-      crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto Mono">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/cpu_scheduling.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
     <script type="text/javascript" src="/javascripts/cpu_scheduling/cpu_scheduling.js"></script>
+
 </head>
 <body>
 <!-- To load side and top navbar -->
@@ -18,11 +26,52 @@
 <div id="side_top_navbar">
 
 </div>
+<div class="text-warning"><h1>Process Scheduling </h1></div>
 
-<!-- Do your changes from here -->
-<!-- Show the simulation here -->
-<div>
-    <p>CPU Scheduling</p>
+
+<div class="container">
+
+        <h3 >Compare Process Scheduling Algorithms</h3>
+        <h5>Input</h5>
+
+        <div class="row">
+            <div class="input-field col-sm-4">
+                <input class="validate" type="text" id="time_quantum"/>
+                <label for="head_pos">Time Quantum</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-2">
+                <div class="col"><b>Processes</b></div>
+                <div class="row">
+                    <a  class="btn btn-info btn-xs col-sm-2" href="javascript:remove_process()">-</a></a>
+                    <div class="col-sm-2" id="n_processes">1</div>
+                    <a class="btn btn-info btn-xs col-sm-2" href="javascript:add_process()">+</a></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" id="processes">
+            <div class="input-field col-sm-4">
+                <input class="validate" type="text" id="p_at0"/>
+                <label for="head_pos">Arrival Time</label>
+            </div>
+            <div class="input-field col-sm-4">
+                <input class="validate" type="text" id="p_bt0"/>
+                <label for="head_pos">Burst Time</label>
+            </div>
+            <div class="input-field col-sm-4">
+                <input class="validate" type="text" id="p_pt0"/>
+                <label for="head_pos">Priority</label>
+            </div>
+        </div>
+        <a class="btn btn-primary" onclick="submit()"><i class="material-icons right">send</i>Submit</a>
+
 </div>
+
+
+
+
 </body>
 </html>

@@ -103,7 +103,7 @@ int main(int argc,char const*argv[])
 				push(j);
 	}
 
-	printf("\n");
+	//printf("\n");
 	for(int i=0; i<n; i++)
 	{
 		printf("%d\t%d\t", proc[i].process_id, proc[i].arrival_time);
@@ -116,6 +116,6 @@ int main(int argc,char const*argv[])
 	tat = tat/(1.0*n);
 	wait_time_total = wait_time_total/(1.0*n);
 
-	printf("\n%f",wait_time_total);
-	printf("\n%f\n", tat);
+	printf("%f",wait_time_total);
+	printf("\n%f", tat);
 }

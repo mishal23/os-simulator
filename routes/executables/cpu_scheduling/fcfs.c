@@ -49,6 +49,6 @@ int main(int argc, char const *argv[])
 
 		printf("%d\t%d\t%d\t%d\t%d\t%d\n",p[i].process_id,p[i].burst_time, p[i].arrival_time, p[i].waiting_time,p[i].turn_around_time,completion_time);
 	}
-	printf("\n%f\n", (float)total_waiting_time/n);
-	printf("\n%f\n",(float)total_turn_around_time/n);
+	printf("%f\n", (float)total_waiting_time/n);
+	printf("%f",(float)total_turn_around_time/n);
 }
