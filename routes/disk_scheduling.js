@@ -11,7 +11,7 @@ router.post('/fcfs', function(req,res){
 	}
 	console.log(input);
 	
-	exec(__dirname + '/executables/disk_scheduling/fcfs ' + input , function callback(error,stdout,stderr) {
+	exec(__dirname + '/executables/disk_scheduling/dfcfs ' + input , function callback(error,stdout,stderr) {
 		console.log(error);
 		res.send(stdout);
 	});
@@ -33,8 +33,8 @@ router.post('/sstf', function(req,res){
 });
 
 
-// Look-Scan
-router.post('/look_scan', function(req,res){
+// Look
+router.post('/look', function(req,res){
 	var input = "";
 	for(var i=0;i<req.body.length;i++)
 	{
@@ -42,7 +42,7 @@ router.post('/look_scan', function(req,res){
 	}
 	console.log(input);
 	
-	exec(__dirname + '/executables/disk_scheduling/look_scan ' + input , function callback(error,stdout,stderr) {
+	exec(__dirname + '/executables/disk_scheduling/look ' + input , function callback(error,stdout,stderr) {
 		console.log(error);
 		res.send(stdout);
 	});
@@ -65,7 +65,7 @@ router.post('/scan', function(req,res){
 });
 
 // C-Scan
-router.post('/c_scan', function(req,res){
+router.post('/cscan', function(req,res){
 	var input = "";
 	for(var i=0;i<req.body.length;i++)
 	{
@@ -73,14 +73,14 @@ router.post('/c_scan', function(req,res){
 	}
 	console.log(input);
 	
-	exec(__dirname + '/executables/disk_scheduling/c_scan ' + input , function callback(error,stdout,stderr) {
+	exec(__dirname + '/executables/disk_scheduling/cscan ' + input , function callback(error,stdout,stderr) {
 		console.log(error);
 		res.send(stdout);
 	});
 });
 
 // C-Look
-router.post('/c_look', function(req,res){
+router.post('/clook', function(req,res){
 	var input = "";
 	for(var i=0;i<req.body.length;i++)
 	{
@@ -88,7 +88,7 @@ router.post('/c_look', function(req,res){
 	}
 	console.log(input);
 	
-	exec(__dirname + '/executables/disk_scheduling/c_look ' + input , function callback(error,stdout,stderr) {
+	exec(__dirname + '/executables/disk_scheduling/clook ' + input , function callback(error,stdout,stderr) {
 		console.log(error);
 		res.send(stdout);
 	});
