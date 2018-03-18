@@ -87,3 +87,35 @@
       <td>/bankers/resource_request</td>
     </tr>
 </table>
+
+- Disk Scheduling
+<table>
+    <tr>  
+      <th>Algorithm</th>
+      <th>API</th>
+    </tr>
+  <tr>  
+    <td>FCFS</td>
+    <td>/disk_scheduling/fcfs</td>
+  </tr>
+  <tr>  
+    <td>Shortest Seek Time First</td>
+    <td>/disk_scheduling/sstf</td>
+  </tr>
+  <tr>  
+    <td>Look Scan</td>
+    <td>/disk_scheduling/look_scan</td>
+  </tr>
+  <tr>  
+    <td>Scan</td>
+    <td>/disk_scheduling/scan</td>
+  </tr>
+  <tr>  
+    <td>C-Scan</td>
+    <td>/disk_scheduling/c_scan</td>
+  </tr>
+  <tr>  
+    <td>C-Look</td>
+    <td>/disk_scheduling/c_look</td>
+  </tr>
+</table>

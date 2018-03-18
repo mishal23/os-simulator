@@ -32,9 +32,9 @@ var height = $(window).height() - $('.top-navbar').height();
 $('.side-navbar').height(2*height);
 
 // set initially the file onclick as hidden
-$(".row").hide();
+$("#side_bar").hide();
 
 // toogle file click function
 function openFile(){
-	$('.row').toggle(100);
+	$('#side_bar').toggle(100);
 }
