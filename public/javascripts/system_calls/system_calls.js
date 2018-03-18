@@ -9,7 +9,7 @@
 			return [pwd, output];
 		}
 		function getOutputFormated(output){
-			if(output[0].includes('hrish:')){
+			if(output[0].includes('mahir:')){
 				return output[0];
 			}
 			for(var i=0;i<output.length;i++){
