@@ -1,4 +1,6 @@
 $(document).ready(function() {
+
+
 	var topic = "Bankers";
     $('#side_top_navbar').load('../base.html' , function(){
     	$('.left').html(topic);
@@ -15,12 +17,19 @@ $(document).ready(function() {
     		$('#c2').append('<div id="ap'+i+'">P'+i+'</div><br>');
     		for(j=0;j<nr;j+=1)
     		{
-    			$('#ap'+i).append('<input style="margin-right:5px;" placeholder="R'+j+'"class="col-md-3" id="ap'+i+'ar'+j+'"></input>');
+    			$('#ap'+i).append('<input required style="margin-right:5px;" placeholder="R'+j+'"class="col-md-3" id="ap'+i+'ar'+j+'"></input>');
     		}
     		$('#c2').append('<br><br>');
     	}
     	$('#2').fadeIn();
         $("b1").attr("disabled", "disabled");
+        var nr=$('#nr').val();
+        var i=0;
+        for(i=0;i<nr;i+=1)
+        {
+            $('#ra_nr').append('<input required style="margin-right:5px;" placeholder="R'+i+'"class="col-md-3" id="ralloc'+i+'"></input>');
+        }
+        $('#ra_text').append('Enter resource request')
   	});
     $('#b2').click(function(){
     	var np=$('#np').val();
@@ -34,7 +43,7 @@ $(document).ready(function() {
     		$('#c3').append('<div id="mp'+i+'">P'+i+'</div><br>');
     		for(j=0;j<nr;j+=1)
     		{
-    			$('#mp'+i).append('<input style="margin-right:5px;" placeholder="R'+j+'"class="col-md-3" id="mp'+i+'mr'+j+'"></input>');
+    			$('#mp'+i).append('<input required style="margin-right:5px;" placeholder="R'+j+'"class="col-md-3" id="mp'+i+'mr'+j+'"></input>');
     		}
     		$('#c3').append('<br><br>');
     	}
@@ -48,52 +57,52 @@ $(document).ready(function() {
     	$('#c4').append('<span class="text-center">Enter available resources of each type <span><br><br>');
     	for(i=0;i<nr;i+=1)
     	{
-    		$('#c4').append('<input style="margin-right:5px;" placeholder="R'+i+'"class="col-md-3" id="avail_r'+i+'"></input>');
+    		$('#c4').append('<input required style="margin-right:5px;" placeholder="R'+i+'"class="col-md-3" id="avail_r'+i+'"></input>');
     	}
     	$('#4').fadeIn();
-    	$('#action').fadeIn();
+    	$('#ss_action').fadeIn();
         $("b3").attr("disabled", "disabled");
   	});
 
 
-    $('#action').click(function(){
-    	var np=$('#np').val();
-    	var nr=$('#nr').val();
+    $('#ss_action').click(function(){
+        var np=$('#np').val();
+        var nr=$('#nr').val();
         document.getElementById("result").innerHTML="";
         document.getElementById("is").innerHTML="";
         document.getElementById("os").innerHTML="";
-    	var i=0;
-    	var j=0;
-    	arguments=np+' '+nr+' ';
-    	for(j=0;j<nr;j+=1)
-		{
-			arguments+=$('#avail_r'+j).val()+' ';
-		}
-    	for(i=0;i<np;i+=1)
-    	{
-    		for(j=0;j<nr;j+=1)
-    		{
-    			arguments+=document.getElementById('ap'+i.toString()+'ar'+j.toString()).value+' ';
-    		}
-    	}
-    	for(i=0;i<np;i+=1)
-    	{
-    		for(j=0;j<nr;j+=1)
-    		{
-    			arguments+=document.getElementById('mp'+i.toString()+'mr'+j.toString()).value+' ';
-    		}
-    	}
+        var i=0;
+        var j=0;
+        arguments=np+' '+nr+' ';
+        for(j=0;j<nr;j+=1)
+        {
+            arguments+=$('#avail_r'+j).val()+' ';
+        }
+        for(i=0;i<np;i+=1)
+        {
+            for(j=0;j<nr;j+=1)
+            {
+                arguments+=document.getElementById('ap'+i.toString()+'ar'+j.toString()).value+' ';
+            }
+        }
+        for(i=0;i<np;i+=1)
+        {
+            for(j=0;j<nr;j+=1)
+            {
+                arguments+=document.getElementById('mp'+i.toString()+'mr'+j.toString()).value+' ';
+            }
+        }
 
-		var req=[];
-		//arguments=arguments.split(' ');
-		for(var i=0;i<arguments.length-1;i+=1)
-			req[i]=parseInt(arguments[i]);
+        var req=[];
+        //arguments=arguments.split(' ');
+        for(var i=0;i<arguments.length-1;i+=1)
+            req[i]=parseInt(arguments[i]);
         var result;
 
-		$.ajax({
-			type: 'POST',
-			data: {arguments},
-            url: 'http://localhost:3000/bankers/safe_sequence',						
+        $.ajax({
+            type: 'POST',
+            data: {arguments},
+            url: 'http://localhost:3000/bankers/safe_sequence',                     
             success: function(data) {
                 setTimeout(function() {
                   $('.spec').addClass('fa-spin');
@@ -137,6 +146,52 @@ $(document).ready(function() {
                }, 6000);                
             }
         });
-	
+    
+    });
+
+
+    $('#ra_action').click(function(){
+        var np=$('#np').val();
+        var nr=$('#nr').val();
+        document.getElementById("result").innerHTML="";
+        document.getElementById("is").innerHTML="";
+        document.getElementById("os").innerHTML="";
+        var i=0;
+        var j=0;
+        arguments=np+' '+nr+' ';
+
+        arguments+=$('#rpn').val()+' ';
+
+        for(j=0;j<nr;j+=1)
+        {
+            arguments+=$('#avail_r'+j).val()+' ';
+        }
+        for(i=0;i<np;i+=1)
+        {
+            for(j=0;j<nr;j+=1)
+            {
+                arguments+=document.getElementById('ap'+i.toString()+'ar'+j.toString()).value+' ';
+            }
+        }
+        for(i=0;i<np;i+=1)
+        {
+            for(j=0;j<nr;j+=1)
+            {
+                arguments+=document.getElementById('mp'+i.toString()+'mr'+j.toString()).value+' ';
+            }
+        }
+        for(j=0;j<nr;j+=1)
+        {
+            arguments+=$('#ralloc'+j).val()+' ';
+        }
+        $.ajax({
+            type: 'POST',
+            data: {arguments},
+            url: 'http://localhost:3000/bankers/resource_request',  
+            success: function(data) {
+                $("#ra_res").append(data);
+            }                   
+        });
+    
     });
 });
