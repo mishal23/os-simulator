@@ -15,16 +15,16 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script type="text/javascript" src="/javascripts/disk_scheduling/disk_scheduling.js"></script>
 </head>
-<body>
+<body class="animated slideInDown" style="background-color: black;font-family: Montserrat;">
 <!-- To load side and top navbar -->
-<!-- DO NOT CHANGE THIS -->
+<!-- DO NOT CHANGE THIS 
 <div id="side_top_navbar">
 
 </div>
 
 <!-- Do your changes from here -->
 <!-- Show the simulation here -->
-<div class="animated slideInDown" style="background-color: black; margin-left: 6.2vh;font-family: Montserrat;">
+<div >
     <h1 class="text-center" style= "color:white;">Disk Scheduling</h1>
     <h2 class="text-center" style="color:white">>>  Comparison of Disk Scheduling Algorithms  <<</h2>
     <h3 class="text-center" style= "color:white;padding-top: 25px;">The algorithms being compared are as follows:</h3>
@@ -53,6 +53,20 @@
     	<div class="input-field col-sm-4 text-center">
     		<input class="validate" id="prev" type="text" placeholder="Enter position"></input>
     	</div>
+    </div>
+    <div class="row text-center">
+    	<div class = "col-sm-6" style="padding-top:10px;font-size: 35px;">
+    	<a  class="btn btn-primary mb1 bg-lime" href="javascript:add_request()">Add Request</a>
+    	</div>
+    	<div id="n_req" style="color:black;">0</div>
+    	<div class = "col-sm-6" style="padding-top:10px;font-size: 35px;">
+    	<a  class="btn btn-primary mb1 bg-lime" href="javascript:remove_request()">Remove Request</a>
+    	</div>
+    </div>
+    <div id="requests">
+    </div>
+    </div class="Y row">
+        <a class="btn btn-info mb1 bg-lime " onclick="javascript:submit()">Submit</a>
     </div>
 </div>
 

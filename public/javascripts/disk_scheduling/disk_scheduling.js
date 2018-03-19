@@ -1,4 +1,4 @@
-$(document).ready(function() {
+/*$(document).ready(function() {
 	var topic="Disk Scheduling";
 
     $('#side_top_navbar').load('../base.html', function(){
@@ -6,10 +6,10 @@ $(document).ready(function() {
     });
     
 });
-
+*/
 
 //Number of requests made
-var n_req = 1;
+var n_req = 0;
 
 
 function S(id){
@@ -20,8 +20,8 @@ function put_requests(){
     requests = S('requests');
     requests.innerHTML = "";
     for(var i=0;i<n_req;i++){
-        var p = '<div class="text-center"> <div class="input-field col-sm-4"> <input class="validate" type="text" id="r'+i+'"/> <label for="head_pos">Track Request</label> </div><div>';
-        processes.innerHTML += p;
+        var p = '<div class="row text-center"><input class="validate animated fadeIn" type="text" placeholder="Enter request value" id="r'+i+'"/></div>';
+        requests.innerHTML += p;
     }
 }
 //To add request
@@ -39,13 +39,11 @@ function remove_request(){
 }
 
 function submit() {
-    var csize = $("#csize").value;
-    var cur = $("#cur").value;
-    var prev = $("#prev").value;
-    console.log("no of process : "+n_processes);
+    var csize = S('csize').value;
+    var cur = S('cur').value;
+    var prev = S('prev').value;
+    console.log("no of requests : "+n_req);
     var input = csize + ' ' + cur + ' ' + prev;
-    var input_p = n_processes + ' ';
-    var input_rr;
     var output =  [];
     var totseek = [];
     for(var j = 0; j < n_req; j++) {
@@ -65,9 +63,8 @@ function submit() {
             output[0] = result;
             result = result.split('\n');
             var len = result.length;
-            tt[0] = result[len-1];
-            wt[0] = result[len-2];
-            console.log(result+" "+tt[0]);
+            //tt[0] = result[len-1];
+            //wt[0] = result[len-2];
         },
         async: false
     });
@@ -81,8 +78,8 @@ function submit() {
             output[1] = result;
             result = result.split('\n');
             var len = result.length;
-            tt[1] = result[len-1];
-            wt[1] = result[len-2];
+            //tt[1] = result[len-1];
+            //wt[1] = result[len-2];
 
         },
         async: false
@@ -98,8 +95,8 @@ function submit() {
             output[2] = result;
             result = result.split('\n');
             var len = result.length;
-            tt[2] = result[len-1];
-            wt[2] = result[len-2];
+            //tt[2] = result[len-1];
+            //wt[2] = result[len-2];
 
         },
         async: false
@@ -108,15 +105,15 @@ function submit() {
     $.ajax({
         type: "POST",
         url: "http://localhost:3000/disk_scheduling/scan",
-        data: {input : input_p},
+        data: {input : input},
         success: function(result){
             console.log(result);
 
             output[3] = result;
             result = result.split('\n');
             var len = result.length;
-            tt[3] = result[len-1];
-            wt[3] = result[len-2];
+            //tt[3] = result[len-1];
+            //wt[3] = result[len-2];
 
         },
         async: false
@@ -125,15 +122,15 @@ function submit() {
     $.ajax({
         type: "POST",
         url: "http://localhost:3000/disk_scheduling/clook",
-        data: {input : input_p},
+        data: {input : input},
         success: function(result){
             console.log(result);
 
             output[4] = result;
             result = result.split('\n');
             var len = result.length;
-            tt[4] = result[len-1];
-            wt[4] = result[len-2];
+            //tt[4] = result[len-1];
+            //wt[4] = result[len-2];
 
         },
         async: false
@@ -142,15 +139,15 @@ function submit() {
     $.ajax({
         type: "POST",
         url: "http://localhost:3000/disk_scheduling/cscan",
-        data: {input : input_p},
+        data: {input : input},
         success: function(result){
             console.log(result);
 
             output[5] = result;
             result = result.split('\n');
             var len = result.length;
-            tt[5] = result[len-1];
-            wt[5] = result[len-2];
+            //tt[5] = result[len-1];
+            //wt[5] = result[len-2];
 
         },
         async: false
@@ -158,11 +155,11 @@ function submit() {
 
 
 
-    draw_graph(tt, wt);
+    //draw_graph(tt, wt);
 
 }
 
-function to_float(output){
+/*function to_float(output){
     for(var i=0;i<output.length;i++)
         output[i] = parseFloat(output[i]);
     return output;
@@ -179,7 +176,7 @@ function draw_graph(tt, wt) {
         type: 'bar'
     };
     var title = {
-        text: 'Comparision of Process Scheduling Algorithms'
+        text: 'Comparision of Disk Scheduling Algorithms'
     };
     var xAxis = {
         categories: algo
@@ -219,4 +216,4 @@ function draw_graph(tt, wt) {
     //json.legend = legend;
     //json.credits = credits;
     $('#chart-container').highcharts(json);
-}
+}*/
