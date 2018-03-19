@@ -69,7 +69,7 @@ router.post('/clook', function(req,res){
 	var input = "";
 	console.log(req.body.input);
 	
-	exec(__dirname + '/executables/disk_scheduling/clook ' + input , function callback(error,stdout,stderr) {
+	exec(__dirname + '/executables/disk_scheduling/clook ' + req.body.input , function callback(error,stdout,stderr) {
 		console.log("hi" + stdout);
 		console.log(error);
 		res.send(stdout);
