@@ -19,7 +19,10 @@ $(document).ready(function() {
     		{
     			$('#ap'+i).append('<input required style="margin-right:5px;" placeholder="R'+j+'"class="col-md-3" id="ap'+i+'ar'+j+'"></input>');
     		}
-    		$('#c2').append('<br><br>');
+            if(nr>3)
+    		  $('#c2').append('<br><br>');
+            else
+               $('#c2').append(''); 
     	}
     	$('#2').fadeIn();
         $("b1").attr("disabled", "disabled");
@@ -45,7 +48,10 @@ $(document).ready(function() {
     		{
     			$('#mp'+i).append('<input required style="margin-right:5px;" placeholder="R'+j+'"class="col-md-3" id="mp'+i+'mr'+j+'"></input>');
     		}
-    		$('#c3').append('<br><br>');
+            if(nr>3)
+              $('#c3').append('<br><br>');
+            else
+               $('#c3').append(''); 
     	}
     	$('#3').fadeIn();
         $("b2").attr("disabled", "disabled");
