@@ -109,6 +109,11 @@ void calculate_safety(int available_resources[],int current_resource_allocation[
 
 			}
 		}
+		if(found==false)
+		{
+			printf("Unsafe sequence");
+			return;
+		}	
 	}
 	if(found==true)
 	{
@@ -117,10 +122,6 @@ void calculate_safety(int available_resources[],int current_resource_allocation[
 		{
 			printf("%d ",safe_sequence[i]);
 		}
-	}
-	else
-	{
-		printf("Processes unsafe to sequence!\n");
 	}
 }
 
