@@ -23,47 +23,48 @@
 <body class>
 <!-- To load side and top navbar -->
 <!-- DO NOT CHANGE THIS -->
- <div class="container x"><h1 class="text-white">PROCESS  SCHEDULING</h1></div>
- 
-      <div class="container">
-        <div class="panel panel-primary">
+<div id="side_top_navbar">
+
+</div>
+
+ <div class="container x">
+     <h1 class="text-white">CPU Scheduling</h1>
+ </div>
+<div class="container">
+    <div class="panel panel-primary">
         <div class="panel-body">
-        <h3 ><font size="6">Compare Process Scheduling Algorithms</font></h3>
-        <div class="row"><h4><b>Input</b></h4>
-            <div class="input-field col-sm-4">
-                <input type="text" class="validate" id="time_quantum" placeholder="Enter time quantum"/>
+            <h3 >Compare CPU Scheduling Algorithms</h3>
+            <div class="row">
+                <h4><b>Input</b></h4>
+                <div class="input-field col-sm-4">
+                    <input type="text" class="validate" id="time_quantum" placeholder="Enter time quantum"/>
+                </div>
             </div>
-        </div>
-        <div class="row">
+            <div class="row">
                 <div class="col-sm-2"><b>Processes</b></div>
                 <div class="col-sm-2">
-                    <a  class="btn btn-danger btn-xs col-sm-2" href="javascript:remove_process()">-</a>
+                    <a  class="btn btn-primary btn-xs col-sm-2" href="javascript:remove_process()">-</a>
                     <div class="col-sm-2" id="n_processes">1</div>
-                    <a class="btn btn-danger btn-xs col-sm-2" href="javascript:add_process()">+</a>
+                    <a class="btn btn-primary btn-xs col-sm-2" href="javascript:add_process()">+</a>
               </div>
-        </div>    
-
-        <div class="row" id="processes">
-            <div class="input-field col-sm-4">
-                <input class="validate" type="text" id="p_at0" placeholder="Enter arrival time"/>
-                <label for="head_pos">Arrival Time</label>
             </div>
-            <div class="input-field col-sm-4">
-                <input class="validate" type="text" id="p_bt0" placeholder="Enter burst time"/>
-                <label for="head_pos">Burst Time</label>
+            <div class="row" id="processes">
+                <div class="input-field col-sm-4">
+                    <input class="validate" type="text" id="p_at0" placeholder="Enter arrival time"/>
+                    <label for="head_pos">Arrival Time</label>
+                </div>
+                <div class="input-field col-sm-4">
+                    <input class="validate" type="text" id="p_bt0" placeholder="Enter burst time"/>
+                    <label for="head_pos">Burst Time</label>
+                </div>
+                <div class="input-field col-sm-4">
+                    <input class="validate" type="text" id="p_pt0" placeholder="Enter priority"/>
+                    <label for="head_pos">Priority</label>
+                </div>
             </div>
-            <div class="input-field col-sm-4">
-                <input class="validate" type="text" id="p_pt0" placeholder="Enter priority"/>
-                <label for="head_pos">Priority</label>
-            </div>
-        </div class="Y">
-        <a class="btn btn-danger " onclick="submit()">Submit</a>
+            <a class="btn btn-primary" onclick="submit()">Submit</a>
       </div>
     </div>
-  </div>
-
-
-
-
+</div>
 </body>
 </html>

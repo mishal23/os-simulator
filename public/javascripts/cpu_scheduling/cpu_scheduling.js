@@ -56,13 +56,11 @@ function submit() {
         data: {input : input},
         success: function(result){
             console.log(result);
-            console.log(typeof result);
             output[0] = result;
             result = result.split('\n');
             var len = result.length;
             tt[0] = result[len-1];
             wt[0] = result[len-2];
-            console.log(result+" "+tt[0]);
         },
         async: false
     });
@@ -167,7 +165,7 @@ function submit() {
         },
         async: false
     });
-
+    print_table(output);
     draw_graph(tt, wt);
 
 }
@@ -179,7 +177,7 @@ function to_float(output){
 }
 
 function draw_graph(tt, wt) {
-    algo = ['FCFS','SJF Non-preemptive', 'SJF Preemptive', 'Priority Non-preemptive', 'Priority Preemptive', 'Priority Aging', 'Round Robin'];
+    var algo = ['FCFS','SJF Non-preemptive', 'SJF Preemptive', 'Priority Non-preemptive', 'Priority Preemptive', 'Priority Aging', 'Round Robin'];
     tt = to_float(tt);
     wt = to_float(wt);
     console.log(tt);
@@ -229,4 +227,29 @@ function draw_graph(tt, wt) {
     //json.legend = legend;
     //json.credits = credits;
     $('#chart-container').highcharts(json);
+}
+
+function print_table(output) {
+    console.log(output);
+    var algo = ['FCFS','SJF Non-preemptive', 'SJF Preemptive', 'Priority Non-preemptive', 'Priority Preemptive', 'Priority Aging', 'Round Robin'];
+    $("body").append("<div class='container-fluid' id='output'></div>");
+    var op = $('#output');
+
+    for(var i = 0; i < output.length; ++i) {
+        op.append("<div class='row'><div class='col-sm-8 col-sm-offset-2'><div class='panel'><div class='panel-body'><h3>"+algo[i]+"</h3><table class='table table-striped'><thead><tr><th>Process ID</th><th>Burst time</th><th>Arrival time</th><th>Waiting Time</th><th>Turn Around Time</th><th>Completion time</th></tr></thead><tbody class='table-body"+i+"'></tbody></table></div></div></div></div>");
+        var cur = output[i].split('\n');
+        console.log(cur);
+        for(var j = 0; j < cur.length-2; ++j) {
+            var row = cur[j].split('\t');
+            console.log(row);
+            $(".table-body"+i).append("<tr>" +
+                "<td>" + row[0]+ "</td>" +
+                "<td>" + row[1]+ "</td>" +
+                "<td>" + row[2]+ "</td>" +
+                "<td>" + row[3]+ "</td>" +
+                "<td>" + row[4]+ "</td>" +
+                "<td>" + row[5]+ "</td>" +
+                "</tr>");
+        }
+    }
 }

@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background: #ED764D;
+    /*background: #ED764D;*/
 }
 .head {
     width: 100%;
@@ -28,26 +28,27 @@ li{
 }
 
 body1 {
-    background:blue;
+    /*background:blue;*/
 }
 input[type=text] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
-    border: 1px solid #555;
+    /*border: 1px solid #555;*/
     outline: none;
-    background-color: hsl(290,60%,70%);
+    /*background-color: hsl(290,60%,70%);*/
 }
 
 input[type=text]:focus {
     background-color: #D6D3CF;
 }
 .panel-body {
-background:#925375;}
+/*background:#925375;*/
+}
 x{
-  background-color: #F1E9ED
+  /*background-color: #F1E9ED*/
 }
 Y{
-  background-color: #D6D3CF
+  /*background-color: #D6D3CF*/
 }
