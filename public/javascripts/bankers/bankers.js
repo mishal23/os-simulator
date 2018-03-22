@@ -195,8 +195,49 @@ $(document).ready(function() {
             data: {arguments},
             url: 'http://localhost:3000/bankers/resource_request',  
             success: function(data) {
-                $("#ra_res").append(data);
-            }                   
+                $("#ra_res").append(data.split(":")[0]);
+                 setTimeout(function() {
+                  $('.spec').addClass('fa-spin');
+               }, 4);         
+                var out=[],result;
+                $('#is').animate({opacity: 1}, 4);  
+                console.log('success');
+                $("#result").append(data);
+                //$('.fa-cog').addClass('fa-spin');
+                result=data
+                for(j=0;j<np;j+=1)
+                {
+                    $('#is').append('<span class="anip" style="margin-right:10px;padding: 3px;border: solid 1px black;">P'+j+'</span>');
+                }
+           
+                $('#is').animate({opacity: 0}, 4000);    
+                j=0;
+                i=0;
+                if(result.split(":")[1][0]=='S')
+                {
+                    for(j in result)
+                        if(result[j]>='0' && result[j]<='9')
+                        {
+                            out[i]=result[j];
+                            i+=1;
+                        }
+
+                    for(j=0;j<np;j+=1)
+                    {
+                        $('#os').append('<span class="anip" style="margin:10px;padding: 3px;border: solid 1px black;">P'+out[j]+'</span>');
+                    }
+                }
+                else
+                {
+                     $('#os').append('<span>No safe sequence possible</span>')
+                }
+           
+                $('#os').hide().delay(6000).fadeIn();    
+               setTimeout(function() {
+                  $('.spec').removeClass('fa-spin');
+               }, 6000);                
+            }
+                            
         });
     
     });
