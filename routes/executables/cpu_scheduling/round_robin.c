@@ -107,8 +107,9 @@ int main(int argc,char const*argv[])
 	//printf("\n");
 	for(int i=0; i<n; i++)
 	{
+		int completion_time = proc[i].turn_around_time + proc[i].arrival_time;
 		printf("%d\t%d\t", proc[i].process_id, proc[i].burst_time);
-		printf("%d\t%d\t%d\n", proc[i].arrival_time, proc[i].waiting_time, proc[i].turn_around_time);
+		printf("%d\t%d\t%d\t%d\n", proc[i].arrival_time, proc[i].waiting_time, proc[i].turn_around_time,completion_time);
 
 		tat += proc[i].turn_around_time;
 		wait_time_total += proc[i].waiting_time;
