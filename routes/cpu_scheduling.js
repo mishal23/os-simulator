@@ -13,7 +13,7 @@ router.post('/fcfs', function(req, res) {
 	}
 	console.log(input);
 	
-	exec(__dirname + '/executables/cpu_scheduling/fcfs ' + input , function callback(error,stdout,stderr) {
+	exec(__dirname + '\'+executables'+'\'+'cpu_scheduling'+'\'+fcfs ' + input , function callback(error,stdout,stderr) {
 		console.log("hi" + stdout);
 		console.log(error);
 		res.send(stdout);
