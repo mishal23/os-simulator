@@ -41,53 +41,54 @@
     <!-- Do your changes from here -->
     <!-- Show the simulation here -->
 
-    <div class = "orange-text text-darken-3"><h2> Multiprogramming with Fixed number of Tasks (MFT) </h1</div>
+    <div class = "orange-text text-darken-3"><h2><center> Multiprogramming with Fixed number of Tasks (MFT) </center></h2></div>
     </br></br>
 
+    <div  style="margin-left:45px; width:100%;">
+        <form action="#">
+            <p>
+                <label>
+                    <input name="fit" type="radio" checked  id="first"/>
+                    <span>First Fit</span>
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input name="fit" type="radio"  id="worst"/>
+                    <span>Worst Fit</span>
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input name="fit" type="radio"  id="best" />
+                    <span>Best Fit</span>
+                </label>
+            </p>
+        </form>
+    </div>
+    </br></br>
 
     <div class="row">
-        <p onclick="cfit(1)">
-            <input name="fit" class="with-gap" type="radio" id="first" checked="checked"/>
-            <label for="first">First Fit</label>
-        </p>
-        <p onclick="cfit(2)">
-            <input name="fit" class="with-gap" type="radio" id="best" />
-            <label for="best">Best Fit</label>
-        </p>
-        <p onclick="cfit(3)">
-            <input name="fit" class="with-gap" type="radio" id="worst" />
-            <label for="worst">Worst Fit</label>
-        </p>
+        <form class="col s12">
+            <div class="row">
+                <div class="input-field col s4">
+                    <input id="mem_size" type="text" class="validate">
+                    <label for="mem_size">Memory Size</label>
+                </div>
+                <div class="input-field col s4">
+                    <input id="number_of_processes" type="text" class="validate">
+                    <label for="number_of_processes">Number of Processes</label>
+                </div>
+                <div class="input-field col s4">
+                    <input id="number_of_partitions" type="text" class="validate">
+                    <label for="number_of_partitions">Number of Partitions</label>
+                </div>
+            </div>
+        </form>
+    </div>
     </br></br>
-
-
-    <div class="row">
-    <form class="col s12">
-      <div class="row">
-        <div class="input-field col s4">
-          <input placeholder="Placeholder" id="mem_size" type="text" class="validate">
-          <label for="mem_size">Memory Size</label>
-        </div>
-        <div class="input-field col s4">
-          <input id="number_of_processes" type="text" class="validate">
-          <label for="number_of_processes">Number of Processes</label>
-        </div>
-        <div class="input-field col s4">
-          <input id="number_of_partitions" type="text" class="validate">
-          <label for="number_of_partitions">Number of Partitions</label>
-        </div>
-      </div>
-    </form>
-    </br></br>
-
 
     <a class="btn waves-effect waves-effect-light teal right" onclick="submit()"><i class="material-icons right">send</i>Submit</a>
-
-
-
-
-
-
 
 </body>
 </html>
