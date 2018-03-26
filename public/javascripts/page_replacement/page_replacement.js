@@ -124,10 +124,10 @@ $(document).ready(function() {
             		for(j=0;j<nr;j+=1)
             		{
 	            		$('#lru_table').append('<tr id="lru'+j+'"><td>Request'+j+'</td></tr>');
-	            		for(i in lru_vals[j])
+	            		for(i in lru_vals[j].split(' '))
 	            		{
-	            			if((lru_vals[j][i]>='0' && lru_vals[j][i]<='9') || lru_vals[j][i]=='-')
-	            				$('#lru'+j).append('<td>'+lru_vals[j][i]+'</td>')
+	            			if(lru_vals[j].split(' ')[i].length>=1)
+	            				$('#lru'+j).append('<td>'+lru_vals[j].split(' ')[i]+'</td>')
 	            		}
 	            		if(lru_results[j][0]=='F')
 	            			$('#lru'+j).append('<td style="background-color:red">'+lru_results[j]+'</td>')
@@ -142,10 +142,10 @@ $(document).ready(function() {
             		for(j=0;j<nr;j+=1)
             		{
 	            		$('#fifo_table').append('<tr id="fifo'+j+'"><td>Request'+j+'</td></tr>');
-	            		for(i in fifo_vals[j])
+	            		for(i in fifo_vals[j].split(' '))
 	            		{
-	            			if((fifo_vals[j][i]>='0' && fifo_vals[j][i]<='9') || fifo_vals[j][i]=='-')
-	            				$('#fifo'+j).append('<td>'+fifo_vals[j][i]+'</td>')
+	            			if(fifo_vals[j].split(' ')[i].length>=1)
+	            				$('#fifo'+j).append('<td>'+fifo_vals[j].split(' ')[i]+'</td>')
 	            		}
 	            		if(fifo_results[j][0]=='F')
 	            			$('#fifo'+j).append('<td style="background-color:red">'+fifo_results[j]+'</td>')
@@ -161,10 +161,10 @@ $(document).ready(function() {
             		for(j=0;j<nr;j+=1)
             		{
 	            		$('#optimal_table').append('<tr id="optimal'+j+'"><td>Request'+j+'</td></tr>');
-	            		for(i in optimal_vals[j])
+	            		for(i in optimal_vals[j].split(' '))
 	            		{
-	            			if((optimal_vals[j][i]>='0' && optimal_vals[j][i]<='9') || optimal_vals[j][i]=='-')
-	            				$('#optimal'+j).append('<td>'+optimal_vals[j][i]+'</td>')
+	            			if(optimal_vals[j].split(' ')[i].length>=1)
+	            				$('#optimal'+j).append('<td>'+optimal_vals[j].split(' ')[i]+'</td>')
 	            		}
 	            		if(optimal_results[j][0]=='F')
 	            			$('#optimal'+j).append('<td style="background-color:red">'+optimal_results[j]+'</td>')

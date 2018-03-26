@@ -192,7 +192,7 @@ int main(int argc, char **argv)
 
 	for(i=0;i<number_of_references;i++)
 	{
-		reference[i]=(int)(*argv[3+i])-48;
+		sscanf(argv[3+i], "%d", &reference[i]);
 	}
 
 	printf("\n\nLRU\n\n");
