@@ -119,3 +119,15 @@
     <td>/disk_scheduling/c_look</td>
   </tr>
 </table>
+
+- Page Replacement
+<table>
+    <tr>  
+      <th>Algorithm</th>
+      <th>API</th>
+    </tr>
+  <tr>  
+    <td>Page Replacement</td>
+    <td>/page_replacement/</td>
+  </tr>
+</table>
