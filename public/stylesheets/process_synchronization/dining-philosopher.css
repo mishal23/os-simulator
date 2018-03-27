@@ -1,0 +1,50 @@
+.waiting_room{
+  margin-top: -1190px;
+}
+
+.waiting_room1{
+  margin-top: -1000px;
+  margin-left: 300px;
+}
+.waiting_room2{
+  margin-top: -750px;
+}
+
+div .list-group {
+  margin-top: 20px;
+}
+
+.panel .list-group {
+  margin-top: 0px;
+}
+
+.panel {
+  margin-top: 15px;
+}
+
+/* Visualization CSS */
+#controller {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.code-panel {
+  padding: 0px 0px 0px;
+}
+
+.panel-label {
+  float: right;
+}
+
+/* Overwriting Prism's CSS to fit Bootstrap's panel */
+.visualization pre[class*="language-"] {
+  border: 0px;
+  margin: 0px 0px;
+}
+
+/* Theming over Bootstrap */
+.navbar-default
+.navbar-nav > .active > a {
+  background-color: #337aB7;
+  color: #fff;
+}
