@@ -39,16 +39,3 @@ div .list-group {
 .panel-label {
   float: right;
 }
-
-/* Overwriting Prism's CSS to fit Bootstrap's panel */
-.visualization pre[class*="language-"] {
-  border: 0px;
-  margin: 0px 0px;
-}
-
-/* Theming over Bootstrap */
-.navbar-default
-.navbar-nav > .active > a {
-  background-color: #337aB7;
-  color: #fff;
-}
