@@ -181,19 +181,16 @@ function draw_graph(totseek) {
             overflow: 'justify'
         }
     };
-    /*var series= [{
-        name: 'Turn Around Time',
-        data: tt
-    }, {
-        name: 'Waiting Time',
-        data: wt
+    var series= [{
+        name: 'Total Seek Time',
+        data: totseek
     }
     ];
     var plotOptions =  {
         series: {
             pointWidth: 10
         }
-    };*/
+    };
 
     var json = {};
     json.chart = chart;
@@ -201,8 +198,8 @@ function draw_graph(totseek) {
     //json.tooltip = tooltip;
     json.xAxis = xAxis;
     json.yAxis = yAxis;
-    //json.series = series;
-    //json.plotOptions = plotOptions;
+    json.series = series;
+    json.plotOptions = plotOptions;
     //json.legend = legend;
     //json.credits = credits;
     $('#chart-container').highcharts(json);
