@@ -45,12 +45,12 @@ function submit() {
     console.log("no of requests : "+n_req);
     var input = csize + ' ' + cur + ' ' + prev;
     var totseek = [];
-    var dfcfs_seq = [];
-    var sstf_seq = [];
-    var look_seq = [];
-    var scan_seq = [];
-    var clook_seq = [];
-    var cscan_seq = [];
+    var dfcfs_seq;
+    var sstf_seq;
+    var look_seq;
+    var scan_seq;
+    var clook_seq;
+    var cscan_seq;
     for(var j = 0; j < n_req; j++) {
         var r = S('r'+j).value;
         input += ' ' + r;
@@ -146,6 +146,12 @@ function submit() {
 
 
     draw_graph(totseek);
+    summarise(dfcfs_seq,'FCFS','fcfs');
+    summarise(sstf_seq,'SSTF','sstf');
+    summarise(look_seq,'Look','look');
+    summarise(scan_seq,'Scan','scan');
+    summarise(clook_seq,'C-Look','clook');
+    summarise(cscan_seq,'C-Scan','cscan');
 
 }
 
@@ -153,6 +159,15 @@ function to_float(output){
     for(var i=0;i<output.length;i++)
         output[i] = parseFloat(output[i]);
     return output;
+}
+
+function to_int(output){
+	output = output.split(' ');
+	for(var i = 0;i<output.length-1;i++)
+	{
+		output[i] = parseInt(output[i]);
+	}
+	return output;
 }
 
 function draw_graph(totseek) {
@@ -204,3 +219,72 @@ function draw_graph(totseek) {
     //json.credits = credits;
     $('#chart-container').highcharts(json);
 }
+
+
+
+function summarise(seq,algo_name,id) {
+    	S(id).innerHTML="";
+    	seq = to_int(seq);
+    	console.log(seq);
+    	var algorithm_name = algo_name;
+    	var order = seq;
+    	var z = '<div class="container-fluid"><div class="row text-center"><div class="col-sm-12" id="' + algo_name + '"></div></div></div>';
+    	S(id).innerHTML += z;
+    	var chart = {
+        	type: 'line'
+    	};
+    	var title = {
+        	text: algorithm_name
+    	};
+    	var yAxis = {
+    		title: {
+    		text: 'Disk Requested'
+    		}
+    	}; 
+    	/*var xAxis = {
+        	min: 0,
+        	title: {
+            	text: 'Time',
+            	align: 'right'
+        	},
+        	labels: {
+            	overflow: 'justify'
+        	}
+    	};*/
+		var tooltip = {
+			 valuePrefix: 'Cylinder/'
+		};
+		var legend = {	
+			 layout: 'vertical',
+			 align: 'right',							
+			 verticalAlign: 'middle',
+			 borderWidth: 1, 
+			// x: -40,
+			//  y: 100,
+			 floating: true,
+				  
+	    	 backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+			// shadow: true
+		};
+    	var series= [{
+        	name: algorithm_name,
+        	data: order
+    	}];	
+
+    	var json = {};
+    	json.chart = chart;
+    	json.title = title;
+    	json.tooltip = tooltip;
+    	//json.xAxis = xAxis;
+    	json.yAxis = yAxis;
+    	json.series = series;
+    	//json.plotOptions = plotOptions;
+    	json.legend = legend;
+    	//json.credits = credits;
+    	$('#'+id).highcharts(json);
+}
+
+
+
+
+
