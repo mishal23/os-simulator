@@ -159,7 +159,7 @@ function draw_graph(totseek) {
     algo = ['FCFS','SSTF', 'Look', 'Scan', 'C-Look', 'C-Scan'];
     totseek = to_float(totseek);
     console.log(totseek);
-    var z = '<div class="container-fluid"><div class="row"><div class="col-sm-12" id="chart-container"></div></div></div>';
+    var z = '<div class="container-fluid"><div class="row text-center"><div class="col-sm-12" id="chart-container"></div></div></div>';
     S('charts').innerHTML="";
     S('charts').innerHTML += z;
     var chart = {

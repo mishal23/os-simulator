@@ -37,7 +37,7 @@ main(int argc, char **argv)
 {
 	int dir,n,r,totseek=0,prev,cur,ct=0,size;
 	int req[10],seq[10];
-	size = atoi(argv[0]);
+	size = atoi(argv[1]);
 	n = argc - 4;
 	int temp,i,j;
 	for(i=4;i<argc;i++)
@@ -48,7 +48,7 @@ main(int argc, char **argv)
 	cur = atoi(argv[2]);
 	prev = atoi(argv[3]);
 	
-	if(cur>prev)
+	if(cur > prev)
 	dir = 1;
 	else
 	dir=0;
@@ -63,7 +63,9 @@ main(int argc, char **argv)
 	}
 	if(dir)
 	{
-		totseek = (cur - req[0]) + 2*(size-cur);
+		
+		totseek = 2*(size-cur) + (cur-req[0]);
+		
 		for(i=0;i<n;i++)
 		{
 			if(req[i]<cur)

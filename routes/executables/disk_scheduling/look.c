@@ -36,7 +36,7 @@ main(int argc, char **argv)
 {
 	int dir,n,r,totseek=0,prev,cur,ct=0,size;
 	int req[10],seq[10];
-	size = atoi(argv[0]);
+	size = atoi(argv[1]);
 	n = argc - 4;
 	int temp,i,j;
 	for(i=4;i<argc;i++)
