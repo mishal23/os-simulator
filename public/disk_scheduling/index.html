@@ -13,18 +13,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="/javascripts/disk_scheduling/disk_scheduling.js"></script>
 </head>
-<body class="animated slideInDown" style="background-color: black;font-family: Montserrat;">
-<!-- To load side and top navbar -->
-<!-- DO NOT CHANGE THIS 
-<div id="side_top_navbar">
-
-</div>
-
-<!-- Do your changes from here -->
-<!-- Show the simulation here -->
-<div >
+<body id = "bdy" class="animated slideInDown" style="background-color: black;font-family: Montserrat;">
+<div>
     <h1 class="text-center" style= "color:white;">Disk Scheduling</h1>
     <h2 class="text-center" style="color:white">>>  Comparison of Disk Scheduling Algorithms  <<</h2>
     <h3 class="text-center" style= "color:white;padding-top: 25px;">The algorithms being compared are as follows:</h3>
@@ -68,7 +59,11 @@
     </div class="Y row">
         <a class="btn btn-info mb1 bg-lime " onclick="javascript:submit()">Submit</a>
     </div>
+    <div id="charts">
+    </div>
 </div>
-
+<script type="text/javascript" src="/javascripts/disk_scheduling/disk_scheduling.js"></script>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
 </body>
 </html>

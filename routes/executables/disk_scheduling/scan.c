@@ -111,12 +111,11 @@ main(int argc, char **argv)
 	}
 	
 	
-	printf("Sequence of movement is: ");
-	printf("%d --> ",cur);
+	//printf("Sequence of movement is: ");
+	printf("%d ",cur);
 	for(i=0;i<n;i++)
-	printf("%d --> ",seq[i]);
-	printf("\nTotal seek time = %d\nAverage Seek time = %f\n",totseek,(float)totseek/n);
-	
+	printf("%d ",seq[i]);
+	printf("\n%d\n%f\n",totseek,(float)totseek/n);
 	
 	
 }

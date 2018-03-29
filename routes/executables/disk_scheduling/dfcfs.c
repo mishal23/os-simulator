@@ -45,10 +45,10 @@ main(int argc, char **argv)
 	cur = atoi(argv[2]);
 	prev = atoi(argv[3]);
 	
-	printf("Sequence of movement is: ");
-	printf("%d --> ",cur);
+	//printf("Sequence of movement is: ");
+	printf("%d ",cur);
 	for(i=0;i<n;i++)
-	printf("%d --> ",seq[i]);
+	printf("%d ",seq[i]);
 	totseek = (cur>seq[0])?cur-seq[0]:seq[0]-cur;
 	for(i=1;i<n;i++)
 	{
@@ -57,7 +57,7 @@ main(int argc, char **argv)
 		else
 		totseek += seq[i-1] - seq[i];
 	}
-	printf("\nTotal seek time = %d\nAverage Seek time = %f\n",totseek,(float)totseek/n);
+	printf("\n%d\n%f\n",totseek,(float)totseek/n);
 	
 	
 	

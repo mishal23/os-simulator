@@ -7,7 +7,7 @@ router.post('/dfcfs', function(req,res){
 	var input="";
 	console.log(req.body.input);
 	exec(__dirname + '/executables/disk_scheduling/dfcfs ' + req.body.input , function callback(error,stdout,stderr) {
-		console.log("hi" + stdout);
+		console.log(stdout);
 		console.log(error);
 		res.send(stdout);
 	});
@@ -19,7 +19,7 @@ router.post('/sstf', function(req,res){
 	console.log(req.body.input);
 	
 	exec(__dirname + '/executables/disk_scheduling/sstf ' + req.body.input , function callback(error,stdout,stderr) {
-		console.log("hi" + stdout);
+		console.log(stdout);
 		console.log(error);
 		res.send(stdout);
 	});
@@ -33,7 +33,7 @@ router.post('/look', function(req,res){
 	console.log(req.body.input);
 	
 	exec(__dirname + '/executables/disk_scheduling/look ' + req.body.input , function callback(error,stdout,stderr) {
-		console.log("hi" + stdout);
+		console.log(stdout);
 		console.log(error);
 		res.send(stdout);
 	});
@@ -46,7 +46,7 @@ router.post('/scan', function(req,res){
 	console.log(req.body.input);
 	
 	exec(__dirname + '/executables/disk_scheduling/scan ' + req.body.input , function callback(error,stdout,stderr) {
-		console.log("hi" + stdout);
+		console.log(stdout);
 		console.log(error);
 		res.send(stdout);
 	});
@@ -58,7 +58,7 @@ router.post('/cscan', function(req,res){
 	console.log(req.body.input);
 	
 	exec(__dirname + '/executables/disk_scheduling/cscan ' + req.body.input , function callback(error,stdout,stderr) {
-		console.log("hi" + stdout);
+		console.log(stdout);
 		console.log(error);
 		res.send(stdout);
 	});
@@ -70,7 +70,7 @@ router.post('/clook', function(req,res){
 	console.log(req.body.input);
 	
 	exec(__dirname + '/executables/disk_scheduling/clook ' + req.body.input , function callback(error,stdout,stderr) {
-		console.log("hi" + stdout);
+		console.log(stdout);
 		console.log(error);
 		res.send(stdout);
 	});

@@ -44,8 +44,13 @@ function submit() {
     var prev = S('prev').value;
     console.log("no of requests : "+n_req);
     var input = csize + ' ' + cur + ' ' + prev;
-    var output =  [];
     var totseek = [];
+    var dfcfs_seq = [];
+    var sstf_seq = [];
+    var look_seq = [];
+    var scan_seq = [];
+    var clook_seq = [];
+    var cscan_seq = [];
     for(var j = 0; j < n_req; j++) {
         var r = S('r'+j).value;
         input += ' ' + r;
@@ -58,13 +63,12 @@ function submit() {
         url: "http://localhost:3000/disk_scheduling/dfcfs",
         data: {input : input},
         success: function(result){
-            console.log(result);
-            console.log(typeof result);
-            output[0] = result;
-            result = result.split('\n');
-            var len = result.length;
-            //tt[0] = result[len-1];
-            //wt[0] = result[len-2];
+        	result = result.split('\n');
+        	dfcfs_seq = result[0];
+        	totseek[0] = result[1];
+            console.log(dfcfs_seq);
+            console.log(totseek[0]);
+            //console.log(typeof result);
         },
         async: false
     });
@@ -73,14 +77,11 @@ function submit() {
         url: "http://localhost:3000/disk_scheduling/sstf",
         data: {input : input},
         success: function(result){
-            console.log(result);
-
-            output[1] = result;
             result = result.split('\n');
-            var len = result.length;
-            //tt[1] = result[len-1];
-            //wt[1] = result[len-2];
-
+        	sstf_seq = result[0];
+        	totseek[1] = result[1];
+            console.log(sstf_seq);
+            console.log(totseek[1]);
         },
         async: false
     });
@@ -90,14 +91,11 @@ function submit() {
         url: "http://localhost:3000/disk_scheduling/look",
         data: {input : input},
         success: function(result){
-            console.log(result);
-
-            output[2] = result;
-            result = result.split('\n');
-            var len = result.length;
-            //tt[2] = result[len-1];
-            //wt[2] = result[len-2];
-
+        	result = result.split('\n');
+        	look_seq = result[0];
+        	totseek[2] = result[1];
+            console.log(look_seq);
+            console.log(totseek[2]);    
         },
         async: false
     });
@@ -107,13 +105,11 @@ function submit() {
         url: "http://localhost:3000/disk_scheduling/scan",
         data: {input : input},
         success: function(result){
-            console.log(result);
-
-            output[3] = result;
             result = result.split('\n');
-            var len = result.length;
-            //tt[3] = result[len-1];
-            //wt[3] = result[len-2];
+        	scan_seq = result[0];
+        	totseek[3] = result[1];
+            console.log(scan_seq);
+            console.log(totseek[3]);    
 
         },
         async: false
@@ -124,14 +120,11 @@ function submit() {
         url: "http://localhost:3000/disk_scheduling/clook",
         data: {input : input},
         success: function(result){
-            console.log(result);
-
-            output[4] = result;
             result = result.split('\n');
-            var len = result.length;
-            //tt[4] = result[len-1];
-            //wt[4] = result[len-2];
-
+        	clook_seq = result[0];
+        	totseek[4] = result[1];
+            console.log(clook_seq);
+            console.log(totseek[4]);    
         },
         async: false
     });
@@ -141,37 +134,34 @@ function submit() {
         url: "http://localhost:3000/disk_scheduling/cscan",
         data: {input : input},
         success: function(result){
-            console.log(result);
-
-            output[5] = result;
             result = result.split('\n');
-            var len = result.length;
-            //tt[5] = result[len-1];
-            //wt[5] = result[len-2];
-
+        	cscan_seq = result[0];
+        	totseek[5] = result[1];
+            console.log(cscan_seq);
+            console.log(totseek[5]);    
         },
         async: false
     });
 
 
 
-    //draw_graph(tt, wt);
+    draw_graph(totseek);
 
 }
 
-/*function to_float(output){
+function to_float(output){
     for(var i=0;i<output.length;i++)
         output[i] = parseFloat(output[i]);
     return output;
 }
 
-function draw_graph(tt, wt) {
-    algo = ['FCFS','SJF Non-preemptive', 'SJF Preemptive', 'Priority Non-preemptive', 'Priority Preemptive', 'Priority Aging', 'Round Robin'];
-    tt = to_float(tt);
-    wt = to_float(wt);
-    console.log(tt);
-    console.log(wt);
-    $("body").append('<div class="container-fluid"><div class="row"><div class="col-sm-12" id="chart-container"></div></div></div>');
+function draw_graph(totseek) {
+    algo = ['FCFS','SSTF', 'Look', 'Scan', 'C-Look', 'C-Scan'];
+    totseek = to_float(totseek);
+    console.log(totseek);
+    var z = '<div class="container-fluid"><div class="row"><div class="col-sm-12" id="chart-container"></div></div></div>';
+    S('charts').innerHTML="";
+    S('charts').innerHTML += z;
     var chart = {
         type: 'bar'
     };
@@ -191,7 +181,7 @@ function draw_graph(tt, wt) {
             overflow: 'justify'
         }
     };
-    var series= [{
+    /*var series= [{
         name: 'Turn Around Time',
         data: tt
     }, {
@@ -203,7 +193,7 @@ function draw_graph(tt, wt) {
         series: {
             pointWidth: 10
         }
-    };
+    };*/
 
     var json = {};
     json.chart = chart;
@@ -211,9 +201,9 @@ function draw_graph(tt, wt) {
     //json.tooltip = tooltip;
     json.xAxis = xAxis;
     json.yAxis = yAxis;
-    json.series = series;
-    json.plotOptions = plotOptions;
+    //json.series = series;
+    //json.plotOptions = plotOptions;
     //json.legend = legend;
     //json.credits = credits;
     $('#chart-container').highcharts(json);
-}*/
+}
