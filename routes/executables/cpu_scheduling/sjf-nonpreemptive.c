@@ -70,7 +70,7 @@ int main(int argc, char const *argv[]) {
 	for(i = 0; i < n; ++i) {
 		tturn += p[i].turn;
 		twait += p[i].wait;
-		printf("%d\t%d\t%d\t%d\t%d\t%d\n", p[i].id, p[i].arrival, p[i].burst, p[i].turn, p[i].comp, p[i].wait);
+		printf("%d\t%d\t%d\t%d\t%d\t%d\n", p[i].id, p[i].burst, p[i].arrival, p[i].wait, p[i].turn, p[i].comp);
 	}
 	printf("%.2f\n%.2f", (float)twait/n, (float)tturn/n);
 	
