@@ -80,6 +80,7 @@ void input(char **argv,int request[number_of_resources],int available_resources[
 	{
 		request[i]=(int)(*argv[4+number_of_resources+number_of_resources*number_of_processes*2+i])-48;
 	}
+
 }
 
 void calculate_safety(int available_resources[],int current_resource_allocation[number_of_processes][number_of_resources],int maximum_resources_needed[number_of_processes][number_of_resources],int needed_resources[number_of_processes][number_of_resources])
@@ -123,18 +124,20 @@ void calculate_safety(int available_resources[],int current_resource_allocation[
 
 			}
 		}
+
+		if(found==false)
+		{
+			printf(":Unsafe sequence");
+			return;
+		}	
 	}
 	if(found==true)
 	{
-		printf("Safe sequence:");
+		printf(":S");
 		for(i=0;i<number_of_processes;i+=1)
 		{
 			printf("%d ",safe_sequence[i]);
 		}
-	}
-	else
-	{
-		printf("Processes unsafe to sequence!\n");
 	}
 }
 int allocate_resource(int available_resources[number_of_resources],int current_resource_allocation[number_of_processes][number_of_resources],int maximum_resources_needed[number_of_processes][number_of_resources],int needed_resources[number_of_processes][number_of_resources],int request_process_number,int request[])
@@ -144,7 +147,7 @@ int allocate_resource(int available_resources[number_of_resources],int current_r
 	{
 		if(request[i]>needed_resources[request_process_number][i] || request[i]>available_resources[i])
 		{
-			printf("Enough resources not available\n");
+			printf("Enough resources not available");
 			return 0;
 		}
 	}
@@ -154,7 +157,7 @@ int allocate_resource(int available_resources[number_of_resources],int current_r
 		current_resource_allocation[request_process_number][i]+=request[i];
 		needed_resources[request_process_number][i]-=request[i];
 	}
-	printf("Resources were allocated\n");
+	printf("Resources were allocated");
 }
 
 

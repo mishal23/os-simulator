@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Dining Philosopher Problem</title>
+
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+    <!-- CSS -->
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/stylesheets/process_synchronization/sleeping-barber.css" rel="stylesheet">
+    
+  </head>
+
+  <body>
+
+<!-- To load side and top navbar -->
+<!-- DO NOT CHANGE THIS -->
+<div id="side_top_navbar">
+
+</div>
+
+    <!-- Content -->
+    <div class="container">
+      
+      <div class="row">
+        <div class="col-md-5"></div>
+        <div class="col-md-2" id="controller">
+          <div class="btn-group btn-group-justified" role="group" aria-label="Navigation" style="margin-top: 50px;">
+            <div class="btn-group" role="group">
+              <button type="button" class="btn btn-default" id="step-prev">
+                <i class="fa fa-chevron-left"></i> Prev
+              </button>
+            </div>
+            <div class="btn-group" role="group">
+              <button type="button" class="btn btn-default" id="step-n" disabled>
+              </button>
+            </div>
+            <div class="btn-group" role="group">
+              <button type="button" class="btn btn-default" id="step-next">
+                <i class="fa fa-chevron-right"></i> Next
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-5"></div>
+      </div>
+
+      <div class="waiting_room">
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-3">
+          <div class="panel panel-default" style="margin-top: -80px;">
+            <div class="panel-heading">Dining Table</div>
+              <ul class="list-group">
+                <li class="list-group-item">
+                  <span>Philosopher #1</span><span class="label" id="philosopher_1" style="float: right;"></span>
+                </li>
+                <li class="list-group-item">
+                  <span>Philosopher #2</span><span class="label" id="philosopher_2" style="float: right;"></span>
+                </li>
+                <li class="list-group-item">
+                  <span>Philosopher #3</span><span class="label" id="philosopher_3" style="float: right;"></span>
+                </li>
+                <li class="list-group-item">
+                  <span>Philosopher #4</span><span class="label" id="philosopher_4" style="float: right;"></span>
+                </li>
+                <li class="list-group-item">
+                  <span>Philosopher #5</span><span class="label" id="philosopher_5" style="float: right;"></span>
+                </li>
+              </ul>
+          </div>
+        </div>
+
+        <div class="col-md-2">
+          <div class="panel panel-default" style="margin-top: -80px;">
+            <div class="panel-heading">Eating Philosopher</div>
+              <ul class="list-group">
+                <li class="list-group-item" id="eating_philosopher"></li>
+              </ul>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="panel panel-default" style="margin-top: -80px;">
+            <div class="panel-heading">State</div>
+            <ul class="list-group">
+              <li class="list-group-item">
+                <span>Chopstick #1</span><span class="label" id="chopstick_1" style="float: right;"></span>
+              </li>
+
+              <li class="list-group-item">
+                <span>Chopstick #2</span><span class="label" id="chopstick_2" style="float: right;"></span>
+              </li>
+
+              <li class="list-group-item">
+                <span>Chopstick #3</span><span class="label" id="chopstick_3" style="float: right;"></span>
+              </li>
+
+              <li class="list-group-item">
+                <span>Chopstick #4</span><span class="label" id="chopstick_4" style="float: right;"></span>
+              </li>
+
+              <li class="list-group-item">
+                <span>Chopstick #5</span><span class="label" id="chopstick_5" style="float: right;"></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+
+      <div class="waiting_room1">
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+          <div class="panel panel-default">
+            <div class="panel-heading">What's going on?</div>
+            <div class="panel-body" id="status"></div>
+          </div>
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+    </div>
+    
+      <div class="waiting_room2" style="margin-left: 230px; ">
+      <div class="row visualization">
+        <div class="col-md-2"></div>
+          <div class="col-md-4">
+            <div class="panel panel-default">
+              <div class="panel-heading" style="width: 350px; margin-top: -80px;" >Dining-Philosopher
+                <span class="panel-label">
+
+                </span>
+              </div>
+              <div class="panel-body code-panel" style="width: 350px;">
+                <pre id="code-philosopher"><code class="language-c">void *thinkEatRepeat() {
+  Thinking...
+
+  pthread_mutex_lock(&amp;chopsticks[i]);
+  pthread_mutex_lock(&amp;chopsticks[(i+1)%n]);
+
+  Eating...
+
+  pthread_mutex_unlock(&amp;chopsticks[i]);
+  pthread_mutex_unlock(&amp;chopsticks[(i+1)%n]);   
+
+  Finished Eating...
+
+}</code></pre>
+              </div>
+            </div>
+          </div>
+  
+  </body>
+     <!-- Scripts -->
+    <script src="/javascripts/process_synchronization/dining-philosopher.js"></script>
+</html>

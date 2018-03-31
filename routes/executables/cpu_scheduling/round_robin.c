@@ -12,6 +12,7 @@ struct process
 	int waiting_time;
 	int turn_around_time;
 	int remaining_time;
+	int comp;
 };
 
 int queue[N];
@@ -103,11 +104,12 @@ int main(int argc,char const*argv[])
 				push(j);
 	}
 
-	printf("\n");
+	//printf("\n");
 	for(int i=0; i<n; i++)
 	{
-		printf("%d\t%d\t", proc[i].process_id, proc[i].arrival_time);
-		printf("%d\t%d\t%d\n", proc[i].burst_time, proc[i].waiting_time, proc[i].turn_around_time);
+		int completion_time = proc[i].turn_around_time + proc[i].arrival_time;
+		printf("%d\t%d\t", proc[i].process_id, proc[i].burst_time);
+		printf("%d\t%d\t%d\t%d\n", proc[i].arrival_time, proc[i].waiting_time, proc[i].turn_around_time,completion_time);
 
 		tat += proc[i].turn_around_time;
 		wait_time_total += proc[i].waiting_time;
@@ -116,6 +118,6 @@ int main(int argc,char const*argv[])
 	tat = tat/(1.0*n);
 	wait_time_total = wait_time_total/(1.0*n);
 
-	printf("\n%f",wait_time_total);
-	printf("\n%f\n", tat);
+	printf("%f",wait_time_total);
+	printf("\n%f", tat);
 }

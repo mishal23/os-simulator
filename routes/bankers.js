@@ -5,14 +5,13 @@ var router = express.Router();
 // Safe Sequence call
 router.post('/safe_sequence', function(req,res){
 	var input = "";
-	for(var i=0;i<req.body.length;i++)
-	{
-		input+=req.body[i]+" ";
-	}
+	console.log(req.body.arguments);
+	
 	console.log(input);
 	
-	exec(__dirname + '/executables/bankers/bankers_safe_sequence ' + input , function callback(error,stdout,stderr) {
+	exec(__dirname + '/executables/bankers/bankers_safe_sequence ' + req.body.arguments , function callback(error,stdout,stderr) {
 		console.log(error);
+		console.log(stdout);
 		res.send(stdout);
 	});
 });
@@ -20,13 +19,10 @@ router.post('/safe_sequence', function(req,res){
 // Resource Request call
 router.post('/resource_request', function(req,res){
 	var input = "";
-	for(var i=0;i<req.body.length;i++)
-	{
-		input+=req.body[i]+" ";
-	}
 	console.log(input);
+	console.log(req.body.arguments);
 	
-	exec(__dirname + '/executables/bankers/bankers_resource_request ' + input , function callback(error,stdout,stderr) {
+	exec(__dirname + '/executables/bankers/bankers_resource_request ' + req.body.arguments , function callback(error,stdout,stderr) {
 		console.log(error);
 		res.send(stdout);
 	});

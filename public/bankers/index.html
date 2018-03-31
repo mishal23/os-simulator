@@ -22,7 +22,150 @@
 <!-- Do your changes from here -->
 <!-- Show the simulation here -->
 <div>
-    <p>Bankers Algorithm</p>
+<div>
+    <h1 class='text-center'>Safety Sequence</h1>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="col-sm-6">
+      <form id="1" class="col-md-6">
+        <div id="c1" style="float:left;">
+          <input style="margin-left: 10px;width:60%;" required id="np" placeholder="Enter number of processes"></input>
+          <br>
+          <br>
+          <input style="margin-left: 10px;width:60%;" required id="nr" placeholder="Enter number of resources"></input>
+        </div>
+
+        <div id="b1" style="float:right;width: 20%;"> 
+          <br>
+          Continue
+          <i style="margin-left: 20px;" class="fa fa-arrow-right"></i>
+        </div>
+      </form>
+
+
+      <form style="margin-top:-40px;display: none;" id="2" class="col-md-6">
+        <div id="c2" style="float:left;width: 60%">
+
+        </div>
+
+        <div id="b2" style="float:right;width: 30%;"> 
+          <br>
+          <br>
+          <br>
+          Continue
+          <i style="margin-left: 20px;" class="fa fa-arrow-right"></i>
+        </div>
+      </form>
+
+      <form style="margin-top:20px;display: none;" id="3" class="col-md-6">
+        <div id="c3" style="float:left;width: 80%">
+
+        </div>
+
+        <div id="b3" style="float:right;width: 20%;"> 
+          <br>
+          <br>
+          <br>
+          Continue
+          <i style="margin-left: 20px;" class="fa fa-arrow-right"></i>
+        </div>
+      </form>
+
+      <div style="margin-top:20px;" id="4" class="col-md-6">
+        <div id="c4" style="float:left;width: 80%">
+
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <button id="ss_action" style="display: none;">
+          Find safe sequence
+        </button>
+      </div>
+    </div>
+        <div style="float: right;" class="col-sm-4 text-center ">
+      <div id="result" style="display: none;position:fixed;width:inherit;">
+      </div>
+      <div style="display:block;margin-top:50px;font-size:20px;width: 100%;" id="is">
+        Input Processes Order   
+      </div>
+        <br>
+        <i class=" fa fa-arrow-down" style="font-size: 30px;"></i>
+       <div id="bb" class="center-block" style="padding:50px;;width: 30%;background-color: black">
+        <i class="fa fa-cog spec" style="font-size:24px;color:white"></i>
+        <i class="fa fa-cog spec" style="font-size:44px;margin-left: -10px;color:white;"></i>
+      </div>      
+        <i class="fa fa-arrow-down" style="font-size: 30px;"></i>
+        <br>
+      <div  id="os" style="font-size:20px;width: 100%;">
+        Output Processes Order  
+      </div>
+      </div>
+    </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      
+    <div  >
+
+    </div>
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    <h1 class="text-center">Resource Allocation</h1>
+      <br>
+      <br>
+
+      <input style="margin-left: 30px;" required id="rpn" placeholder="Requesting Process Number"></input>
+      <br>
+      <br>
+      <span style="margin-left: 30px;" id="ra_text">
+      
+      </span>      
+      <br>
+      <br>
+      <span class="col-md-3" id="ra_nr" style="margin-left: 18px;">
+
+      </span>
+      <br>
+      <br>
+      <button style="margin-left: 30px;"  id="ra_action">
+        Check if resources can be allocated
+      </button>
+      <br>
+      <br>
+      <span class="col-md-3" id="ra_res">
+        
+      </span>
+    </div>
+
 </div>
 </body>
 </html>

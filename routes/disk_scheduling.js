@@ -3,15 +3,11 @@ var exec = require('child_process').exec;
 var router = express.Router();
 
 // FCFS Disk Scheduling
-router.post('/fcfs', function(req,res){
-	var input = "";
-	for(var i=0;i<req.body.length;i++)
-	{
-		input+=req.body[i]+" ";
-	}
-	console.log(input);
-	
-	exec(__dirname + '/executables/disk_scheduling/fcfs ' + input , function callback(error,stdout,stderr) {
+router.post('/dfcfs', function(req,res){
+	var input="";
+	console.log(req.body.input);
+	exec(__dirname + '/executables/disk_scheduling/dfcfs ' + req.body.input , function callback(error,stdout,stderr) {
+		console.log(stdout);
 		console.log(error);
 		res.send(stdout);
 	});
@@ -20,29 +16,24 @@ router.post('/fcfs', function(req,res){
 // Shortest Seek Time First
 router.post('/sstf', function(req,res){
 	var input = "";
-	for(var i=0;i<req.body.length;i++)
-	{
-		input+=req.body[i]+" ";
-	}
-	console.log(input);
+	console.log(req.body.input);
 	
-	exec(__dirname + '/executables/disk_scheduling/sstf ' + input , function callback(error,stdout,stderr) {
+	exec(__dirname + '/executables/disk_scheduling/sstf ' + req.body.input , function callback(error,stdout,stderr) {
+		console.log(stdout);
 		console.log(error);
 		res.send(stdout);
 	});
 });
 
 
-// Look-Scan
-router.post('/look_scan', function(req,res){
+// Look
+router.post('/look', function(req,res){
 	var input = "";
-	for(var i=0;i<req.body.length;i++)
-	{
-		input+=req.body[i]+" ";
-	}
-	console.log(input);
 	
-	exec(__dirname + '/executables/disk_scheduling/look_scan ' + input , function callback(error,stdout,stderr) {
+	console.log(req.body.input);
+	
+	exec(__dirname + '/executables/disk_scheduling/look ' + req.body.input , function callback(error,stdout,stderr) {
+		console.log(stdout);
 		console.log(error);
 		res.send(stdout);
 	});
@@ -52,43 +43,34 @@ router.post('/look_scan', function(req,res){
 // Scan
 router.post('/scan', function(req,res){
 	var input = "";
-	for(var i=0;i<req.body.length;i++)
-	{
-		input+=req.body[i]+" ";
-	}
-	console.log(input);
+	console.log(req.body.input);
 	
-	exec(__dirname + '/executables/disk_scheduling/scan ' + input , function callback(error,stdout,stderr) {
+	exec(__dirname + '/executables/disk_scheduling/scan ' + req.body.input , function callback(error,stdout,stderr) {
+		console.log(stdout);
 		console.log(error);
 		res.send(stdout);
 	});
 });
 
 // C-Scan
-router.post('/c_scan', function(req,res){
+router.post('/cscan', function(req,res){
 	var input = "";
-	for(var i=0;i<req.body.length;i++)
-	{
-		input+=req.body[i]+" ";
-	}
-	console.log(input);
+	console.log(req.body.input);
 	
-	exec(__dirname + '/executables/disk_scheduling/c_scan ' + input , function callback(error,stdout,stderr) {
+	exec(__dirname + '/executables/disk_scheduling/cscan ' + req.body.input , function callback(error,stdout,stderr) {
+		console.log(stdout);
 		console.log(error);
 		res.send(stdout);
 	});
 });
 
 // C-Look
-router.post('/c_look', function(req,res){
+router.post('/clook', function(req,res){
 	var input = "";
-	for(var i=0;i<req.body.length;i++)
-	{
-		input+=req.body[i]+" ";
-	}
-	console.log(input);
+	console.log(req.body.input);
 	
-	exec(__dirname + '/executables/disk_scheduling/c_look ' + input , function callback(error,stdout,stderr) {
+	exec(__dirname + '/executables/disk_scheduling/clook ' + req.body.input , function callback(error,stdout,stderr) {
+		console.log(stdout);
 		console.log(error);
 		res.send(stdout);
 	});
