@@ -7,7 +7,13 @@ $(document).ready(function() {
 
 });
 
-var type = 0;      //0 -> first ; 1 -> best ; 2 -> Worst
+//todo disable second submit button
+
+var type = 0;           //0 -> first ; 1 -> best ; 2 -> Worst
+var memSize = 0;
+var numOfPart = 1;      //by default one
+var numOfProc = 0;
+
 
 function S(id){
 
@@ -18,24 +24,50 @@ function S(id){
 function get_type(){
 
     //to get type of Fit
-    if(document.getElementById("first").checked){
+    if(S("first").checked){
 
         type = 0;
-        document.getElementById("worst").disabled = true;
-        document.getElementById("best").disabled = true;
+        S("worst").disabled = true;
+        S("best").disabled = true;
     }
 
-    else if(document.getElementById("best").checked){
+    else if(S("best").checked){
 
         type = 1;
-        document.getElementById("worst").disabled = true;
-        document.getElementById("first").disabled = true;
+        S("worst").disabled = true;
+        S("first").disabled = true;
     }
 
-    else if(document.getElementById("worst").checked){
+    else if(S("worst").checked){
 
         type = 2;
-        document.getElementById("first").disabled = true;
-        document.getElementById("best").disabled = true;
+        S("first").disabled = true;
+        S("best").disabled = true;
     }
+}
+
+function submit1(){
+
+    //On click of the first submit Button
+    //get information from the get_type function
+    //get values from the two text fields -> Memory size and number of Partitions
+    //using the number of partitions we have to create appropriate number of text fields to enter partitons block_sizes
+    memSize = S("mem_size").value;
+    num_part = S("num_part").value;
+    get_type();
+
+    var partitionSizes = S('partition_sizes');
+    partitionSizes.innerHTML = "";
+    for(var i=1;i<=num_part;i++){
+        var p = '<div class="row text-center"><input class="validate animated fadeIn" type="text" placeholder="Enter size of Partition '+i+'" id="p'+i+'"/></div></br>';
+        partitionSizes.innerHTML += p;
+    }
+}
+
+function submit2(){
+
+    //on click of the second submit Button
+    //get information from number of process and the partitions sizes
+    //from the number of processes value create the appropriate number of text fields for entering memory required for each process
+
 }
