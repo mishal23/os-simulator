@@ -13,7 +13,8 @@ var type = 0;           //0 -> first ; 1 -> best ; 2 -> Worst
 var memSize = 0;
 var numOfPart = 1;      //by default one
 var numOfProc = 0;
-
+var partSizes = []
+var procSizes = [];
 
 function S(id){
 
@@ -69,5 +70,29 @@ function submit2(){
     //on click of the second submit Button
     //get information from number of process and the partitions sizes
     //from the number of processes value create the appropriate number of text fields for entering memory required for each process
+    num_proc = S('num_proc').value;
+    for(var i=1;i<=num_part;i++){
+        var p = S('p' + i).value;
+        partSizes.append(p);
+    }
+
+    var procSizes = S('mem_req_proc');
+    procSizes.innerHTML = "";
+    for(var i=1;i<=num_proc;i++){
+        var p = '<div class="row text-center"><input class="validate animated fadeIn" type="text" placeholder="Enter size of Process '+i+'" id="pr'+i+'"/></div></br>';
+        partitionSizes.innerHTML += p;
+    }
+}
+
+function submit3(){
+
+    //get process memory sizes
+    //send everything to executable file
+    //get the result
+    for(var i=1;i<=num_proc;i++){
+        var p = S('pr' + i).value;
+        procSizes.append(p);
+    }
+
 
 }
