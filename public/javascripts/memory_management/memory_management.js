@@ -15,6 +15,7 @@ var numOfPart = 1;      //by default one
 var numOfProc = 0;
 var partSizes = []
 var procSizes = [];
+var input = "";
 
 function S(id){
 
@@ -44,6 +45,25 @@ function get_type(){
         type = 2;
         S("first").disabled = true;
         S("best").disabled = true;
+    }
+}
+
+function create_input(){
+
+    //to create input to be sent to the executable file
+    //input is of the form memSize numOfPart partSizes numOfProc procSizes
+    input += memSize + ' ';
+
+    input += numOfPart + ' ';
+    for(var i=0;i<numOfPart;++i){
+
+        input += partSizes[i] + ' ';
+    }
+
+    input += numOfProc + ' ';
+    for(var i=0;i<numOfProc;++i){
+
+        input += procSizes[i] + ' ';
     }
 }
 
@@ -94,5 +114,52 @@ function submit3(){
         procSizes.append(p);
     }
 
+    create_input();
+    console.log(input);
 
+    if(type == 0){
+
+        //first Fit
+        $.ajax({
+            type: "POST",
+            url: "",
+            data: {input : input},
+            success: function(result){
+                console.log(result);
+
+            },
+            async: false
+        });
+
+    }
+    else if(type == 1){
+
+        //bestt Fit
+        $.ajax({
+            type: "POST",
+            url: "",
+            data: {input : input},
+            success: function(result){
+                console.log(result);
+
+            },
+            async: false
+        });
+
+    }
+    else{
+
+        //worst Fit
+        $.ajax({
+            type: "POST",
+            url: "",
+            data: {input : input},
+            success: function(result){
+                console.log(result);
+
+            },
+            async: false
+        });
+
+    }
 }
