@@ -166,3 +166,5 @@ router.post('/write', function(req,res){
 		res.send(stdout);
 	});
 });
+
+module.exports=router;

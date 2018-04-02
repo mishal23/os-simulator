@@ -42,6 +42,232 @@ function shellexec(){
 	console.log(input);
 	temp = temp.split(' ');
 	temp = temp[0];
+	if(temp == 'access')
+	{
+		$.ajax({
+        type: "POST",
+        url: "http://localhost:3000/system_calls/access",
+        data: {input : input},
+        success: function(result){
+            console.log(result);
+            out.innerHTML += '<div class="wd">' + wdt.innerHTML + "</div>" + " $ "+temp+"<br>";
+			out.innerHTML += result;
+            
+        },
+        async: false
+    });
+	}
+	else if(temp=='alarm')
+	{
+		$.ajax({
+        type: "POST",
+        url: "http://localhost:3000/system_calls/alarm",
+        data: {input : input},
+        success: function(result){
+            console.log(result);
+            out.innerHTML += '<div class="wd">' + wdt.innerHTML + "</div>" + " $ "+temp+"<br>";
+			out.innerHTML += result;
+            
+        },
+        async: false
+    });
+	}
+	else if(temp=='creat')
+	{
+		$.ajax({
+        type: "POST",
+        url: "http://localhost:3000/system_calls/creat",
+        data: {input : input},
+        success: function(result){
+            console.log(result);
+            out.innerHTML += '<div class="wd">' + wdt.innerHTML + "</div>" + " $ "+temp+"<br>";
+			out.innerHTML += result;
+            
+        },
+        async: false
+    });
+	}
+	else if(temp=='dup')
+	{
+		$.ajax({
+        type: "POST",
+        url: "http://localhost:3000/system_calls/dup",
+        data: {input : input},
+        success: function(result){
+            console.log(result);
+            out.innerHTML += '<div class="wd">' + wdt.innerHTML + "</div>" + " $ "+temp+"<br>";
+			out.innerHTML += result;
+            
+        },
+        async: false
+    });
+	}
+	else if(temp=='exit')
+	{
+		$.ajax({
+        type: "POST",
+        url: "http://localhost:3000/system_calls/exit",
+        data: {input : input},
+        success: function(result){
+            console.log(result);
+            out.innerHTML += '<div class="wd">' + wdt.innerHTML + "</div>" + " $ "+temp+"<br>";
+			out.innerHTML += result;
+            
+        },
+        async: false
+    });
+	}
+	else if(temp=='fork')
+	{
+		$.ajax({
+        type: "POST",
+        url: "http://localhost:3000/system_calls/fork",
+        data: {input : input},
+        success: function(result){
+            console.log(result);
+            out.innerHTML += '<div class="wd">' + wdt.innerHTML + "</div>" + " $ "+temp+"<br>";
+			out.innerHTML += result;
+            
+        },
+        async: false
+    });
+	}
+	else if(temp=='getid')
+	{
+		$.ajax({
+        type: "POST",
+        url: "http://localhost:3000/system_calls/getid",
+        data: {input : input},
+        success: function(result){
+            console.log(result);
+            out.innerHTML += '<div class="wd">' + wdt.innerHTML + "</div>" + " $ "+temp+"<br>";
+			out.innerHTML += result;
+            
+        },
+        async: false
+    });
+	}
+	else if(temp=='kill')
+	{
+		$.ajax({
+        type: "POST",
+        url: "http://localhost:3000/system_calls/kill",
+        data: {input : input},
+        success: function(result){
+            console.log(result);
+            out.innerHTML += '<div class="wd">' + wdt.innerHTML + "</div>" + " $ "+temp+"<br>";
+			out.innerHTML += result;
+            
+        },
+        async: false
+    });
+	}
+	else if(temp=='link')
+	{
+		$.ajax({
+        type: "POST",
+        url: "http://localhost:3000/system_calls/link",
+        data: {input : input},
+        success: function(result){
+            console.log(result);
+            out.innerHTML += '<div class="wd">' + wdt.innerHTML + "</div>" + " $ "+temp+"<br>";
+			out.innerHTML += result;
+            
+        },
+        async: false
+    });
+	}
+	else if(temp=='lseek')
+	{
+		$.ajax({
+        type: "POST",
+        url: "http://localhost:3000/system_calls/lseek",
+        data: {input : input},
+        success: function(result){
+            console.log(result);
+            out.innerHTML += '<div class="wd">' + wdt.innerHTML + "</div>" + " $ "+temp+"<br>";
+			out.innerHTML += result;
+            
+        },
+        async: false
+    });
+	}
+	else if(temp=='open')
+	{
+		$.ajax({
+        type: "POST",
+        url: "http://localhost:3000/system_calls/open",
+        data: {input : input},
+        success: function(result){
+            console.log(result);
+            out.innerHTML += '<div class="wd">' + wdt.innerHTML + "</div>" + " $ "+temp+"<br>";
+			out.innerHTML += result;
+            
+        },
+        async: false
+    });
+	}
+	else if(temp=='read')
+	{
+		$.ajax({
+        type: "POST",
+        url: "http://localhost:3000/system_calls/read",
+        data: {input : input},
+        success: function(result){
+            console.log(result);
+            out.innerHTML += '<div class="wd">' + wdt.innerHTML + "</div>" + " $ "+temp+"<br>";
+			out.innerHTML += result;
+            
+        },
+        async: false
+    });
+	}
+	else if(temp=='unlink')
+	{
+		$.ajax({
+        type: "POST",
+        url: "http://localhost:3000/system_calls/unlink",
+        data: {input : input},
+        success: function(result){
+            console.log(result);
+            out.innerHTML += '<div class="wd">' + wdt.innerHTML + "</div>" + " $ "+temp+"<br>";
+			out.innerHTML += result;
+            
+        },
+        async: false
+    });
+	}
+	else if(temp=='wait')
+	{
+		$.ajax({
+        type: "POST",
+        url: "http://localhost:3000/system_calls/wait",
+        data: {input : input},
+        success: function(result){
+            console.log(result);
+            out.innerHTML += '<div class="wd">' + wdt.innerHTML + "</div>" + " $ "+temp+"<br>";
+			out.innerHTML += result;
+            
+        },
+        async: false
+    });
+	}
+	else if(temp=='write')
+	{
+		$.ajax({
+        type: "POST",
+        url: "http://localhost:3000/system_calls/write",
+        data: {input : input},
+        success: function(result){
+            console.log(result);
+            out.innerHTML += '<div class="wd">' + wdt.innerHTML + "</div>" + " $ "+temp+"<br>";
+			out.innerHTML += result;
+            
+        },
+        async: false
+    });
+	}
+	
 	/*var xhr = new XMLHttpRequest();
 	xhr.onreadystatechange = function() {
 	    if (xhr.readyState == XMLHttpRequest.DONE) {
