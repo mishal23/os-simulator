@@ -90,17 +90,17 @@ function submit2(){
     //on click of the second submit Button
     //get information from number of process and the partitions sizes
     //from the number of processes value create the appropriate number of text fields for entering memory required for each process
-    num_proc = S('num_proc').value;
+    num_proc = S("num_proc").value;
     for(var i=1;i<=num_part;i++){
-        var p = S('p' + i).value;
-        partSizes.append(p);
+        var q = S('p' + i).value;
+        partSizes.append(q);
     }
 
-    var procSizes = S('mem_req_proc');
-    procSizes.innerHTML = "";
+    var processSizes = S('mem_req_proc');
+    processSizes.innerHTML = "";
     for(var i=1;i<=num_proc;i++){
-        var p = '<div class="row text-center"><input class="validate animated fadeIn" type="text" placeholder="Enter size of Process '+i+'" id="pr'+i+'"/></div></br>';
-        partitionSizes.innerHTML += p;
+        var r = '<div class="row text-center"><input class="validate animated fadeIn" type="text" placeholder="Enter size of Process '+i+'" id="pr'+i+'"/></div></br>';
+        processSizes.innerHTML += r;
     }
 }
 
@@ -110,8 +110,8 @@ function submit3(){
     //send everything to executable file
     //get the result
     for(var i=1;i<=num_proc;i++){
-        var p = S('pr' + i).value;
-        procSizes.append(p);
+        var s = S('pr' + i).value;
+        procSizes.append(s);
     }
 
     create_input();

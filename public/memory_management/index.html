@@ -36,9 +36,9 @@
 
     <!-- Choice for best fit, worst fit and first fit -->
     <div class = "text-center well well-lg container">
-        <label class="radio-inline"><input type="radio" name="optradio" id="first">First Fit</label>
-        <label class="radio-inline"><input type="radio" name="optradio" id="best">Best Fit</label>
-        <label class="radio-inline"><input type="radio" name="optradio" id="worst">Worst Fit</label>
+        <label class="radio-inline"><input type="radio" name="optradio" id="first" onclick="javascript:get_type()">First Fit</label>
+        <label class="radio-inline"><input type="radio" name="optradio" id="best" onclick="javascript:get_type()">Best Fit</label>
+        <label class="radio-inline"><input type="radio" name="optradio" id="worst" onclick="javascript:get_type()">Worst Fit</label>
     </div>
 
     </br></br></br>
@@ -55,7 +55,7 @@
         </div>
         </br>
         <div class = "row text-center">
-            <input type="submit" class="btn btn-info" value="Submit Button" id="first_text_submit">
+            <input type="submit" class="btn btn-info" value="Submit Button" id="first_text_submit" onclick="javascript:submit1()">
         </div>
     </div>
 
@@ -71,7 +71,7 @@
         </div>
         </br>
         <div class = "row text-center">
-            <input type="submit" class="btn btn-info" value="Submit Button" id="second_text_submit">
+            <input type="submit" class="btn btn-info" value="Submit Button" id="second_text_submit" onclick="javascript:submit2()">
         </div>
     </div>
 
@@ -81,19 +81,12 @@
         <div id = "mem_req_proc"></div>
         </br>
         <div class = "row text-center">
-            <input type="submit" class="btn btn-info" value="Submit Button" id="third_text_submit">
+            <input type="submit" class="btn btn-info" value="Submit Button" id="third_text_submit" onclick="javascript:submit3()">
         </div>
     </div>
 
 
 
-
-
-
-
-
-
-
-
+    <script type="text/javascript" src="/javascripts/memory_management/memory_management.js"></script>
 </body>
 </html>
