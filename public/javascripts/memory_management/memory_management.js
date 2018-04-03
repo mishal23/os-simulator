@@ -13,7 +13,7 @@ var type = 0;           //0 -> first ; 1 -> best ; 2 -> Worst
 var memSize = 0;
 var numOfPart = 1;      //by default one
 var numOfProc = 0;
-var partSizes = []
+var partSizes = [];
 var procSizes = [];
 var input = "";
 
@@ -93,7 +93,7 @@ function submit2(){
     num_proc = S("num_proc").value;
     for(var i=1;i<=num_part;i++){
         var q = S('p' + i).value;
-        partSizes.append(q);
+        partSizes.push(q);
     }
 
     var processSizes = S('mem_req_proc');
@@ -111,7 +111,7 @@ function submit3(){
     //get the result
     for(var i=1;i<=num_proc;i++){
         var s = S('pr' + i).value;
-        procSizes.append(s);
+        procSizes.push(s);
     }
 
     create_input();
