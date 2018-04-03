@@ -87,7 +87,7 @@ void main(int argc , char **argv)
                 //allocated
 				printf("%d",par[j].id);
 				internalFrag = par[j].size - memReq[i];
-                printf("_%d_%d|",internalFrag,minusOne);
+                printf(" %d %d ",internalFrag,minusOne);
 				totalInternalFrag += internalFrag;
 				totalAllocatedSize += memReq[i];
 				par[j].allocated = 1;
@@ -101,11 +101,11 @@ void main(int argc , char **argv)
         if(flag == 0)
 		{
             //not alocated
-			printf("_%d_%d_%d|" ,minusOne,minusOne,(memSize - totalInternalFrag - totalAllocatedSize));    //external fragmentation
+			printf("%d %d %d " ,minusOne,minusOne,(memSize - totalInternalFrag - totalAllocatedSize));    //external fragmentation
 		}
 	}
 
 	externalFrag = memSize - totalInternalFrag - totalAllocatedSize;
 
-    printf("&%d&%d" , totalInternalFrag , externalFrag);
+    printf("%d %d" , totalInternalFrag , externalFrag);
 }

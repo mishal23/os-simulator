@@ -4,7 +4,7 @@
     $('#side_top_navbar').load('../base.html', function(){
     	$('.left').html(topic);
     });
-    
+
 });
 */
 
@@ -60,7 +60,7 @@ function submit() {
 
     $.ajax({
         type: "POST",
-        url: "http://localhost:3000/disk_scheduling/dfcfs",
+        url: "/disk_scheduling/dfcfs",
         data: {input : input},
         success: function(result){
         	result = result.split('\n');
@@ -74,7 +74,7 @@ function submit() {
     });
     $.ajax({
         type: "POST",
-        url: "http://localhost:3000/disk_scheduling/sstf",
+        url: "/disk_scheduling/sstf",
         data: {input : input},
         success: function(result){
             result = result.split('\n');
@@ -88,28 +88,28 @@ function submit() {
 
     $.ajax({
         type: "POST",
-        url: "http://localhost:3000/disk_scheduling/look",
+        url: "/disk_scheduling/look",
         data: {input : input},
         success: function(result){
         	result = result.split('\n');
         	look_seq = result[0];
         	totseek[2] = result[1];
             console.log(look_seq);
-            console.log(totseek[2]);    
+            console.log(totseek[2]);
         },
         async: false
     });
 
     $.ajax({
         type: "POST",
-        url: "http://localhost:3000/disk_scheduling/scan",
+        url: "/disk_scheduling/scan",
         data: {input : input},
         success: function(result){
             result = result.split('\n');
         	scan_seq = result[0];
         	totseek[3] = result[1];
             console.log(scan_seq);
-            console.log(totseek[3]);    
+            console.log(totseek[3]);
 
         },
         async: false
@@ -117,28 +117,28 @@ function submit() {
 
     $.ajax({
         type: "POST",
-        url: "http://localhost:3000/disk_scheduling/clook",
+        url: "/disk_scheduling/clook",
         data: {input : input},
         success: function(result){
             result = result.split('\n');
         	clook_seq = result[0];
         	totseek[4] = result[1];
             console.log(clook_seq);
-            console.log(totseek[4]);    
+            console.log(totseek[4]);
         },
         async: false
     });
 
     $.ajax({
         type: "POST",
-        url: "http://localhost:3000/disk_scheduling/cscan",
+        url: "/disk_scheduling/cscan",
         data: {input : input},
         success: function(result){
             result = result.split('\n');
         	cscan_seq = result[0];
         	totseek[5] = result[1];
             console.log(cscan_seq);
-            console.log(totseek[5]);    
+            console.log(totseek[5]);
         },
         async: false
     });
@@ -240,7 +240,7 @@ function summarise(seq,algo_name,id) {
     		title: {
     		text: 'Disk Requested'
     		}
-    	}; 
+    	};
     	/*var xAxis = {
         	min: 0,
         	title: {
@@ -254,22 +254,22 @@ function summarise(seq,algo_name,id) {
 		var tooltip = {
 			 valuePrefix: 'Cylinder/'
 		};
-		var legend = {	
+		var legend = {
 			 layout: 'vertical',
-			 align: 'right',							
+			 align: 'right',
 			 verticalAlign: 'middle',
-			 borderWidth: 1, 
+			 borderWidth: 1,
 			// x: -40,
 			//  y: 100,
 			 floating: true,
-				  
+
 	    	 backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
 			// shadow: true
 		};
     	var series= [{
         	name: algorithm_name,
         	data: order
-    	}];	
+    	}];
 
     	var json = {};
     	json.chart = chart;
@@ -283,8 +283,3 @@ function summarise(seq,algo_name,id) {
     	//json.credits = credits;
     	$('#'+id).highcharts(json);
 }
-
-
-
-
-

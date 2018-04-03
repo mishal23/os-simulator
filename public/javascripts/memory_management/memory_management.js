@@ -122,7 +122,7 @@ function submit3(){
         //first Fit
         $.ajax({
             type: "POST",
-            url: "",
+            url: "/memory_management/mft_first_fit",
             data: {input : input},
             success: function(result){
                 console.log(result);

@@ -12,6 +12,7 @@ var cpu_scheduling = require('./routes/cpu_scheduling');
 var bankers = require('./routes/bankers');
 var disk_scheduling = require('./routes/disk_scheduling');
 var page_replacement = require('./routes/page_replacement');
+var memory_management = require('./routes/memory_management');
 
 var app = express();
 
@@ -33,6 +34,7 @@ app.use('/cpu_scheduling', cpu_scheduling);
 app.use('/bankers', bankers);
 app.use('/disk_scheduling', disk_scheduling);
 app.use('/page_replacement', page_replacement);
+app.use('/memory_management', memory_management);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
