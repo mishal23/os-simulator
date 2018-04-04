@@ -1,10 +1,15 @@
 $(document).ready(function() {
 
-    var topic="Reader Writer";
+
+  /*particlesJS.load('particles-js', '../particles.json', function() {
+    console.log('particles.json config loaded');
+  });*/
+
+   /* var topic="Reader Writer";
 
     $('#side_top_navbar').load('../base.html', function(){
         $('.left').html(topic);
-    });
+    });*/
 
   // Selectors
   var $stepn = $('#step-n');

@@ -1,0 +1,28 @@
+body {
+  padding-top: 54px;
+}
+
+#particles-js, #particles-js > canvas {
+			position: absolute;
+			width: 100%;
+			height: 170%;
+			background-color: #000;
+			background-image: url("");
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: 50% 50%;
+		}
+
+		h3{
+			color: #FFFFFF;
+		}
+		img{
+			width: 200px;
+			height: 200px;
+		}
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 56px;
+  }
+}
