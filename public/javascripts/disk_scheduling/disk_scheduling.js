@@ -60,7 +60,7 @@ function submit() {
 
     $.ajax({
         type: "POST",
-        url: "http://localhost:3000/disk_scheduling/dfcfs",
+        url: "/disk_scheduling/dfcfs",
         data: {input : input},
         success: function(result){
         	result = result.split('\n');
@@ -74,7 +74,7 @@ function submit() {
     });
     $.ajax({
         type: "POST",
-        url: "http://localhost:3000/disk_scheduling/sstf",
+        url: "/disk_scheduling/sstf",
         data: {input : input},
         success: function(result){
             result = result.split('\n');
@@ -88,7 +88,7 @@ function submit() {
 
     $.ajax({
         type: "POST",
-        url: "http://localhost:3000/disk_scheduling/look",
+        url: "/disk_scheduling/look",
         data: {input : input},
         success: function(result){
         	result = result.split('\n');
@@ -102,7 +102,7 @@ function submit() {
 
     $.ajax({
         type: "POST",
-        url: "http://localhost:3000/disk_scheduling/scan",
+        url: "/disk_scheduling/scan",
         data: {input : input},
         success: function(result){
             result = result.split('\n');
@@ -117,7 +117,7 @@ function submit() {
 
     $.ajax({
         type: "POST",
-        url: "http://localhost:3000/disk_scheduling/clook",
+        url: "/disk_scheduling/clook",
         data: {input : input},
         success: function(result){
             result = result.split('\n');
@@ -131,7 +131,7 @@ function submit() {
 
     $.ajax({
         type: "POST",
-        url: "http://localhost:3000/disk_scheduling/cscan",
+        url: "/disk_scheduling/cscan",
         data: {input : input},
         success: function(result){
             result = result.split('\n');
