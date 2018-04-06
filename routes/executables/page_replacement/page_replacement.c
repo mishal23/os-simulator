@@ -200,9 +200,6 @@ void second_chance(int frame_size,int frame[], int reference,int reference_bits[
 			break;
 		}
 	}
-
-
-	printf("\n");
 	int j;
 	if(alloted == false)
 	{
@@ -219,16 +216,10 @@ void second_chance(int frame_size,int frame[], int reference,int reference_bits[
 			{
 				reference_bits[pointer]=0;
 				pointer = (pointer+1)%frame_size;
-				printf("\nREF CHANGED\n");
 			}
 			frame[pointer]=reference;
 		}
 	}
-
-	printf("\nREFEENCE BITS\n");
-	for(i=0;i<frame_size;i+=1)
-		printf("%d|",reference_bits[i] );
-	printf("\n");
 	print(frame_size, frame);
 }
 
@@ -281,13 +272,14 @@ int main(int argc, char **argv)
 		frame[i] = -1;
 	}
 	int reference_bits[frame_size];
-	printf("\n\nSECOND CHANCE REPLACEMENT\n\n");
+	printf("\n\nSECOND CHANCE\n\n");
 	for(i=0;i<number_of_references;i++)
 	{
 		second_chance(frame_size,frame,reference[i],reference_bits);
 	}
 	printf("\n(Number of faults:%d(\n)Number of hits:%d\n)",faults,hits );
-
+	hits=0;
+	faults=0;
 	for(i=0;i<frame_size;i++)
 	{
 		frame[i] = -1;
@@ -297,5 +289,5 @@ int main(int argc, char **argv)
 	{
 		optimal(frame_size,frame,reference[i],i,number_of_references,reference);
 	}
-	printf("\nNumber of faults: %d \nNumber of hits: %d\n",faults,hits );
+	printf("\n(Number of faults:%d(\n)Number of hits:%d\n)",faults,hits );
 }
