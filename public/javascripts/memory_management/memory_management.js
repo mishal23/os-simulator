@@ -11,8 +11,6 @@ $(document).ready(function() {
 
 var type = 0;           //0 -> first ; 1 -> best ; 2 -> Worst
 var memSize = 0;
-var numOfPart = 1;      //by default one
-var numOfProc = 0;
 var partSizes = [];
 var procSizes = [];
 var input = "";
@@ -45,25 +43,6 @@ function get_type(){
         type = 2;
         S("first").disabled = true;
         S("best").disabled = true;
-    }
-}
-
-function create_input(){
-
-    //to create input to be sent to the executable file
-    //input is of the form memSize numOfPart partSizes numOfProc procSizes
-    input += memSize + ' ';
-
-    input += numOfPart + ' ';
-    for(var i=0;i<numOfPart;++i){
-
-        input += partSizes[i] + ' ';
-    }
-
-    input += numOfProc + ' ';
-    for(var i=0;i<numOfProc;++i){
-
-        input += procSizes[i] + ' ';
     }
 }
 
@@ -109,6 +88,14 @@ function submit3(){
     //get process memory sizes
     //send everything to executable file
     //get the result
+
+    var parId = [];
+    var internalFrag = [];
+    var externalFrag = [];
+    var totalInternal;
+    var remainingMem;
+    var temp;
+
     for(var i=1;i<=num_proc;i++){
         var s = S('pr' + i).value;
         procSizes.push(s);
@@ -126,11 +113,24 @@ function submit3(){
             data: {input : input},
             success: function(result){
                 console.log(result);
+                result = result.split(' ');
 
+                var len = result.length;
+                for(var i=0;i<len-2;++i){
+
+                    if(i%3==0)
+                        parId.push(result[i]);
+                    else if((i-1)%3==0)
+                        internalFrag.push(result[i]);
+                    else
+                        externalFrag.push(result[i]);
+                }
+
+                totalInternal = result[len-2];
+                remainingMem = result[len-1];
             },
-            async: false
+            async: true
         });
-
     }
     else if(type == 1){
 
@@ -142,10 +142,23 @@ function submit3(){
             success: function(result){
                 console.log(result);
 
-            },
-            async: false
-        });
+                var len = result.length;
+                for(var i=0;i<len-2;++i){
 
+                    if(i%3==0)
+                        parId.push(result[i]);
+                    else if((i-1)%3==0)
+                        internalFrag.push(result[i]);
+                    else
+                        externalFrag.push(result[i]);
+                }
+
+                totalInternal = result[len-2];
+                remainingMem = result[len-1];
+
+            },
+            async: true
+        });
     }
     else{
 
@@ -157,9 +170,57 @@ function submit3(){
             success: function(result){
                 console.log(result);
 
-            },
-            async: false
-        });
+                var len = result.length;
+                for(var i=0;i<len-2;++i){
 
+                    if(i%3==0)
+                        parId.push(result[i]);
+                    else if((i-1)%3==0)
+                        internalFrag.push(result[i]);
+                    else
+                        externalFrag.push(result[i]);
+                }
+
+                totalInternal = result[len-2];
+                remainingMem = result[len-1];
+
+            },
+            async: true
+        });
     }
+
+    table = S('table');
+    //table.innerHTML = "";
+
+    for(var i=0;i<num_proc;++i){
+
+        if(externalFrag[i] == 0)
+            ch = "YES";
+        else
+            ch = "NO";
+
+        temp = '<tr><td>'+ (i+1) +'</td><td>'+ procSizes[i] +'</td><td>'+ ch +'</td><td>'+ parId[i] +'</td><td>'+ internalFrag[i] +'</td><td>'+ externalFrag[i] +'</td></tr>';
+        table.innerHTML += temp;
+    }
+
+}
+
+function create_input(){
+
+    //to create input to be sent to the executable file
+    //input is of the form memSize numOfPart partSizes numOfProc procSizes
+    input += memSize + ' ';
+
+    input += num_part + ' ';
+    for(var i=0;i<num_part;++i){
+
+        input += partSizes[i] + ' ';
+    }
+
+    input += num_proc + ' ';
+    for(var i=0;i<num_proc-1;++i){
+
+        input += procSizes[i] + ' ';
+    }
+    input += procSizes[i];
 }
