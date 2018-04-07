@@ -189,6 +189,7 @@ function submit3(){
         });
     }
 
+    //For the table part
     table = S('table');
     //table.innerHTML = "";
 
@@ -203,6 +204,58 @@ function submit3(){
         table.innerHTML += temp;
     }
 
+    var pos;
+    var diff;
+    var scaledown = (500/memSize);
+    //For the box part
+    for(var i=0;i<num_part;++i){
+
+        pos = find_partition(i);
+        diff = partSizes[i] - procSizes[pos];
+        var box = S('visual');
+        box.innerHTML = "";
+        var tempbox1;
+        var tempbox2 = '<div class="black-box" id="internalfragbox"></div>';
+        var pos2 = pos +1;
+
+        switch(i){
+
+            case 0: tempbox1 = '<label><div class ="red-box" id="b'+i+'">Process'+pos2+'</div></label>';
+                    break;
+            case 1: tempbox1 = '<label><div class ="green-box" id="b'+i+'">Process'+pos2+'</div></label>';
+                    break;
+            case 2: tempbox1 = '<label><div class ="yellow-box" id="b'+i+'">Process'+pos2+'</div></label>';
+                    break;
+            case 3: tempbox1 = '<label><div class ="blue-box" id="b'+i+'">Process'+pos2+'</div></label>';
+                    break;
+            case 4: tempbox1 = '<label><div class ="violet-box" id="b'+i+'">Process'+pos2+'</div></label>';
+                    break;
+            case 5: tempbox1 = '<label><div class ="orange-box" id="b'+i+'">Process'+pos2+'</div></label>';
+                    break;
+            case 6: tempbox1 = '<label><div class ="grey-box" id="b'+i+'">Process'+pos2+'</div></label>';
+                    break;
+            case 7: tempbox1 = '<label><div class ="brown-box" id="b'+i+'">Process'+pos2+'</div></label>';
+                    break;
+            case 8: tempbox1 = '<label><div class ="pink-box" id="b'+i+'">Process'+pos2+'</div></label>';
+                    break;
+        }
+
+        box += tempbox1;
+        S('b' + i).style.height = procSizes[pos]*scaledown + 'px';
+        box += tempbox2;
+        S('internalfragbox').style.height = diff*scaledown + 'px';
+    }
+
+    //add totalinternal
+}
+
+function find_partition(i){
+
+    for(var j=0;j<num_proc;++j){
+
+        if(parId[j] == (i+1))
+            return j;
+    }
 }
 
 function create_input(){
