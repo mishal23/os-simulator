@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contiguous file allocation</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto Mono">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto Mono">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+    <link href="/stylesheets/file_allocation/contiguous.css" rel="stylesheet">
+    <script type="text/javascript" src="/javascripts/file_allocation/contiguous.js"></script>
+</head>
+<body>
+<!-- To load side and top navbar -->
+<!-- DO NOT CHANGE THIS -->
+<div id="side_top_navbar">
+
+</div>
+
+<!-- Do your changes from here -->
+<!-- Show the simulation here -->
+<div class="head teal white-text" ><h1> File Allocation </h1></div>
+  <div class="container" style="margin-top : -8%;">
+    <div class="card" >
+      <div class="card-content">
+        <div class="row size-line"> 
+          <div class="col s1">0</div>
+          <div class="col s11 right-align">63</div>
+        </div>
+        <div class="col" id="storage"></div>
+        <div class="row">
+          <div class="col s4">
+            <div class="input-field">
+              <input  class="validate" type="text" id="file-size"/>
+              <label for="file-size">File Size</label>  
+            </div> 
+          </div>
+          <div class="col s4">
+            <div class="input-field">
+              <input class="validate" type="text" id="file-name"/>
+              <label for="file-name">File Name</label>  
+            </div> 
+          </div>
+        </div>
+        <div>
+          <a class="btn waves-effect waves-effect-light teal" onclick="add_file()"><i class="material-icons right">add</i>Add</a>
+        </div>
+        <div class="row">
+          <div class="col s4">
+            <div class="input-field">
+              <input class="validate" type="text" id="file-name"/>
+              <label for="file-name">File Name</label>  
+            </div> 
+          </div>
+        </div>
+        <div>
+          <a class="btn waves-effect waves-effect-light teal" onclick="delete_file()"><i class="material-icons right">delete</i>Delete</a>
+        </div>
+      </div>
+      
+      </div>
+    </div>
+</body>
+  <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+   <script
+    src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"></script>
+</html>
