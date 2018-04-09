@@ -68,6 +68,7 @@
 		var file_names  = [];
 		var file_name = [];
 		var sizes = [];
+        var input = '';
 
 		function S(id){
 			return document.getElementById(id)
@@ -106,22 +107,18 @@
 		}
 
 		function delete_file(name){
-			input = '2 '+ name;
+			input += ' 2 '+ name;
 			send_request(input);
 		}
 
 		function add_file(){
-			// size  = S('file-size').value;
-			// fname  = S('file-name').value;
-			// input = ' 1 ' + fname + ' ' + parseInt(size) + ' 0';
-			// send_request(input);
             size  = $("#file-size").val();
             fname  = $("#file-name").val();
-            var input = '';
-            for(var i = 0; i < file_name.length; ++i)
-                input += ' 1 ' + file_name[i] + ' ' + sizes[i];
 
-            input += ' 1 ' + fname + ' ' + parseInt(size) + ' ' + '0';
+            // for(var i = 0; i < file_name.length; ++i)
+            //     input += ' 1 ' + file_name[i] + ' ' + sizes[i];
+
+            input += ' 1 ' + fname + ' ' + parseInt(size);// + ' ' + '0';
             // file_n++;
             sizes.push(parseInt(size));
             file_name.push(fname);
@@ -132,23 +129,7 @@
 
 		function send_request(input){
 			console.log(input);
-			// var xhr = new XMLHttpRequest();
-			// xhr.onreadystatechange = function() {
-			//     if (xhr.readyState == XMLHttpRequest.DONE) {
-			//     	output = xhr.responseText;
-			//     	output = output.split('\n');
-			//     	if((output[0].includes('File ') || output[0].includes('All') || output[0].includes('Not')) && output.length == 1){
-			//     		Materialize.toast(output, 1500);
-			// 			return;
-			//     	}
-			//     	output = output.slice(0, output.length-1);
-			//     	console.log(output);
-			//     	handle_output(output);
-			// 		window.scrollTo(0,document.body.scrollHeight);
-			//     }
-			// }
-			// xhr.open('GET', '/indexed_file_allocation/execute?input='+input, true);
-			// xhr.send();
+			input += ' 0';
             $.ajax({
                 type: "POST",
                 url: "/file_allocation/indexed",

@@ -167,8 +167,8 @@ struct file
 			break;
 		case 2:
 			name=argv[k++];
-			if(deletefile(name))
-				display();
+			if(deletefile(name));
+				//display();
 			break;
 		case 3:
 			display();
