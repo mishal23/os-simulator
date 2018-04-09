@@ -1,88 +1,234 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Indexed file allocation</title>
-    <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1">
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <script
-  src="https://code.jquery.com/jquery-3.1.1.min.js"
-  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-  crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto Mono">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-   
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto Mono">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
-    <link href="/stylesheets/file_allocation/contiguous.css" rel="stylesheet">
-    <script type="text/javascript" src="/javascripts/file_allocation/indexed.js"></script>
+	<title>File Allocation</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<script
+	src="https://code.jquery.com/jquery-3.1.1.min.js"
+	integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+	crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto Mono">
+	<style>
+
+		body {
+			margin: 0;
+			padding: 0;
+			background: rgb(233, 234, 237);
+		}
+
+		.head {
+			width: 100%;
+			padding: 2%;
+			padding-bottom: 10%;
+		}
+
+		.block {
+			display: inline-block;
+			height: 100%;
+		}
+
+		.blocks {
+			padding: 0;
+			height: 30px;
+			background-color: #ddd;
+		}
+
+		.size-line {
+			font-size: 50%;
+			margin: 0;
+			padding: 0;
+		}
+
+		.size-line .col {
+			padding: 0;
+		}
+
+		.chip {
+			color: white;
+		}
+
+		.block-number {
+			color: #222;
+		}
+
+	</style>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+	<script type="text/javascript">
+
+		var SIZE        = 64;
+		var BLOCK_WIDTH = 100.0/64.0;
+		var n_blocks    = 0;
+		var color       = ['red', 'deep-purple', 'light-blue', 'teal', 'yellow', 'deep-orange', 'blue-grey', 'pink', 'indigo', 'cyan', 'light-green', 'amber', 'brown', 'purple', 'blue', 'lime', 'orange', 'grey'];
+		var file_n      = 0;
+		var file_names  = [];
+		var file_name = [];
+		var sizes = [];
+
+		function S(id){
+			return document.getElementById(id)
+		}
+
+		function put_file(name, fbs, n){
+			var file_chip = '<div class="row" id="file-' + name + '"><div class="col chip ' + color[n] + '">' + name + '<i class="close material-icons" onclick="delete_file(\'' + name + '\')">close</i></div><div>';
+			$('.file-chips').append(file_chip);
+			for(var i=0; i<fbs.length; i++){
+				$('#block-'+fbs[i]).attr('class', 'block '+color[n]);
+				if(i==0) $('#file-'+name).append('<div class="col chip block-number ' + color[n] + '">' + fbs[i] + '</div>');
+				else     $('#file-'+name).append('<div class="col chip block-number">' + fbs[i] + '</div>');
+			}
+		}
+
+		function to_int(output){
+			for(var i=0;i<output.length;i++)
+				output[i] = parseInt(output[i]);
+			return output.slice(0, output.length-1);
+		}
+
+		function handle_output(output){
+			put_blocks();
+			//file_names = [];
+			$('.file-chips').html('');
+			for(var i=0; i<output.length; i++){
+				o = output[i].split(' ');
+				name = o[0];
+				size = parseInt(o[1]) + 1;
+				fbs  = []
+				for(var j=0; j<size; j++)
+					fbs.push(parseInt(o[j+2]));
+				put_file(name, fbs, i);
+				file_names.push(name);
+			}
+		}
+
+		function delete_file(name){
+			input = '2 '+ name;
+			send_request(input);
+		}
+
+		function add_file(){
+			// size  = S('file-size').value;
+			// fname  = S('file-name').value;
+			// input = ' 1 ' + fname + ' ' + parseInt(size) + ' 0';
+			// send_request(input);
+            size  = $("#file-size").val();
+            fname  = $("#file-name").val();
+            var input = '';
+            for(var i = 0; i < file_name.length; ++i)
+                input += ' 1 ' + file_name[i] + ' ' + sizes[i];
+
+            input += ' 1 ' + fname + ' ' + parseInt(size) + ' ' + '0';
+            // file_n++;
+            sizes.push(parseInt(size));
+            file_name.push(fname);
+            console.log(file_name);
+            console.log(input);
+            send_request(input);
+		}
+
+		function send_request(input){
+			console.log(input);
+			// var xhr = new XMLHttpRequest();
+			// xhr.onreadystatechange = function() {
+			//     if (xhr.readyState == XMLHttpRequest.DONE) {
+			//     	output = xhr.responseText;
+			//     	output = output.split('\n');
+			//     	if((output[0].includes('File ') || output[0].includes('All') || output[0].includes('Not')) && output.length == 1){
+			//     		Materialize.toast(output, 1500);
+			// 			return;
+			//     	}
+			//     	output = output.slice(0, output.length-1);
+			//     	console.log(output);
+			//     	handle_output(output);
+			// 		window.scrollTo(0,document.body.scrollHeight);
+			//     }
+			// }
+			// xhr.open('GET', '/indexed_file_allocation/execute?input='+input, true);
+			// xhr.send();
+            $.ajax({
+                type: "POST",
+                url: "/file_allocation/indexed",
+                data: {input : input},
+                success: function(result){
+                    console.log(result);
+                    result = result.split('\n');
+                    result = result.slice(0, result.length-2);
+                    console.log(result);
+                    handle_output(result);
+                    window.scrollTo(0,document.body.scrollHeight);
+                },
+                async: false
+            });
+		}
+
+		function put_blocks(){
+			$('.blocks').html('');
+			for(var i=0; i<64; i++){
+				var block = '<div class="block" id="block-' + i + '"></div>';
+				$('.blocks').append(block);
+				$('#block-'+i).css('width', BLOCK_WIDTH+'%');
+			}
+		}
+
+
+	</script>
+
 </head>
-<body>
-<!-- To load side and top navbar -->
-<!-- DO NOT CHANGE THIS -->
-<!--<div id="side_top_navbar">-->
+<body onload="put_blocks()">
+	<div class="head green white-text" ><h1> File Allocation </h1></div>
+	<div class="container" style="margin-top : -8%;">
+		<div class="card" >
+			<div class="card-content">
+				<div class="row">
+					<h3>Indexed File Allocation</h3>
+					<br>
+					<div style="font-size: 20px;">1. Provides solutions to problems of contigous and linked allocation.<br>
+2. A index block is created having all pointers to files.<br>
+3. Each file has its own index block which stores the addresses of disk space occupied by the file.<br>
+4. Directory contains the addresses of index blocks of files.
 
-<!--</div>-->
+    					</div>
+				</div>
+			</div>
+		</div>
 
-<!-- Do your changes from here -->
-<!-- Show the simulation here -->
-<div class="head teal white-text" ><h1> File Allocation </h1></div>
-  <div class="container" style="margin-top : -8%;">
-    <div class="card" >
-      <div class="card-content">
-        <div class="row size-line"> 
-          <div class="col s1">0</div>
-          <div class="col s11 right-align">63</div>
-        </div>
-        <div class="col" id="storage"></div>
-        <div class="row">
-          <div class="col s4">
-            <div class="input-field">
-              <input  class="validate" type="text" id="file-size"/>
-              <label for="file-size">File Size</label>  
-            </div> 
-          </div>
-          <div class="col s4">
-            <div class="input-field">
-              <input class="validate" type="text" id="file-name"/>
-              <label for="file-name">File Name</label>  
-            </div> 
-          </div>
-        </div>
-        <div>
-          <a class="btn waves-effect waves-effect-light teal" onclick="add_file()"><i class="material-icons right">add</i>Add</a>
-        </div>
-        <div class="row">
-          <div class="col s4">
-            <div class="input-field">
-              <input class="validate" type="text" id="file-name"/>
-              <label for="file-name">File Name</label>  
-            </div> 
-          </div>
-        </div>
-        <div>
-          <a class="btn waves-effect waves-effect-light teal" onclick="delete_file()"><i class="material-icons right">delete</i>Delete</a>
-        </div>
-      </div>
-      
-      </div>
-    </div>
+		<div class="card" >
+			<div class="card-content">
+				<div class="row">
+					<div class="col s6"><h4>Indexed File Allocation</h4></div>
+				</div>
+				<div class="row">
+					<div class="col s4">
+						<div class="input-field">
+							<input class="validate" type="text" id="file-name"/>
+							<label for="file-name">File Name</label>
+						</div>
+					</div>
+					<div class="col s4">
+						<div class="input-field">
+							<input class="validate" type="text" id="file-size"/>
+							<label for="file-size">File Size</label>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col s4">
+						<a class="green btn waves-effect waves-effect-light teal" onclick="add_file()"><i class="material-icons right">add</i>Add</a>
+					</div>
+				</div>
+				<br>
+				<div class="row size-line"> 
+					<div class="col s1">0</div>
+					<div class="col s11 right-align">63</div>
+				</div>
+				<div class="row blocks"></div>
+				<br>
+				<div class="file-chips"></div>
+			</div>
+		</div>
+	</div>
 </body>
-  <script
-      src="https://code.jquery.com/jquery-3.3.1.min.js"
-      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-      crossorigin="anonymous"></script>
-   <script
-    src="https://code.jquery.com/jquery-3.1.1.min.js"
-    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-    crossorigin="anonymous"></script>
-</html>

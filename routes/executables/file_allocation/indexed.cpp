@@ -129,7 +129,7 @@ struct file
 			for(int i=0;i<list[j].size;i++)
 				cout<<list[j].a[i].val<<" ";
 		}
-		cout<<"<br>";
+		cout<<"<br>\n";
 	}
 	cout<<endl;
 	fflush(stdout);
@@ -162,8 +162,8 @@ struct file
 			//Enter file name and size
 		    name=argv[k++];
 		    size=atoi(argv[k++]);
-			if(addfile(name,size))
-				display();
+			if(addfile(name,size));
+				//display();
 			break;
 		case 2:
 			name=argv[k++];
@@ -174,6 +174,7 @@ struct file
 			display();
 			break;
 		case 0:
+		    display();
 			exit(0);
 
 		fflush(stdin);
