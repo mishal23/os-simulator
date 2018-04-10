@@ -166,5 +166,15 @@ router.post('/write', function(req,res){
 		res.send(stdout);
 	});
 });
+// man() call
+router.post('/man', function(req,res){
+	var input="";
+	console.log(req.body.input);
+	exec(__dirname + '/executables/system_calls/man ' + req.body.input , function callback(error,stdout,stderr) {
+		console.log(stdout);
+		console.log(error);
+		res.send(stdout);
+	});
+});
 
 module.exports=router;

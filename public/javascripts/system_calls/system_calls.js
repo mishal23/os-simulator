@@ -267,6 +267,21 @@ function shellexec(){
         async: false
     });
 	}
+	else if(temp=='man')
+	{
+		$.ajax({
+        type: "POST",
+        url: "/system_calls/man",
+        data: {input : input},
+        success: function(result){
+            console.log(result);
+            out.innerHTML += '<div class="wd" style="color:red">' + wdt.innerHTML + "</div>" + " $ "+input+"<br>";
+			out.innerHTML += result + "<br>" + "<br>";
+            
+        },
+        async: false
+    });
+	}
 	
 	/*var xhr = new XMLHttpRequest();
 	xhr.onreadystatechange = function() {
