@@ -19,7 +19,14 @@
 
     <script type="text/javascript" src="/javascripts/bankers/bankers.js"></script>
 
+    <style type="text/css">
+      ::placeholder {
+    color: black;
+    opacity: 1; /* Firefox */
+}
 
+
+    </style>
     <link href="/stylesheets/team.css" rel="stylesheet">
 </head>
 <body>
@@ -33,160 +40,143 @@
           </div>
           <div class="header-font center-align">
             
-            <span class="topic">Safety Sequence</span>
+            <span class="topic">Bankers Algorithm</span>
           </div>
         </div>
       </div>
   </header>
-<div><br><br></div>
-    <div class="col s6">
-      <form id="1" class="col s6">
-        <div id="c1" style="float:left;">
+  <div class="row">
+  <div class="col s2">
+    
+    <h4>
+      Safety Sequence
+    </h4>
+    </div>
+  </div>
+<div class="row">
+    <div class="col s12">
+      <form id="1" class="col s3">
+        <div id="c1" >
         <div class="row">
           <div class="input-field col s12">
             <input id="np" type="text" >
-            <label for="last_name">Number of Processes</label>
+            <label for="np">Number of Processes</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s12">
             <input  id="nr" type="text" >
-            <label for="last_name">Number of Resources</label>
+            <label for="nr">Number of Resources</label>
           </div>
         </div>
 
 
         </div>
+        <a style="background-color:black;font-size: 15px;" id="b1" class="waves-effect waves-light btn-large">Continue<i style="font-size:15px;margin-left: 10px;" class="fa fa-arrow-right"></i></a>
 
-        <div id="b1"> 
-          <br>
-          Continue
-          <i  class="fa fa-arrow-right"></i>
-        </div>
       </form>
 
 
-      <form style="display: none;" id="2" class="col s6">
-        <div id="c2" style="float:left;width: 60%">
-
+      <form style="display: none;" id="2" class="col s3">
+        <div id="c2" >
+      
         </div>
+ <a id="b2" style="background-color:black;font-size: 15px;" id="b1" class="waves-effect waves-light btn-large">Continue<i style="font-size:15px;margin-left: 10px;" class="fa fa-arrow-right"></i></a>
 
-        <div id="b2" style="float:right;width: 30%;"> 
-          <br>
-          <br>
-          <br>
-          Continue
-          <i style="margin-left: 20px;" class="fa fa-arrow-right"></i>
-        </div>
       </form>
 
-      <form style="margin-top:20px;display: none;" id="3" class="col s6">
-        <div id="c3" style="float:left;width: 80%">
+      <form style="display: none;" id="3" class="col s3">
+        <div id="c3" style="float:left;width: 100%">
 
         </div>
 
-        <div id="b3" style="float:right;width: 20%;"> 
-          <br>
-          <br>
-          <br>
-          Continue
-          <i style="margin-left: 20px;" class="fa fa-arrow-right"></i>
-        </div>
+        <a style="background-color:black;font-size: 15px;" id="b3" class="waves-effect waves-light btn-large">Continue<i style="font-size:15px;margin-left: 10px;" class="fa fa-arrow-right"></i></a>
+
       </form>
 
-      <div style="margin-top:20px;" id="4" class="col s6">
-        <div id="c4" style="float:left;width: 80%">
+      <div style="display:none;" id="4" class="col s3">
+        <div id="c4" style="float:left;width: 100%">
 
         </div>
-        <br>
-        <br>
-        <br>
-        <br>
-        <button id="ss_action" style="display: none;">
-          Find safe sequence
-        </button>
+
+        <a style="background-color:black;font-size: 15px;" id="b4" class="waves-effect waves-light btn-large">Find Sequence </a>
+
       </div>
     </div>
-        <div  class="col offset-s3 center ">
-          <div id="result" style="display: none;position:fixed;width:inherit;">
-          </div>
-          <div style="display:block;margin-top:50px;font-size:20px;width: 100%;" id="is">
-            Input Processes Order   
-          </div>
-            <br>
-            <i class=" fa fa-arrow-down" style="font-size: 30px;"></i>
-           <div id="bb" class="center-block" style="width: 10%;background-color: black">
-            <i class="fa fa-cog spec" style="font-size:24px;color:white"></i>
-            <i class="fa fa-cog spec" style="font-size:44px;margin-left: -10px;color:white;"></i>
-          </div>      
-            <i class="fa fa-arrow-down" style="font-size: 30px;"></i>
-            <br>
-          <div  id="os" style="font-size:20px;width: 100%;">
-            Output Processes Order  
-          </div>
-        </div>
     </div>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
+    <div class="row">
+      <div class="col s12 center">
+            <div id="result" style="display: none;width:inherit;">
+            </div>
+            <div style="display:block;margin-top:50px;font-size:20px;width: 100%;" id="is">
+              Input Processes Order   
+            </div>
+              <br>
+              <i class=" fa fa-arrow-down" style="font-size: 30px;"></i>
+             <div id="bb" class="center-block" style="width:20%;padding:40px;background-color: black">
+              <i class="fa fa-cog spec" style="font-size:24px;color:white"></i>
+              <i class="fa fa-cog spec" style="font-size:44px;margin-left: -10px;color:white;"></i>
+            </div>      
+              <i class="fa fa-arrow-down" style="font-size: 30px;"></i>
+              <br>
+            <div  id="os" style="font-size:20px;width: 100%;">
+              Output Processes Order  
+            </div>
+      </div>
+      
+
+    </div>
+
+
       
     <div  >
 
     </div>
-
+  <div class="row">
+  <div class="col s3">
+    
+    <h4>
+      Resource Allocation
+    </h4>
+    </div>
+  </div>
       <br>
       <br>
+<div class="row">
+  <div class="col s3">
+          <div class="row">
+          <div class="input-field col s12">
+            <input  id="rpn" type="text" >
+            <label for="rpn">Enter Requesting Process Number</label>
+          </div>
+        </div>
       <br>
       <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-    <h1 class="center">Resource Allocation</h1>
-      <br>
-      <br>
-
-      <input style="margin-left: 30px;" required id="rpn" placeholder="Requesting Process Number"></input>
-      <br>
-      <br>
-      <span style="margin-left: 30px;" id="ra_text">
+      </div>
+      <div class="col s3">
+      <span style="font-size:18px;margin-left: 30px;" id="ra_text">
       
-      </span>      
+      </span>    
+      </div>  
       <br>
       <br>
-      <span class="col s3" id="ra_nr" style="margin-left: 18px;">
+      <div class="col s3">
+      <span class="col s12" id="ra_nr" style="margin-left: 18px;">
 
       </span>
       <br>
       <br>
-      <button style="margin-left: 30px;"  id="ra_action">
-        Check if resources can be allocated
-      </button>
+</div>
+
+        <a style="background-color:black;font-size: 15px;" id="ra_action" class="col s1 waves-effect waves-light btn-large">Find Sequence </a>
+      
       <br>
       <br>
       <span class="col s3" id="ra_res">
         
       </span>
     </div>
-
+</div>
 </div>
 </body>
 </html>

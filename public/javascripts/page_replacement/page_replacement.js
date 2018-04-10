@@ -1,5 +1,8 @@
 $(document).ready(function() {
 	var topic = "Page Replacement";
+		particlesJS.load('particles-js', '../particles.json', function() {
+  		console.log('callback - particles.js config loaded');
+	});
     $('#side_top_navbar').load('../base.html', function () {
     	$('.left').html(topic);
     })
@@ -11,7 +14,7 @@ $(document).ready(function() {
     	var i=0;
 	    for(i=0;i<n;i+=1)
 	    {
-    		$('#input_boxes').append("<input style='width:5%;' class='ref col-sm-1'>");
+    		$('#input_boxes').append("<input style='width:5%;margin-right:10px' class='ref col s1'>");
 	    }
     });
 
@@ -28,7 +31,7 @@ $(document).ready(function() {
 		 $.ajax({
 	            type: 'POST',
 	            data: {inp},
-	            url: 'http://localhost:3000/page_replacement',                     
+	            url: 'http://uos-simulator.herokuapp.com/page_replacement',                     
 	            success: function(data) {
 	            	document.getElementById("lru_table").innerHTML="<tr></tr>";
 	            	document.getElementById("fifo_table").innerHTML="<tr></tr>";
@@ -125,27 +128,17 @@ $(document).ready(function() {
 	            	optimal_hits = optimal.split("hits:")[1];
 	            	optimal_hits=optimal_hits.match(/\d+/)[0]           	
 	            	optimal_hits=parseInt(optimal_hits);
-	            	alert('OP')
-	            	alert(optimal_hits)
 	            	lru_hits = lru.split("hits:")[1];
 	            	lru_hits=lru_hits.split("\n")[0];
 	            	lru_hits=parseInt(lru_hits);
-	            	alert('LRU')
-	            	alert(lru_hits)
 
 	            	fifo_hits = fifo.split("hits:")[1];
 	            	fifo_hits=fifo_hits.split("\n")[0];
 	            	fifo_hits=parseInt(fifo_hits);
 
-	            	alert('FIFO')
-	            	alert(fifo_hits)
-
 	            	sc_hits = second_chance.split("hits:")[1];
 	            	sc_hits=sc_hits.split("\n")[0];
 	            	sc_hits=parseInt(sc_hits);
-
-	            	alert('SC')
-	            	alert(sc_hits)
 	            	$('#lru_hit').append((lru_hits/nr)*100);
 	            	$('#optimal_hit').append((optimal_hits/nr)*100);
 	            	$('#fifo_hit').append((fifo_hits/nr)*100);
