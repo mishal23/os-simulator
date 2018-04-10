@@ -1,0 +1,33 @@
+body {
+    padding: 1%;
+    font-family: 'Roboto Mono' !important;
+    font-size: 1em;
+    background-color: #000;
+}
+#shell input {
+    display: inline;
+    width: 90%;
+    border-bottom: 0px !important;
+    box-shadow: none !important;
+    color: white;
+    height: 1em;
+    margin: 0 !important;
+}
+#out {
+    width: 70%;
+    
+}
+.wd {
+    display: inline-block;
+    color: #2196f3;
+}
+.dir, .file {
+    display: inline-block;
+    width: 20%;
+}
+.dir {
+    color: #2196f3;
+}
+.file {
+    color: #8bc34a;
+}
