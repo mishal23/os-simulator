@@ -4,7 +4,18 @@ body {
   font-size: 1.5em;
   font-weight: 100;
 }
-
+.btn-large{
+  background-color: #000;
+}
+.btn-large:hover{
+  background-color: #000;
+}
+.btn-large:visited{
+  background-color: #000;
+}
+.btn-large:focus{
+  background-color: #000;
+}
 
 .macbook {
   width: 300px;

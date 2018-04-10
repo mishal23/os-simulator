@@ -1,4 +1,3 @@
-
 #particles-js, #particles-js > canvas {
 	position: absolute;
 	width: 100%;
@@ -57,6 +56,7 @@
 
 
 .topic {
+
 	font-size: 7vh;
 }
 .aboutme {
@@ -96,9 +96,4 @@
 
 .plot{
 	text-align: center;
-}
-
-
-.circle {
-  border-radius: 50%;
 }

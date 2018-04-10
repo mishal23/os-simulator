@@ -1,5 +1,8 @@
 $(document).ready(function() {
 
+    particlesJS.load('particles-js', '../particles.json', function() {
+        console.log('callback - particles.js config loaded');
+    });
 
 	var topic = "Bankers";
     $('#side_top_navbar').load('../base.html' , function(){
@@ -11,14 +14,15 @@ $(document).ready(function() {
         document.getElementById("c2").innerHTML=""
     	var i=0;
     	var j=0;
-    	$('#c2').append('<span class="text-center">Enter current allocation matrix</span><br><br>');
+    	$('#c2').append('<span style="font-size:18px;" class="text-center">Enter current allocation matrix</span><br><br>');
     	for(i=0;i<np;i+=1)
     	{
-    		$('#c2').append('<div id="ap'+i+'">P'+i+'</div><br>');
+    		$('#c2').append('<div>P'+i+'<div id="ap'+i+'"</div></div><br><br>');
     		for(j=0;j<nr;j+=1)
     		{
-    			$('#ap'+i).append('<input required style="margin-right:5px;" placeholder="R'+j+'"class="col-md-3" id="ap'+i+'ar'+j+'"></input>');
+    			$('#ap'+i).append('<input required style="margin-right:5px;" placeholder="R'+j+'"class="col s2" id="ap'+i+'ar'+j+'"></input>');
     		}
+
             if(nr>3)
     		  $('#c2').append('<br><br>');
             else
@@ -30,7 +34,7 @@ $(document).ready(function() {
         var i=0;
         for(i=0;i<nr;i+=1)
         {
-            $('#ra_nr').append('<input required style="margin-right:5px;" placeholder="R'+i+'"class="col-md-3" id="ralloc'+i+'"></input>');
+            $('#ra_nr').append('<input required style="margin-right:5px;" placeholder="R'+i+'"class="col s2" id="ralloc'+i+'"></input>');
         }
         $('#ra_text').append('Enter resource request')
   	});
@@ -40,13 +44,13 @@ $(document).ready(function() {
     	var i=0;
     	var j=0;
         document.getElementById("c3").innerHTML=""
-    	$('#c3').append('<span class="text-center">Enter maximum allocation matrix</span><br><br>');
+    	$('#c3').append('<span style="font-size:18px;" class="text-center">Enter maximum allocation matrix</span><br><br>');
     	for(i=0;i<np;i+=1)
     	{
-    		$('#c3').append('<div id="mp'+i+'">P'+i+'</div><br>');
+    		$('#c3').append('<div>P'+i+'<div id="mp'+i+'"</div></div><br><br>');
     		for(j=0;j<nr;j+=1)
     		{
-    			$('#mp'+i).append('<input required style="margin-right:5px;" placeholder="R'+j+'"class="col-md-3" id="mp'+i+'mr'+j+'"></input>');
+    			$('#mp'+i).append('<input required style="margin-right:5px;" placeholder="R'+j+'"class="col s2" id="mp'+i+'mr'+j+'"></input>');
     		}
             if(nr>3)
               $('#c3').append('<br><br>');
@@ -60,10 +64,10 @@ $(document).ready(function() {
     	var nr=$('#nr').val();
     	var i=0;
         document.getElementById("c4").innerHTML=""
-    	$('#c4').append('<span class="text-center">Enter available resources of each type <span><br><br>');
+    	$('#c4').append('<span style="font-size:18px;" class="text-center">Enter available resources of each type <span><br><br>');
     	for(i=0;i<nr;i+=1)
     	{
-    		$('#c4').append('<input required style="margin-right:5px;" placeholder="R'+i+'"class="col-md-3" id="avail_r'+i+'"></input>');
+    		$('#c4').append('<input required style="margin-right:5px;" placeholder="R'+i+'"class="col s3" id="avail_r'+i+'"></input>');
     	}
     	$('#4').fadeIn();
     	$('#ss_action').fadeIn();
@@ -108,7 +112,7 @@ $(document).ready(function() {
         $.ajax({
             type: 'POST',
             data: {arguments},
-            url: 'http://localhost:3000/bankers/safe_sequence',                     
+            url: 'http://uos-simulator.herokuapp.com/bankers/safe_sequence',                     
             success: function(data) {
                 setTimeout(function() {
                   $('.spec').addClass('fa-spin');
