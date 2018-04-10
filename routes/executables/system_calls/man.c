@@ -33,7 +33,15 @@ int main(int argc, char const *argv[])
 			if(strcmp(argv[2],"read")==0)
 			printf("Usage: read no_of_bytes pathname\nUsed to read from a file.\n");
 			if(strcmp(argv[2],"write")==0)
-			printf("Usage: write pathname text_to_write\nUsed to write text to a file\n");			
+			printf("Usage: write pathname text_to_write\nUsed to write text to a file\n");
+			if(strcmp(argv[2],"getid")==0)
+			printf("Usage: getid\nUsed to obtain personal, group, process and parent process id.\n");
+			if(strcmp(argv[2],"kill")==0)
+			printf("Usage: kill pid\nUsed to send signal to a process.\n");
+			if(strcmp(argv[2],"fork")==0)
+			printf("Usage: fork no_of_calls\nUsed to create a child process.\n");
+			
+						
 			
 		}
 
