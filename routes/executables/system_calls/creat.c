@@ -12,7 +12,6 @@
 //Format to execute is creat pathname
 int main(int argc, char const *argv[])
 {
-	if(strcmp(argv[1],"creat")==0);
 	int filedescriptor1 = creat(argv[2],S_IRWXU);
 	if(filedescriptor1<0)
 		perror("Error Creating the file");

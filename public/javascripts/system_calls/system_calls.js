@@ -50,8 +50,8 @@ function shellexec(){
         data: {input : input},
         success: function(result){
             console.log(result);
-            out.innerHTML += '<div class="wd">' + wdt.innerHTML + "</div>" + " $ "+temp+"<br>";
-			out.innerHTML += result;
+            out.innerHTML += '<div class="wd" style="color:red">' + wdt.innerHTML + "</div>" + " $ "+input+"<br>";
+			out.innerHTML += result  + "<br>";
             
         },
         async: false
@@ -65,8 +65,8 @@ function shellexec(){
         data: {input : input},
         success: function(result){
             console.log(result);
-            out.innerHTML += '<div class="wd">' + wdt.innerHTML + "</div>" + " $ "+temp+"<br>";
-			out.innerHTML += result;
+            out.innerHTML += '<div class="wd" style="color:red">' + wdt.innerHTML + "</div>" + " $ "+input+"<br>";
+			out.innerHTML += result + "<br>";
             
         },
         async: false
@@ -80,8 +80,8 @@ function shellexec(){
         data: {input : input},
         success: function(result){
             console.log(result);
-            out.innerHTML += '<div class="wd">' + wdt.innerHTML + "</div>" + " $ "+temp+"<br>";
-			out.innerHTML += result;
+            out.innerHTML += '<div class="wd" style="color:red">' + wdt.innerHTML + "</div>" + " $ "+input+"<br>";
+			out.innerHTML += result + "<br>";
             
         },
         async: false
@@ -95,8 +95,8 @@ function shellexec(){
         data: {input : input},
         success: function(result){
             console.log(result);
-            out.innerHTML += '<div class="wd">' + wdt.innerHTML + "</div>" + " $ "+temp+"<br>";
-			out.innerHTML += result;
+            out.innerHTML += '<div class="wd" style="color:red">' + wdt.innerHTML + "</div>" + " $ "+input+"<br>";
+			out.innerHTML += result + "<br>";
             
         },
         async: false
@@ -110,8 +110,8 @@ function shellexec(){
         data: {input : input},
         success: function(result){
             console.log(result);
-            out.innerHTML += '<div class="wd">' + wdt.innerHTML + "</div>" + " $ "+temp+"<br>";
-			out.innerHTML += result;
+            out.innerHTML += '<div class="wd" style="color:red">' + wdt.innerHTML + "</div>" + " $ "+input+"<br>";
+			out.innerHTML += result + "<br>";
             
         },
         async: false
@@ -125,8 +125,8 @@ function shellexec(){
         data: {input : input},
         success: function(result){
             console.log(result);
-            out.innerHTML += '<div class="wd">' + wdt.innerHTML + "</div>" + " $ "+temp+"<br>";
-			out.innerHTML += result;
+            out.innerHTML += '<div class="wd" style="color:red">' + wdt.innerHTML + "</div>" + " $ "+input+"<br>";
+			out.innerHTML += result + "<br>";
             
         },
         async: false
@@ -140,8 +140,8 @@ function shellexec(){
         data: {input : input},
         success: function(result){
             console.log(result);
-            out.innerHTML += '<div class="wd">' + wdt.innerHTML + "</div>" + " $ "+temp+"<br>";
-			out.innerHTML += result;
+            out.innerHTML += '<div class="wd" style="color:red">' + wdt.innerHTML + "</div>" + " $ "+input+"<br>";
+			out.innerHTML += result + "<br>";
             
         },
         async: false
@@ -155,8 +155,8 @@ function shellexec(){
         data: {input : input},
         success: function(result){
             console.log(result);
-            out.innerHTML += '<div class="wd">' + wdt.innerHTML + "</div>" + " $ "+temp+"<br>";
-			out.innerHTML += result;
+            out.innerHTML += '<div class="wd" style="color:red">' + wdt.innerHTML + "</div>" + " $ "+input+"<br>";
+			out.innerHTML += result + "<br>";
             
         },
         async: false
@@ -170,8 +170,8 @@ function shellexec(){
         data: {input : input},
         success: function(result){
             console.log(result);
-            out.innerHTML += '<div class="wd">' + wdt.innerHTML + "</div>" + " $ "+temp+"<br>";
-			out.innerHTML += result;
+            out.innerHTML += '<div class="wd" style="color:red">' + wdt.innerHTML + "</div>" + " $ "+input+"<br>";
+			out.innerHTML += result + "<br>";
             
         },
         async: false
@@ -185,8 +185,8 @@ function shellexec(){
         data: {input : input},
         success: function(result){
             console.log(result);
-            out.innerHTML += '<div class="wd">' + wdt.innerHTML + "</div>" + " $ "+temp+"<br>";
-			out.innerHTML += result;
+            out.innerHTML += '<div class="wd" style="color:red">' + wdt.innerHTML + "</div>" + " $ "+input+"<br>";
+			out.innerHTML += result + "<br>";
             
         },
         async: false
@@ -200,8 +200,8 @@ function shellexec(){
         data: {input : input},
         success: function(result){
             console.log(result);
-            out.innerHTML += '<div class="wd">' + wdt.innerHTML + "</div>" + " $ "+temp+"<br>";
-			out.innerHTML += result;
+            out.innerHTML += '<div class="wd" style="color:red">' + wdt.innerHTML + "</div>" + " $ "+input+"<br>";
+			out.innerHTML += result + "<br>";
             
         },
         async: false
@@ -215,8 +215,8 @@ function shellexec(){
         data: {input : input},
         success: function(result){
             console.log(result);
-            out.innerHTML += '<div class="wd">' + wdt.innerHTML + "</div>" + " $ "+temp+"<br>";
-			out.innerHTML += result;
+            out.innerHTML += '<div class="wd" style="color:red">' + wdt.innerHTML + "</div>" + " $ "+input+"<br>";
+			out.innerHTML += result + "<br>";
             
         },
         async: false
@@ -230,8 +230,8 @@ function shellexec(){
         data: {input : input},
         success: function(result){
             console.log(result);
-            out.innerHTML += '<div class="wd">' + wdt.innerHTML + "</div>" + " $ "+temp+"<br>";
-			out.innerHTML += result;
+            out.innerHTML += '<div class="wd" style="color:red">' + wdt.innerHTML + "</div>" + " $ "+input+"<br>";
+			out.innerHTML += result + "<br>";
             
         },
         async: false
@@ -245,8 +245,8 @@ function shellexec(){
         data: {input : input},
         success: function(result){
             console.log(result);
-            out.innerHTML += '<div class="wd">' + wdt.innerHTML + "</div>" + " $ "+temp+"<br>";
-			out.innerHTML += result;
+            out.innerHTML += '<div class="wd" style="color:red">' + wdt.innerHTML + "</div>" + " $ "+input+"<br>";
+			out.innerHTML += result + "<br>";
             
         },
         async: false
@@ -256,12 +256,12 @@ function shellexec(){
 	{
 		$.ajax({
         type: "POST",
-        url: "http://localhost:3000/system_calls/write",
+        url: "/system_calls/write",
         data: {input : input},
         success: function(result){
             console.log(result);
-            out.innerHTML += '<div class="wd">' + wdt.innerHTML + "</div>" + " $ "+temp+"<br>";
-			out.innerHTML += result;
+            out.innerHTML += '<div class="wd" style="color:red">' + wdt.innerHTML + "</div>" + " $ "+input+"<br>";
+			out.innerHTML += result + "<br>" + "<br>";
             
         },
         async: false
@@ -277,7 +277,7 @@ function shellexec(){
 		   	[pwd, output] = getPWD(output);
 		   	output = output.split('\n');
 		   	output = getOutputFormated(output);
-			out.innerHTML += '<div class="wd">' + wdt.innerHTML + "</div>" + " $ "+command.value+"<br>";
+			out.innerHTML += '<div class="wd" style="color:red">' + wdt.innerHTML + "</div>" + " $ "+command.value+"<br>";
 			  	out.innerHTML += output;
 			 
 			   	if(output.length>0) out.innerHTML += '<br>';

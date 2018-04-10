@@ -9,9 +9,9 @@
 // Usage ./open path
 int main(int argc, char const *argv[])
 {
-	if(strcmp(argv[0],"./open")==0)
+	if(strcmp(argv[1],"./open")==0)
 		{
-			int filedescriptor = open(argv[1],O_CREAT | O_RDWR,S_IRWXU);
+			int filedescriptor = open(argv[2],O_CREAT | O_RDWR,S_IRWXU);
 			if(filedescriptor<0)
 				perror("Error");
 			else

@@ -13,9 +13,9 @@ int main(int argc, char const *argv[])
 {
 	int i;
 	char string[35]="";
-	if(strcmp(argv[0],"./write")==0)
-	{   int filedescriptor = open(argv[1],O_WRONLY | O_APPEND,S_IRWXU);
-		for(i=2;i<argc;i++)
+	if(strcmp(argv[1],"./write")==0)
+	{   int filedescriptor = open(argv[2],O_WRONLY | O_APPEND,S_IRWXU);
+		for(i=3;i<argc;i++)
 		{ strcat(string,argv[i]);
 		  strcat(string," ");
 		}
@@ -24,6 +24,6 @@ int main(int argc, char const *argv[])
 		if(size_wrote<0)
 			perror("error");
 		else
-			printf("\nContent :%s \nWritten to file %s\n",string,argv[1]);
+			printf("\nContent :%s \nWritten to file %s\n",string,argv[2]);
 	}
 }

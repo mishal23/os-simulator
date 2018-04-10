@@ -10,12 +10,12 @@
 int main(int argc, char const *argv[])
 {
 	char buf[100];
-	if(strcmp(argv[0],"./read")==0)
+	if(strcmp(argv[1],"./read")==0)
 		{
-			int filedescriptor = open(argv[2],O_RDONLY,S_IRWXU);
+			int filedescriptor = open(argv[3],O_RDONLY,S_IRWXU);
 			if(filedescriptor<0)
 				perror("Error");
-			int size_read = read(filedescriptor, buf, atoi(argv[1]));
+			int size_read = read(filedescriptor, buf, atoi(argv[2]));
 			buf[size_read]='\0';
 			if(size_read<0)
 				perror("Error");
