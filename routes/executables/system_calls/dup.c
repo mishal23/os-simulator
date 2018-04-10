@@ -12,9 +12,9 @@
 int main(int argc, char const *argv[])
 {
 
-	if(strcmp(argv[0],"./dup")==0)
+	if(strcmp(argv[1],"./dup")==0)
 		{
-			int filedescriptor = open(argv[1],O_RDWR,S_IRWXU);
+			int filedescriptor = open(argv[2],O_RDWR,S_IRWXU);
 			int newfd = dup(filedescriptor);
 			if(filedescriptor<0 || newfd < 0)
 				perror("Error");

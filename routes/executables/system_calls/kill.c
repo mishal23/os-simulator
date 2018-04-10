@@ -2,17 +2,13 @@
 #include <signal.h>
 #include <unistd.h>
 #include <stdlib.h>
-int main()
+
+// Usage ./kill pid
+int main(int argc, char const *argv[])
 {
     int i;
-    pid_t child = fork();
-    printf("child=%d\n",child );
-
-    int flag=0;
-    for(i=0;i<1000;i++)
+    if(strcmp(argv[1],"./kill")==0)
     {
-        if(i==100)
-            kill(6758,SIGKILL);   // close some tab
-        printf("%d\n",i);
+            kill(atoi(argv[2]),SIGKILL);   // close some tab        
     }
 }

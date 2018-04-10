@@ -10,9 +10,9 @@
 // Usage ./link oldpath newpath
 int main(int argc, char const *argv[])
 {
-	if(strcmp(argv[0],"./link")==0)
+	if(strcmp(argv[1],"./link")==0)
 		{
-			int linked = link(argv[1],argv[2]);
+			int linked = link(argv[2],argv[3]);
 	 		if(linked!=0)
 	 			perror("Error");
 			else
