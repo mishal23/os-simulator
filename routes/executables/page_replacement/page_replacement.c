@@ -10,7 +10,6 @@ int faults ,hits;
 void print(int frame_size,int frame[])
 {
 	int i;
-	//printf("Printing the Frames: ");
 	for(i=0;i<frame_size;i++)
 	{
 		if(frame[i]==-1)
@@ -176,6 +175,56 @@ void fifo(int frame_size,int frame[], int reference)
 	print(frame_size, frame);
 }
 
+void second_chance(int frame_size,int frame[], int reference,int reference_bits[])
+{
+	int i;
+	bool alloted = false;
+
+	for(i=0;i<frame_size;i++)
+	{
+		if(frame[i]==reference)
+		{
+			alloted = true;
+			printf("*Hit for %d | ", reference);
+			reference_bits[i]=1;
+			hits++;
+			break;
+		}
+		else if(frame[i]==-1)
+		{
+			alloted = true;
+			frame[i] = reference;
+			printf("*Fault for %d | ", reference);
+			reference_bits[i]=0;
+			faults++;
+			break;
+		}
+	}
+	int j;
+	if(alloted == false)
+	{
+		faults++;
+		printf("*Fault for %d | ", reference);
+		if(reference_bits[pointer]==0)
+		{
+			frame[pointer]=reference;
+			pointer = (pointer+1)%frame_size;
+		}
+		else
+		{
+			while(reference_bits[pointer]==1)
+			{
+				reference_bits[pointer]=0;
+				pointer = (pointer+1)%frame_size;
+			}
+			frame[pointer]=reference;
+		}
+	}
+	print(frame_size, frame);
+}
+
+
+
 int main(int argc, char **argv)
 {
 	int frame_size,i,number_of_references;
@@ -194,7 +243,6 @@ int main(int argc, char **argv)
 	{
 		sscanf(argv[3+i], "%d", &reference[i]);
 	}
-
 	printf("\n\nLRU\n\n");
 	for(i=0;i<number_of_references;i++)
 	{
@@ -223,11 +271,23 @@ int main(int argc, char **argv)
 	{
 		frame[i] = -1;
 	}
-
+	int reference_bits[frame_size];
+	printf("\n\nSECOND CHANCE\n\n");
+	for(i=0;i<number_of_references;i++)
+	{
+		second_chance(frame_size,frame,reference[i],reference_bits);
+	}
+	printf("\n(Number of faults:%d(\n)Number of hits:%d\n)",faults,hits );
+	hits=0;
+	faults=0;
+	for(i=0;i<frame_size;i++)
+	{
+		frame[i] = -1;
+	}
 	printf("\n\nOPTIMAL\n\n");
 	for(i=0;i<number_of_references;i++)
 	{
 		optimal(frame_size,frame,reference[i],i,number_of_references,reference);
 	}
-	printf("\nNumber of faults: %d \nNumber of hits: %d\n",faults,hits );
+	printf("\n(Number of faults:%d(\n)Number of hits:%d\n)",faults,hits );
 }
