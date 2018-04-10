@@ -7,15 +7,18 @@
 #include <stdlib.h>
 #include <string.h>
 
-//Usage ./write pathname
+//Usage ./write pathname text
 
 int main(int argc, char const *argv[])
 {
-	char string[35];
+	int i;
+	char string[35]="";
 	if(strcmp(argv[0],"./write")==0)
 	{   int filedescriptor = open(argv[1],O_WRONLY | O_APPEND,S_IRWXU);
-		printf("Enter the Data to write to the file: ");
-		scanf("%[^\n]",string);
+		for(i=2;i<argc;i++)
+		{ strcat(string,argv[i]);
+		  strcat(string," ");
+		}
 		int size_wrote = write(filedescriptor,string,strlen(string));
 		write(filedescriptor,'\n',1);
 		if(size_wrote<0)
