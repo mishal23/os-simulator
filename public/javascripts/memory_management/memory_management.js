@@ -141,6 +141,7 @@ function submit3(){
             data: {input : input},
             success: function(result){
                 console.log(result);
+                result = result.split(' ');
 
                 var len = result.length;
                 for(var i=0;i<len-2;++i){
@@ -169,6 +170,7 @@ function submit3(){
             data: {input : input},
             success: function(result){
                 console.log(result);
+                result = result.split(' ');
 
                 var len = result.length;
                 for(var i=0;i<len-2;++i){
