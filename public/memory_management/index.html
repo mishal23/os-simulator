@@ -21,65 +21,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <style>
+    .box{
+        margin-left: 0.5em;
+        text-align: center;
+    }
     .red-box{
     	width:0px;
     	height:100px;
         background:#f00;
         display: inline-block;
+        vertical-align: middle;
     }
     .green-box{
     	width:0px;
     	height:100px;
         background:#32CD32;
         display: inline-block;
+        vertical-align: middle;
     }
     .blue-box{
     	width:0px;
     	height:100px;
         background:#00BFFF;
         display: inline-block;
+        vertical-align: middle;
     }
     .violet-box{
     	width:0px;
     	height:100px;
         background:#9400D3;
         display: inline-block;
+        vertical-align: middle;
     }
     .orange-box{
     	width:0px;
     	height:100px;
         background:#CD853F;
         display: inline-block;
+        vertical-align: middle;
     }
     .yellow-box{
     	width:0px;
     	height:100px;
         background:#FFD700;
         display: inline-block;
+        vertical-align: middle;
     }
     .grey-box{
     	width:0px;
     	height:100px;
         background:#A9A9A9;
         display: inline-block;
+        vertical-align: middle;
     }
     .brown-box{
     	width:0px;
     	height:100px;
         background:#996633;
         display: inline-block;
+        vertical-align: middle;
     }
     .pink-box{
     	width:0px;
     	height:100px;
         background:#ff3399;
         display: inline-block;
+        vertical-align: middle;
     }
     .black-box{
     	width:0px;
     	height:100px;
         background:#000000;
         display: inline-block;
+        vertical-align: middle;
     }
     </style>
 
@@ -151,6 +165,7 @@
     <!-- To create the table -->
     </br></br>
     <div class = "container well well-lg">
+        <h4 class="text-center"><b>Process Allocation Table</b></h4></br></br>
         <table class="table table-hover text-center">
             <thead>
                 <tr>
@@ -169,7 +184,9 @@
 
     <!-- To create visualise memory in thr form a box -->
     </br></br>
-    <div class = "row col-sm-12 container well well-lg" id="visual"></div>
+    <div class = "row col-sm-12 container well well-lg" id="visual">
+        <h4 class="text-center"><b>Process Allocation in Memory</b></h4></br></br>
+    </div>
 
     <script type="text/javascript" src="/javascripts/memory_management/memory_management.js"></script>
 </body>

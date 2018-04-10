@@ -225,45 +225,71 @@ function submit3(){
 
     var pos;
     var diff;
-    var scaledown = (500/memSize);
+    var scaledown;
+
+    if(memSize>400)
+        scaledown = (500/memSize);
+    else if(memSize < 100)
+        scaledown = 2;
+    else
+        scaledown = 1.2;
+
     //For the box part
     for(var i=0;i<num_part;++i){
 
         pos = find_partition(i);
-        diff = partSizes[i] - procSizes[pos];
-        var box = S('visual');
-        //box.innerHTML = "";
-        var tempbox1;
-        var tempbox2 = '<div class="black-box" id="internalfragbox"></div>';
-        var pos2 = pos +1;
 
-        switch(i){
+        if(pos != -1){
 
-            case 0: tempbox1 = '<div class ="red-box" id="b'+i+'">Process'+pos2+'</div>';
-                    break;
-            case 1: tempbox1 = '<div class ="green-box" id="b'+i+'">Process'+pos2+'</div>';
-                    break;
-            case 2: tempbox1 = '<div class ="yellow-box" id="b'+i+'">Process'+pos2+'</div>';
-                    break;
-            case 3: tempbox1 = '<div class ="blue-box" id="b'+i+'">Process'+pos2+'</div>';
-                    break;
-            case 4: tempbox1 = '<div class ="violet-box" id="b'+i+'">Process'+pos2+'</div>';
-                    break;
-            case 5: tempbox1 = '<div class ="orange-box" id="b'+i+'">Process'+pos2+'</div>';
-                    break;
-            case 6: tempbox1 = '<div class ="grey-box" id="b'+i+'">Process'+pos2+'</div>';
-                    break;
-            case 7: tempbox1 = '<div class ="brown-box" id="b'+i+'">Process'+pos2+'</div>';
-                    break;
-            case 8: tempbox1 = '<div class ="pink-box" id="b'+i+'">Process'+pos2+'</div>';
-                    break;
+            diff = partSizes[i] - procSizes[pos];
+            var box = S('visual');
+            //box.innerHTML = "";
+            var tempbox1;
+            var tempbox2 = '<div class="box black-box" id="internalfragbox' + i + '"></div>';
+            var pos2 = pos +1;
+
+            switch(i){
+
+                case 0: tempbox1 = '<div class ="box red-box" id="b'+i+'">P'+pos2+'</div>';
+                        break;
+                case 1: tempbox1 = '<div class ="box green-box" id="b'+i+'">P'+pos2+'</div>';
+                        break;
+                case 2: tempbox1 = '<div class ="box yellow-box" id="b'+i+'">P'+pos2+'</div>';
+                        break;
+                case 3: tempbox1 = '<div class ="box blue-box" id="b'+i+'">P'+pos2+'</div>';
+                        break;
+                case 4: tempbox1 = '<div class ="box violet-box" id="b'+i+'">P'+pos2+'</div>';
+                        break;
+                case 5: tempbox1 = '<div class ="box orange-box" id="b'+i+'">P'+pos2+'</div>';
+                        break;
+                case 6: tempbox1 = '<div class ="box grey-box" id="b'+i+'">P'+pos2+'</div>';
+                        break;
+                case 7: tempbox1 = '<div class ="box brown-box" id="b'+i+'">P'+pos2+'</div>';
+                        break;
+                case 8: tempbox1 = '<div class ="box pink-box" id="b'+i+'">P'+pos2+'</div>';
+                        break;
+            }
+
+            var t1;
+            var t2;
+            box.innerHTML += tempbox1;
+            box.innerHTML += tempbox2;
+            t1 = S('b' + i);
+            $(t1).css("width", procSizes[pos]*scaledown + "px");
+            t2 = S('internalfragbox' + i);
+            $(t2).css("width", diff*scaledown + "px");
         }
 
-        box.innerHTML += tempbox1;
-        console.log(procSizes[pos]*scaledown);
-        $('#b' + i).css("width", procSizes[pos]*scaledown);
-        box.innerHTML += tempbox2;
-        $('#internalfragbox').css("width", diff*scaledown);
+        else{
+
+            diff = partSizes[i];
+            var box = S('visual');
+            var tempbox2 = '<div class="box black-box" id="internalfragbox' + i + '"></div>';
+            var t2;
+            box.innerHTML += tempbox2;
+            t2 = S('internalfragbox' + i);
+            $(t2).css("width", diff*scaledown + "px");
+        }
     }
 
     //add totalinternal
@@ -276,6 +302,7 @@ function find_partition(i){
         if(parId[j] == (i+1))
             return j;
     }
+    return -1;
 }
 
 function create_input(){
