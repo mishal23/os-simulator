@@ -6,7 +6,7 @@ var router = express.Router();
 router.post('/access', function(req,res){
 	var input="";
 	console.log(req.body.input);
-	exec(__dirname + '/executables/system_calls/access' + req.body.input , function callback(error,stdout,stderr) {
+	exec(__dirname + '/executables/system_calls/access ' + req.body.input , function callback(error,stdout,stderr) {
 		console.log(stdout);
 		console.log(error);
 		res.send(stdout);
@@ -17,7 +17,7 @@ router.post('/access', function(req,res){
 router.post('/alarm', function(req,res){
 	var input="";
 	console.log(req.body.input);
-	exec(__dirname + '/executables/system_calls/alarm' + req.body.input , function callback(error,stdout,stderr) {
+	exec(__dirname + '/executables/system_calls/alarm ' + req.body.input , function callback(error,stdout,stderr) {
 		console.log(stdout);
 		console.log(error);
 		res.send(stdout);
