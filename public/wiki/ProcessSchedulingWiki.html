@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <title>Process Scheduling Wiki</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <style>
+        body {font-family: "Times New Roman", Georgia, Serif;}
+        h1,h2,h3,h4,h5,h6 {
+            font-family: "Playfair Display";
+            letter-spacing: 5px;
+        }
+    </style>
+
+<body>
+
+<!-- Navbar (sit on top) -->
+    <div class="w3-top">
+        <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+            <a href="#home" class="w3-bar-item w3-button">Process Scheduling Wiki Page</a>
+            <!-- Right-sided navbar links. Hide them on small screens -->
+            <div class="w3-right w3-hide-small">
+                <a href="#about" class="w3-bar-item w3-button">About</a>
+                <a href="#menu" class="w3-bar-item w3-button">Types</a>
+            </div>
+        </div>
+    </div>
+
+<!-- Page content -->
+    <div class="w3-content" style="max-width:1100px">
+
+  <!-- About Section -->
+    <div class="w3-row w3-padding-64" id="about">
+        <div class="w3-col m6 w3-padding-large w3-hide-small">
+            <img src="/images/PC1.png" class="w3-round w3-image w3-opacity-min" alt="PC" width="600" height="750" style = "padding-top: 100px">
+            <img src="/images/PC2.png" class="w3-round w3-image w3-opacity-min" alt="PC" width="600" height="750" style = "padding-top: 100px">
+        </div>
+
+        <div class="w3-col m6 w3-padding-large">
+            <h1 class="w3-center">About Process Scheduling</h1><br>
+            <p class="w3-large">The <b>process scheduling</b> is the activity of the process manager that handles the removal of the running process from the CPU and the selection of another process on the basis of a particular strategy.<br>
+                                Process scheduling is an essential part of a Multiprogramming operating systems. Such operating systems allow more than one process to be loaded into the executable memory at a time and the loaded process shares the CPU using time multiplexing.</p>
+            <p class="w3-large w3-text-grey w3-hide-medium">A Process Scheduler schedules different processes to be assigned to the CPU based on particular scheduling algorithms. There are 5 popular process scheduling algorithms which we are going to discuss in this chapter:<br>
+                                                            1.First-Come, First-Served (FCFS) Scheduling<br>
+                                                            2.Shortest-Job-Next (SJN) Scheduling<br>
+                                                            3.Priority Scheduling<br>
+                                                            4.Shortest Remaining Time<br>
+                                                            5.Round Robin(RR) Scheduling<br></p>
+            <p class="w3-large">These algorithms are either non-preemptive or preemptive. Non-preemptive algorithms are designed so that once a process enters the running state, it cannot be preempted until it completes its allotted time,
+                                whereas the preemptive scheduling is based on priority where a scheduler may preempt a low priority running process anytime when a high priority process enters into a ready state.</p>
+        </div>
+    </div>
+    <hr>
+
+  <!-- Menu Section -->
+    <div class="w3-row w3-padding-64" id="menu">
+        <div class="w3-col l6 w3-padding-large">
+            <h1 class="w3-center">Types</h1><br>
+            <h4>FCFS (First Come First Serve)</h4>
+            <p class="w3-text-grey">Jobs are executed on first come, first serve basis. It is a non-preemptive/preemptive scheduling algorithm. It is quite easy to understand and implement;
+                                    implementation is based on FIFO queue. However it is poor in terms of performance as average wait time is high.</p><br>
+
+            <h4>SJN (Shortest Job Next)</h4>
+            <p class="w3-text-grey">This is also known as shortest job first, or SJF. This is a non-preemptive/preemptive scheduling algorithm. It is the best approach to minimize waiting time.
+                                    It is quite easy to implement in batch systems where required CPU time is known in advance but it is impossible to implement in interactive systems where required CPU time is not known as the processor should know in advance how much time process will take.</p><br>
+
+            <h4>Priority Based Scheduling</h4>
+            <p class="w3-text-grey">Priority scheduling is a non-preemptive algorithm and one of the most common scheduling algorithms in batch systems. Each process is assigned a priority. Process with highest priority is to be executed first and so on.
+                                    Processes with same priority are executed on first come first served basis. Priority can be decided based on memory requirements, time requirements or any other resource requirement.<br>
+                                    In priority-based scheduling algorithms, a major problem is indefinite block, or starvation. A process that is ready to run but waiting for the CPU can be considered blocked. A priority scheduling algorithm can leave some low-priority processes waiting indefinitely.
+                                    A steady stream of higher-priority processes can prevent a low-priority process from ever getting the CPU.<br>
+                                    Aging is used to ensure that jobs with lower priority will eventually complete their execution. This technique can be used to reduce starvation of low priority tasks. There are many ways to implement aging, but all have the same principle that the priority of a process should increase as it waits in the ready queue.
+                                    The increase in priority may or may not be equal to the waiting time of the process.</p><br>
+
+            <h4>Shortest Remaining Time First</h4>
+            <p class="w3-text-grey">Shortest remaining time (SRT) is the preemptive version of the SJN algorithm. The processor is allocated to the job closest to completion but it can be preempted by a newer ready job with shorter time to completion.
+                                    Once again it is impossible to implement in interactive systems where required CPU time is not known. It is often used in batch environments where short jobs need to give preference.</p><br>
+
+            <h4>Round Robin Scheduling</h4>
+            <p class="w3-text-grey">Round Robin is the preemptive process scheduling algorithm. Each process is provided a fix time to execute, it is called a quantum. Once a process is executed for a given time period,
+                                    it is preempted and other process executes for a given time period. Context switching is used to save states of preempted processes.</p><br>
+
+        </div>
+        <div class="w3-col l6 w3-padding-large">
+            <img src="/images/PC3.jpg" class="w3-round w3-image w3-opacity-min" alt="PC" style="width:100%; padding-top: 150px">
+            <img src="/images/PC4.jpg" class="w3-round w3-image w3-opacity-min" alt="PC" style="width:100%; padding-top: 10px">
+            <img src="/images/PC5.png" class="w3-round w3-image w3-opacity-min" alt="PC" style="width:100%; padding-top: 10px">
+        </div>
+    </div>
+    <hr>
+
+<!-- End page content -->
+    </div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-32">
+  <p><a href= "#" title="W3.CSS" target="_blank" class="w3-hover-text-green">OS Simulation</a></p>
+</footer>
+
+</body>
+</html>

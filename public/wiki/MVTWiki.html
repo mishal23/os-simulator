@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <title>MVT Wiki</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <style>
+        body {font-family: "Times New Roman", Georgia, Serif;}
+        h1,h2,h3,h4,h5,h6 {
+            font-family: "Playfair Display";
+            letter-spacing: 5px;
+        }
+    </style>
+
+<body>
+
+<!-- Navbar (sit on top) -->
+    <div class="w3-top">
+        <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+            <a href="#home" class="w3-bar-item w3-button">MVT Wiki Page</a>
+            <!-- Right-sided navbar links. Hide them on small screens -->
+            <div class="w3-right w3-hide-small">
+                <a href="#about" class="w3-bar-item w3-button">About</a>
+                <a href="#menu" class="w3-bar-item w3-button">Types</a>
+            </div>
+        </div>
+    </div>
+
+<!-- Page content -->
+    <div class="w3-content" style="max-width:1100px">
+
+  <!-- About Section -->
+    <div class="w3-row w3-padding-64" id="about">
+        <div class="w3-col m6 w3-padding-large w3-hide-small">
+            <img src="/images/MVT1.jpg" class="w3-round w3-image w3-opacity-min" alt="MVT 1" width="600" height="750" style = "padding-top: 50px">
+        </div>
+
+        <div class="w3-col m6 w3-padding-large">
+            <h1 class="w3-center">About MVT</h1><br>
+            <p class="w3-large">MVT (Multiprogramming with a Variable number of Tasks) is the memory management technique in which each job gets just the amount of memory it needs.
+                        That is, the partitioning of memory is dynamic and changes as jobs enter and leave the system.</p>
+            <p class="w3-large w3-text-grey w3-hide-medium"><b><u>Advantages</u></b>: In this scheme there is no internal fragmentation. This method is more flexible as variable size process can be given memory. there is no size limitation.<br>
+                                                            <b><u>Disadvantages</u></b>: It also suffers from external fragmentation. In this scheme compile time address binding is not possible.</p>
+        </div>
+    </div>
+    <hr>
+
+  <!-- Menu Section -->
+    <div class="w3-row w3-padding-64" id="menu">
+        <div class="w3-col l6 w3-padding-large">
+            <h1 class="w3-center">Types of MVT</h1><br>
+            <h4>Best Fit</h4>
+            <p class="w3-text-grey">The best fit deals with allocating the smallest free partition which meets the requirement of the requesting process. This algorithm first searches the entire list of free partitions and considers the smallest hole that is adequate. It then tries to find a hole which is close to actual process size needed.</p><br>
+
+            <h4>First Fit</h4>
+            <p class="w3-text-grey">In the first fit approach is to allocate the first free partition or hole large enough which can accommodate the process. It finishes after finding the first suitable free partition.</p><br>
+
+            <h4>Worst Fit</h4>
+            <p class="w3-text-grey">In worst fit approach is to locate largest available free portion so that the portion left will be big enough to be useful. It is the reverse of best fit.</p><br>
+        </div>
+        <div class="w3-col l6 w3-padding-large">
+            <img src="/images/MVT2.jpg" class="w3-round w3-image w3-opacity-min" alt="MVT2" style="width:100%; padding-top: 10px">
+            <img src="/images/MVT3.jpg" class="w3-round w3-image w3-opacity-min" alt="MVT2" style="width:100%; padding-top: 10px">
+            <img src="/images/MVT4.jpg" class="w3-round w3-image w3-opacity-min" alt="MVT2" style="width:100%; padding-top: 10px">
+        </div>
+    </div>
+    <hr>
+
+<!-- End page content -->
+    </div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-32">
+  <p><a href= "#" title="W3.CSS" target="_blank" class="w3-hover-text-green">OS Simulation</a></p>
+</footer>
+
+</body>
+</html>

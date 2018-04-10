@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <title>Socket Programming Wiki</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <style>
+        body {font-family: "Times New Roman", Georgia, Serif;}
+        h1,h2,h3,h4,h5,h6 {
+            font-family: "Playfair Display";
+            letter-spacing: 5px;
+        }
+    </style>
+
+<body>
+
+<!-- Navbar (sit on top) -->
+    <div class="w3-top">
+        <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+            <a href="#home" class="w3-bar-item w3-button">Socket Programming Wiki Page</a>
+            <!-- Right-sided navbar links. Hide them on small screens -->
+            <div class="w3-right w3-hide-small">
+                <a href="#about" class="w3-bar-item w3-button">About</a>
+                <a href="#menu" class="w3-bar-item w3-button">How to Implement</a>
+            </div>
+        </div>
+    </div>
+
+<!-- Page content -->
+    <div class="w3-content" style="max-width:1100px">
+
+  <!-- About Section -->
+    <div class="w3-row w3-padding-64" id="about">
+        <div class="w3-col m6 w3-padding-large w3-hide-small">
+            <img src="/images/Soc1.png" class="w3-round w3-image w3-opacity-min" alt="Soc 1" width="600" height="750" style = "padding-top: 100px">
+            </br></br></br>
+            <img src="/images/Soc3.jpg" class="w3-round w3-image w3-opacity-min" alt="Soc" style="width:100%; padding-top: 10px">
+        </div>
+
+        <div class="w3-col m6 w3-padding-large">
+            <h1 class="w3-center">About Socket Programming</h1><br>
+            <p class="w3-large"><b>Socket programming</b> is a way of connecting two nodes on a network to communicate with each other. One socket(node) listens on a particular port at an IP, while other socket reaches out to the other to form a connection.
+                                Server forms the listener socket while client reaches out to the server.<br>
+                                <b>Sockets</b> allow communication between two different processes on the same or different machines. To be more precise, it's a way to talk to other computers using standard Unix file descriptors. In Unix, every I/O action is done by writing or reading a file descriptor.
+                                A file descriptor is just an integer associated with an open file and it can be a network connection, a text file, a terminal, or something else.</p>
+            <p class="w3-large w3-text-grey w3-hide-medium">There are four types of sockets available to the users. The first two are most commonly used and the last two are rarely used. They are:<br>
+                                                            1.Stream Sockets<br>
+                                                            2.Datagram Sockets<br>
+                                                            3.Raw Sockets<br>
+                                                            4.Sequence Packed Sockets<br>
+                                                            <h4><u>Client Process</u></h4><br>
+                                                            This is the process, which typically makes a request for information. After getting the response, this process may terminate or may do some other processing.<br>
+                                                            <h4><u>Server Process</u></h4><br>
+                                                            This is the process which takes a request from the clients. After getting a request from the client, this process will perform the required processing, gather the requested information, and send it to the requestor client. Once done, it becomes ready to serve another client. Server processes are always alert and ready to serve incoming requests.<br></p>
+        </div>
+    </div>
+    <hr>
+
+  <!-- Menu Section -->
+    <div class="w3-row w3-padding-64" id="menu">
+        <div class="w3-col l6 w3-padding-large">
+            <h1 class="w3-center">How to Implement</h1><br>
+            <h4>How to Make Client</h4>
+            <p class="w3-text-grey">The system calls for establishing a connection are somewhat different for the client and the server, but both involve the basic construct of a socket. Both the processes establish their own sockets.<br>
+                                    The steps involved in establishing a socket on the client side are as follows:<br>
+                                    1.Create a socket with the socket() system call.<br>
+                                    2.Connect the socket to the address of the server using the connect() system call.<br>
+                                    3.Send and receive data. There are a number of ways to do this, but the simplest way is to use the read() and write() system calls.</p><br>
+            <h4>How to make a Server</h4>
+            <p class="w3-text-grey">The steps involved in establishing a socket on the server side are as follows:<br>
+                                    1.Create a socket with the socket() system call.<br>
+                                    2.Bind the socket to an address using the bind() system call. For a server socket on the Internet, an address consists of a port number on the host machine.<br>
+                                    3.Listen for connections with the listen() system call.<br>
+                                    4.Accept a connection with the accept() system call. This call typically blocks the connection until a client connects with the server.<br>
+                                    5.Send and receive data using the read() and write() system calls.</p><br>
+        </div>
+        <div class="w3-col l6 w3-padding-large">
+            <img src="/images/Soc2.jpg" class="w3-round w3-image w3-opacity-min" alt="Soc" style="width:100%; padding-top: 10px">
+        </div>
+    </div>
+    <hr>
+
+<!-- End page content -->
+    </div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-32">
+  <p><a href= "#" title="W3.CSS" target="_blank" class="w3-hover-text-green">OS Simulation</a></p>
+</footer>
+
+</body>
+</html>

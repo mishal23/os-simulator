@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <title>System Calls Wiki</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <style>
+        body {font-family: "Times New Roman", Georgia, Serif;}
+        h1,h2,h3,h4,h5,h6 {
+            font-family: "Playfair Display";
+            letter-spacing: 5px;
+        }
+    </style>
+
+<body>
+
+<!-- Navbar (sit on top) -->
+    <div class="w3-top">
+        <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+            <a href="#home" class="w3-bar-item w3-button">System Calls Wiki Page</a>
+            <!-- Right-sided navbar links. Hide them on small screens -->
+            <div class="w3-right w3-hide-small">
+                <a href="#about" class="w3-bar-item w3-button">About</a>
+                <a href="#menu" class="w3-bar-item w3-button">Types</a>
+            </div>
+        </div>
+    </div>
+
+<!-- Page content -->
+    <div class="w3-content" style="max-width:1100px">
+
+  <!-- About Section -->
+    <div class="w3-row w3-padding-64" id="about">
+        <div class="w3-col m6 w3-padding-large w3-hide-small">
+            <img src="/images/Sys1.jpg" class="w3-round w3-image w3-opacity-min" alt="Sys 1" width="600" height="750" style = "padding-top: 50px">
+        </div>
+
+        <div class="w3-col m6 w3-padding-large">
+            <h1 class="w3-center">About System Calls</h1><br>
+            <p class="w3-large">In computing, a system call is the programmatic way in which a computer program requests a service from the kernel of the operating system it is executed on. This may include hardware-related services (for example, accessing a hard disk drive), creation and execution of new processes, and communication with integral kernel services such as process scheduling.
+                                System calls provide an essential interface between a process and the operating system.</p>
+                <p class="w3-large w3-text-grey w3-hide-medium">System calls can be classified into 5 categories:<br>
+                                                                1.Process Control<br>
+                                                                2.File Management<br>
+                                                                3.Device Management<br>
+                                                                4.Information Maintenance<br>
+                                                                5.Communication<br></p>
+        </div>
+    </div>
+    <hr>
+
+  <!-- Menu Section -->
+    <div class="w3-row w3-padding-64" id="menu">
+        <div class="w3-col l6 w3-padding-large">
+            <h1 class="w3-center">Types of System Calls</h1><br>
+            <h4>File Structure Related</h4>
+            <p class="w3-text-grey">1.creat()<br>
+                                    2.open()<br>
+                                    3.close()<br>
+                                    4.read()<br>
+                                    5.write()<br>
+                                    6.lseek()<br>
+                                    7.dup()<br>
+                                    8.link()<br>
+                                    9.unlink()<br>
+                                    10.access()<br>
+                                    11.chmod()<br>
+                                    12.chown()<br>
+                                    13.unmask()<br>
+                                    14.ioctl()<br></p><br>
+            <h4>Process Related</h4>
+            <p class="w3-text-grey">1.execl()<br>
+                                    2.fork()<br>
+                                    3.wait()<br>
+                                    5.getuid()<br>
+                                    4.exit()<br>
+                                    6.geteuid()<br>
+                                    7.getgid()<br>
+                                    8.getegid()<br>
+                                    9.getpid()<br>
+                                    10.getppid()<br>
+                                    12.kill()<br>
+                                    11.signal()<br>
+                                    13.alarm()<br>
+                                    14.chdir()<br></p><br>
+        </div>
+        <div class="w3-col l6 w3-padding-large">
+            <img src="/images/Sys2.jpg" class="w3-round w3-image w3-opacity-min" alt="Sys2" style="width:100%; padding-top: 20px">
+            <img src="/images/Sys3.jpg" class="w3-round w3-image w3-opacity-min" alt="Sys2" style="width:100%; padding-top: 20px">
+            <img src="/images/Sys4.jpg" class="w3-round w3-image w3-opacity-min" alt="Sys2" style="width:100%; padding-top: 20px">
+        </div>
+    </div>
+    <hr>
+
+<!-- End page content -->
+    </div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-32">
+  <p><a href= "#" title="W3.CSS" target="_blank" class="w3-hover-text-green">OS Simulation</a></p>
+</footer>
+
+</body>
+</html>
