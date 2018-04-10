@@ -3,6 +3,11 @@ $(document).ready(function() {
 	var topic = "Memory Management";
     $('#side_top_navbar').load('../base.html', function(){
     	$('.left').html(topic);
+
+    });
+
+        particlesJS.load('particles-js', '../particles.json', function() {
+        console.log('callback - particles.js config loaded');
     });
 
 });
@@ -66,8 +71,11 @@ function submit1(){
     var partitionSizes = S('partition_sizes');
     partitionSizes.innerHTML = "";
     for(var i=1;i<=num_part;i++){
-        var p = '<div class="row text-center"><input class="validate animated fadeIn" type="text" placeholder="Enter size of Partition '+i+'" id="p'+i+'"/></div></br>';
-        partitionSizes.innerHTML += p;
+        partitionSizes.innerHTML+='<div class="input-field col s4">\
+                    <input name="third_text" id="p'+i+'" type="text" >\
+                    <label for="number_of_frames">Size of partition '+i+'</label>\
+                  </div>'
+        
     }
 }
 
@@ -81,12 +89,14 @@ function submit2(){
         var q = S('p' + i).value;
         partSizes.push(q);
     }
-
     var processSizes = S('mem_req_proc');
     processSizes.innerHTML = "";
     for(var i=1;i<=num_proc;i++){
-        var r = '<div class="row text-center"><input class="validate animated fadeIn" type="text" placeholder="Enter size of Process '+i+'" id="pr'+i+'"/></div></br>';
-        processSizes.innerHTML += r;
+        processSizes.innerHTML+='<div class="input-field col s3">\
+                            <input name="third_text" id="pr'+i+'" type="text" >\
+                            <label for="number_of_frames">Enter size of processes '+i+'</label>\
+                          </div>'
+        
     }
 }
 
@@ -291,7 +301,7 @@ function submit3(){
             $(t2).css("width", diff*scaledown + "px");
         }
     }
-
+    $('#in').fadeIn();
     //add totalinternal
 }
 
