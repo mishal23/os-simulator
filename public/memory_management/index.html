@@ -22,54 +22,64 @@
 
     <style>
     .red-box{
-    	width:100px;
+    	width:0px;
     	height:100px;
         background:#f00;
+        display: inline-block;
     }
     .green-box{
-    	width:100px;
+    	width:0px;
     	height:100px;
         background:#32CD32;
+        display: inline-block;
     }
     .blue-box{
-    	width:100px;
+    	width:0px;
     	height:100px;
         background:#00BFFF;
+        display: inline-block;
     }
     .violet-box{
-    	width:100px;
+    	width:0px;
     	height:100px;
         background:#9400D3;
+        display: inline-block;
     }
     .orange-box{
-    	width:100px;
+    	width:0px;
     	height:100px;
         background:#CD853F;
+        display: inline-block;
     }
     .yellow-box{
-    	width:100px;
+    	width:0px;
     	height:100px;
         background:#FFD700;
+        display: inline-block;
     }
     .grey-box{
-    	width:100px;
+    	width:0px;
     	height:100px;
         background:#A9A9A9;
+        display: inline-block;
     }
     .brown-box{
-    	width:100px;
+    	width:0px;
     	height:100px;
         background:#996633;
+        display: inline-block;
     }
     .pink-box{
-    	width:100px;
+    	width:0px;
     	height:100px;
         background:#ff3399;
+        display: inline-block;
     }
     .black-box{
-    	width:100px;
+    	width:0px;
     	height:100px;
         background:#000000;
+        display: inline-block;
     }
     </style>
 
@@ -141,7 +151,7 @@
     <!-- To create the table -->
     </br></br>
     <div class = "container well well-lg">
-        <div class="table table-hover text-center">
+        <table class="table table-hover text-center">
             <thead>
                 <tr>
                     <th>Process Number</th>
@@ -152,15 +162,15 @@
                     <th>External Fragmentation</th>
                 </tr>
             </thead>
-            <tbody id="table">
+            <tbody id="table-test">
             </tbody>
-        </div>
+        </table>
     </div>
 
     <!-- To create visualise memory in thr form a box -->
     </br></br>
-    <div class = "container well well-lg" id="visual"></div>
-    
+    <div class = "row col-sm-12 container well well-lg" id="visual"></div>
+
     <script type="text/javascript" src="/javascripts/memory_management/memory_management.js"></script>
 </body>
 </html>

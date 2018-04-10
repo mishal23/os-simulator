@@ -15,9 +15,16 @@ var partSizes = [];
 var procSizes = [];
 var input = "";
 
+var parId = [];
+var internalFrag = [];
+var externalFrag = [];
+var totalInternal;
+var remainingMem;
+
 function S(id){
 
     //to get element by id
+
     return document.getElementById(id)
 }
 
@@ -88,14 +95,7 @@ function submit3(){
     //get process memory sizes
     //send everything to executable file
     //get the result
-
-    var parId = [];
-    var internalFrag = [];
-    var externalFrag = [];
-    var totalInternal;
-    var remainingMem;
     var temp;
-
     for(var i=1;i<=num_proc;i++){
         var s = S('pr' + i).value;
         procSizes.push(s);
@@ -129,7 +129,7 @@ function submit3(){
                 totalInternal = result[len-2];
                 remainingMem = result[len-1];
             },
-            async: true
+            async: false
         });
     }
     else if(type == 1){
@@ -137,7 +137,7 @@ function submit3(){
         //bestt Fit
         $.ajax({
             type: "POST",
-            url: "",
+            url: "/memory_management/mft_best_fit",
             data: {input : input},
             success: function(result){
                 console.log(result);
@@ -157,7 +157,7 @@ function submit3(){
                 remainingMem = result[len-1];
 
             },
-            async: true
+            async: false
         });
     }
     else{
@@ -165,7 +165,7 @@ function submit3(){
         //worst Fit
         $.ajax({
             type: "POST",
-            url: "",
+            url: "/memory_management/mft_worst_fit",
             data: {input : input},
             success: function(result){
                 console.log(result);
@@ -185,22 +185,39 @@ function submit3(){
                 remainingMem = result[len-1];
 
             },
-            async: true
+            async: false
         });
     }
 
     //For the table part
-    table = S('table');
-    //table.innerHTML = "";
-
+    table = S('table-test');
+    var ch2;
+    var ch1;
+    var ch0;
     for(var i=0;i<num_proc;++i){
 
-        if(externalFrag[i] == 0)
+        if((externalFrag[i]) == -1)
+        {
             ch = "YES";
-        else
-            ch = "NO";
+            ch0 = parId[i];
+            ch1 = internalFrag[i];
+            ch2 = "-";
+        }
+        else if((externalFrag[i] == 0) && (parId[i] == -1)){
 
-        temp = '<tr><td>'+ (i+1) +'</td><td>'+ procSizes[i] +'</td><td>'+ ch +'</td><td>'+ parId[i] +'</td><td>'+ internalFrag[i] +'</td><td>'+ externalFrag[i] +'</td></tr>';
+            ch = "NO";
+            ch0 = "-";
+            ch1 = "No Mem.";
+            ch2 = "No Mem.";
+        }
+        else{
+            ch = "NO";
+            ch0 = "-";
+            ch2 = externalFrag[i];
+            ch1 = "-";
+        }
+
+        temp = '<tr><td>'+ (i+1) +'</td><td>'+ procSizes[i] +'</td><td>'+ ch +'</td><td>'+ ch0 +'</td><td>'+ ch1 +'</td><td>'+ ch2 +'</td></tr>';
         table.innerHTML += temp;
     }
 
@@ -213,37 +230,38 @@ function submit3(){
         pos = find_partition(i);
         diff = partSizes[i] - procSizes[pos];
         var box = S('visual');
-        box.innerHTML = "";
+        //box.innerHTML = "";
         var tempbox1;
         var tempbox2 = '<div class="black-box" id="internalfragbox"></div>';
         var pos2 = pos +1;
 
         switch(i){
 
-            case 0: tempbox1 = '<label><div class ="red-box" id="b'+i+'">Process'+pos2+'</div></label>';
+            case 0: tempbox1 = '<div class ="red-box" id="b'+i+'">Process'+pos2+'</div>';
                     break;
-            case 1: tempbox1 = '<label><div class ="green-box" id="b'+i+'">Process'+pos2+'</div></label>';
+            case 1: tempbox1 = '<div class ="green-box" id="b'+i+'">Process'+pos2+'</div>';
                     break;
-            case 2: tempbox1 = '<label><div class ="yellow-box" id="b'+i+'">Process'+pos2+'</div></label>';
+            case 2: tempbox1 = '<div class ="yellow-box" id="b'+i+'">Process'+pos2+'</div>';
                     break;
-            case 3: tempbox1 = '<label><div class ="blue-box" id="b'+i+'">Process'+pos2+'</div></label>';
+            case 3: tempbox1 = '<div class ="blue-box" id="b'+i+'">Process'+pos2+'</div>';
                     break;
-            case 4: tempbox1 = '<label><div class ="violet-box" id="b'+i+'">Process'+pos2+'</div></label>';
+            case 4: tempbox1 = '<div class ="violet-box" id="b'+i+'">Process'+pos2+'</div>';
                     break;
-            case 5: tempbox1 = '<label><div class ="orange-box" id="b'+i+'">Process'+pos2+'</div></label>';
+            case 5: tempbox1 = '<div class ="orange-box" id="b'+i+'">Process'+pos2+'</div>';
                     break;
-            case 6: tempbox1 = '<label><div class ="grey-box" id="b'+i+'">Process'+pos2+'</div></label>';
+            case 6: tempbox1 = '<div class ="grey-box" id="b'+i+'">Process'+pos2+'</div>';
                     break;
-            case 7: tempbox1 = '<label><div class ="brown-box" id="b'+i+'">Process'+pos2+'</div></label>';
+            case 7: tempbox1 = '<div class ="brown-box" id="b'+i+'">Process'+pos2+'</div>';
                     break;
-            case 8: tempbox1 = '<label><div class ="pink-box" id="b'+i+'">Process'+pos2+'</div></label>';
+            case 8: tempbox1 = '<div class ="pink-box" id="b'+i+'">Process'+pos2+'</div>';
                     break;
         }
 
-        box += tempbox1;
-        S('b' + i).style.height = procSizes[pos]*scaledown + 'px';
-        box += tempbox2;
-        S('internalfragbox').style.height = diff*scaledown + 'px';
+        box.innerHTML += tempbox1;
+        console.log(procSizes[pos]*scaledown);
+        $('#b' + i).css("width", procSizes[pos]*scaledown);
+        box.innerHTML += tempbox2;
+        $('#internalfragbox').css("width", diff*scaledown);
     }
 
     //add totalinternal
