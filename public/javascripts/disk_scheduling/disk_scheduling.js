@@ -1,12 +1,16 @@
-/*$(document).ready(function() {
+$(document).ready(function() {
 	var topic="Disk Scheduling";
 
     $('#side_top_navbar').load('../base.html', function(){
     	$('.left').html(topic);
     });
     
+     particlesJS.load('particles-js', '../particles.json', function() {
+        console.log('particles.json config loaded');
+    });
+
 });
-*/
+
 
 //Number of requests made
 var n_req = 0;
@@ -20,7 +24,7 @@ function put_requests(){
     requests = S('requests');
     requests.innerHTML = "";
     for(var i=0;i<n_req;i++){
-        var p = '<div class="row text-center"><input class="validate animated fadeIn" type="text" placeholder="Enter request value" id="r'+i+'"/></div>';
+        var p = '<div class="row"><div class="input-field col s2"><input class="validate" type="text"id="r'+i+'"/><label for="head_pos">Enter request value</label></div></div>';
         requests.innerHTML += p;
     }
 }
@@ -174,7 +178,7 @@ function draw_graph(totseek) {
     algo = ['FCFS','SSTF', 'Look', 'Scan', 'C-Look', 'C-Scan'];
     totseek = to_float(totseek);
     console.log(totseek);
-    var z = '<div class="container-fluid"><div class="row text-center"><div class="col-sm-12" id="chart-container"></div></div></div>';
+    var z = '<div class="container"><div class="row"><div class="col s12" id="chart-container"></div></div></div>';
     S('charts').innerHTML="";
     S('charts').innerHTML += z;
     var chart = {
@@ -228,7 +232,7 @@ function summarise(seq,algo_name,id) {
     	console.log(seq);
     	var algorithm_name = algo_name;
     	var order = seq;
-    	var z = '<div class="container-fluid"><div class="row text-center"><div class="col-sm-12" id="' + algo_name + '"></div></div></div>';
+    	var z = '<div class="container"><div class="row"><div class="col s12" id="' + algo_name + '"></div></div></div>';
     	S(id).innerHTML += z;
     	var chart = {
         	type: 'line'
@@ -283,8 +287,3 @@ function summarise(seq,algo_name,id) {
     	//json.credits = credits;
     	$('#'+id).highcharts(json);
 }
-
-
-
-
-

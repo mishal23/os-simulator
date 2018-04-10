@@ -1,9 +1,13 @@
 $(document).ready(function() {
 	$('.test').show();
 	var topic = "UDP Simulation";
-    $('#side_top_navbar').load('../base.html', function(){
-    	$('.left').html(topic);
-    });
+    // $('#side_top_navbar').load('../base.html', function(){
+    // 	$('.left').html(topic);
+    // });
+	particlesJS.load('particles-js', '../particles.json', function() {
+		console.log('callback - particles.json config loaded');
+	});
+
 
     $(".macbook-content").css("background-color","#000");
     $("#server").hide();
@@ -57,7 +61,6 @@ $(document).ready(function() {
 		 });
     	}, 2300);	
     	
-
     	$("#receive").show();
     });
     

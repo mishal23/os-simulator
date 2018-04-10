@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>System Calls</title>
+
+	<script
+	src="https://code.jquery.com/jquery-3.1.1.min.js"
+	integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+	crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto Mono">
+	<link rel="stylesheet" href="/stylesheets/system_calls/system_calls.css">
+    <script type="text/javascript" src="/javascripts/system_calls/system_calls.js"></script>
+</head>
+<body>
+	<div id="contain" style = "background-color: #000; height: 100%">
+
+	<div id="out"></div>
+	<div id="shell">
+		<div class="wd" id="wd">/</div> <span style="color: #fff;">$
+		<input type="text" id="command" onkeypress="keypress(event)" value="" autofocus/>
+		</span>
+	</div>
+
+	</div>
+
+</body>
+</html>

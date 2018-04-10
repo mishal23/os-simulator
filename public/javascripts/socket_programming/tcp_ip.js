@@ -4,7 +4,10 @@ $(document).ready(function() {
     $('#side_top_navbar').load('../base.html', function(){
     	$('.left').html(topic);
     });
-
+	particlesJS.load('particles-js', '../particles.json', function() {
+		console.log('callback - particles.json config loaded');
+	});
+	
     $(".macbook-content").css("background-color","#000");
     $("#server").hide();
     $(".macbook1-content").css("background-color","#000");
