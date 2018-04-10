@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <title>Banker's Algorithm Wiki</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <style>
+        body {font-family: "Times New Roman", Georgia, Serif;}
+        h1,h2,h3,h4,h5,h6 {
+            font-family: "Playfair Display";
+            letter-spacing: 5px;
+        }
+    </style>
+
+<body>
+
+<!-- Navbar (sit on top) -->
+    <div class="w3-top">
+        <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+            <a href="#home" class="w3-bar-item w3-button">Banker's Algorithm Wiki Page</a>
+            <!-- Right-sided navbar links. Hide them on small screens -->
+            <div class="w3-right w3-hide-small">
+                <a href="#about" class="w3-bar-item w3-button">About</a>
+                <a href="#menu" class="w3-bar-item w3-button">Algorithms</a>
+            </div>
+        </div>
+    </div>
+
+<!-- Page content -->
+    <div class="w3-content" style="max-width:1100px">
+
+  <!-- About Section -->
+    <div class="w3-row w3-padding-64" id="about">
+        <div class="w3-col m6 w3-padding-large w3-hide-small">
+            <img src="/images/B1.png" class="w3-round w3-image w3-opacity-min" alt="B" width="600" height="750" style = "padding-top: 500px">
+        </div>
+
+        <div class="w3-col m6 w3-padding-large">
+            <h1 class="w3-center">About Banker's Algorithm</h1><br>
+            <p class="w3-large">Banker's algorithm is a deadlock avoidance algorithm. It is named so because this algorithm is used in banking systems to determine whether a loan can be granted or not.<br>
+                                Consider there are n account holders in a bank and the sum of the money in all of their accounts is S. Everytime a loan has to be granted by the bank, it subtracts the loan amount from the total money the bank has.
+                                Then it checks if that difference is greater than S. It is done because, only then, the bank would have enough money even if all the n account holders draw all their money at once.<br>
+                                Banker's algorithm works in a similar way in computers.<br>
+                                Whenever a new process is created, it must specify the maximum It is an n x m matrix which represents the number of resources of each type currently allocated to each process. If Allocation[i][j] = k, then process P(i) is currently allocated k instances of resource type R(j).
+                                instances of each resource type that it needs, exactly.</p>
+            <p class="w3-large w3-text-grey w3-hide-medium">Let us assume that there are n processes and m resource types. Some data structures that are used to implement the banker's algorithm are:
+                                                            1.<u>Available</u><br>
+                                                            It is an array of length m. It represents the number of available resources of each type. If Available[j] = k, then there are k instances available, of resource type R(j).<br>
+                                                            2.<u>Max</u><br>
+                                                            It is an n x m matrix which represents the maximum number of instances of each resource that a process can request. If Max[i][j] = k, then the process P(i) can request atmost k instances of resource type R(j).<br>
+                                                            3.<u>Allocation</u><br>
+                                                            It is an n x m matrix which represents the number of resources of each type currently allocated to each process. If Allocation[i][j] = k, then process P(i) is currently allocated k instances of resource type R(j).
+                                                            4.<u>Need</u><br>
+                                                            It is an n x m matrix which indicates the remaining resource needs of each process. If Need[i][j] = k, then process P(i) may need k more instances of resource type R(j) to complete its task.</p>
+        </div>
+    </div>
+    <hr>
+
+  <!-- Menu Section -->
+    <div class="w3-row w3-padding-64" id="menu">
+        <div class="w3-col l6 w3-padding-large">
+            <h1 class="w3-center">Algorithms</h1><br>
+            <h4>Safety Algorithm</h4>
+            <p class="w3-text-grey">1.Let Work and Finish be vectors of length m and n, respectively. Initially, <br>
+                                    -------------------------------------<br>
+                                    <code>Work = Available<br>
+                                    Finish[i] =false for i = 0, 1, ... , n - 1.<br></code>
+                                    -------------------------------------<br>
+                                    This means, initially, no process has finished and the number of available resources is represented by the Available array.<br>
+                                    2.Find an index i such that both<br>
+                                    -------------------------------------<br>
+                                    <code>Finish[i] ==false<br>
+                                    Need(i) <= Work<br></code>
+                                    -------------------------------------<br>
+                                    If there is no such i present, then proceed to step 4.<br>
+                                    It means, we need to find an unfinished process whose need can be satisfied by the available resources. If no such process exists, just go to step 4.<br>
+                                    3.Perform the following: <br>
+                                    -------------------------------------<br>
+                                    <code>Work = Work + Allocation;<br>
+                                    Finish[i] = true;<br></code>
+                                    -------------------------------------<br>
+                                    Go to step 2.<br>
+                                    When an unfinished process is found, then the resources are allocated and the process is marked finished. And then, the loop is repeated to check the same for all other processes.<br>
+                                    4.If Finish[i] == true for all i, then the system is in a safe state.<br>
+                                    That means if all processes are finished, then the system is in safe state.</p>
+            <h4>Resource Request Algorithm</h4>
+            <p class="w3-text-grey">1.If number of requested instances of each resource is less than the need (which was declared previously by the process), go to step 2.<br>
+                                    2.If number of requested instances of each resource type is less than the available resources of each type, go to step 3. If not, the process has to wait because sufficient resources are not available yet.<br>
+                                    3.Now, assume that the resources have been allocated. Accordingly do,<br>
+                                    -------------------------------------<br>
+                                    <code>Available = Available - Request(i)<br>
+                                    Allocation(i) = Allocation(i) + Request(i)<br>
+                                    Need(i) = Need(i) - Request(i)<br></code>
+                                    -------------------------------------</p>
+        </div>
+        <div class="w3-col l6 w3-padding-large">
+            <img src="/images/B2.png" class="w3-round w3-image w3-opacity-min" alt="B" style="width:100%; padding-top: 450px">
+        </div>
+    </div>
+    <hr>
+
+<!-- End page content -->
+    </div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-32">
+  <p><a href= "#" title="W3.CSS" target="_blank" class="w3-hover-text-green">OS Simulation</a></p>
+</footer>
+
+</body>
+</html>
