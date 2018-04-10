@@ -1,12 +1,12 @@
 $(document).ready(function() {
-    var topic = "File allocation - Indexed";
-    $('#side_top_navbar').load('../base.html', function () {
-        $('.left').html(topic);
-    })
+    // var topic = "File allocation - Indexed";
+    // $('#side_top_navbar').load('../base.html', function () {
+    //     $('.left').html(topic);
+    // })
 
-    /*particlesJS.load('particles-js', '../particles.json', function() {
+    particlesJS.load('particles-js', '../particles.json', function() {
         console.log('particles.json config loaded');
-    });*/
+    });
 
 
 });

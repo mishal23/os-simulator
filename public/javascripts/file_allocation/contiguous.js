@@ -4,9 +4,9 @@
 //         $('.left').html(topic);
 //     })
 //
-//     /*particlesJS.load('particles-js', '../particles.json', function() {
-//         console.log('particles.json config loaded');
-//     });*/
+    // /*particlesJS.load('particles-js', '../particles.json', function() {
+    //     console.log('particles.json config loaded');
+    // });*/
 //
 //
 // });
@@ -29,7 +29,11 @@
 // 			file_n++;
 // 			console.log(input);
 // }
-
+$(document).ready(function(){
+    particlesJS.load('particles-js', '../particles.json', function() {
+        console.log('particles.json config loaded');
+    });
+});
 
 var SIZE       = 64;
 var n_blocks   = 0;

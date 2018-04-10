@@ -9,22 +9,32 @@
 	src="https://code.jquery.com/jquery-3.1.1.min.js"
 	integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
 	crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" type="text/javascript"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto Mono">
     <link rel="stylesheet" type="text/css" href="/stylesheets/file_allocation/indexed.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
 	<script type="text/javascript" src="/javascripts/file_allocation/indexed.js"></script>
-
+	<link rel="stylesheet" href="/stylesheets/common.css">
 </head>
 <body onload="put_blocks()">
-	<div class="head teal white-text" ><h1> File Allocation </h1></div>
-	<div class="container" style="margin-top : -8%;">
-		<div class="card" >
-			<div class="card-content">
-				<div class="row">
-					<div class="col s6"><h4>Indexed File Allocation</h4></div>
+	<header>
+			<div class="container" style="margin: 0;">
+				<div class="header-section">
+				<div id="particles-js">
 				</div>
+				<div class="header-font center-align">   
+					<span class="topic">Indexed File Allocation</span>
+				</div>
+			</div>
+		</div>
+	</header>
+
+				<div class="row">
+					<!-- <div class="col s6"><h4>Indexed File Allocation</h4></div> -->
+				</div>
+				<div class="container">
 				<div class="row">
 					<div class="col s4">
 						<div class="input-field">
@@ -41,7 +51,7 @@
 				</div>
 				<div class="row">
 					<div class="col s4">
-						<a class="green btn waves-effect waves-effect-light teal" onclick="add_file()"><i class="material-icons right">add</i>Add</a>
+						<a class="btn btn-large" onclick="add_file()"><i class="material-icons right">add</i>Add</a>
 					</div>
 				</div>
 				<br>
