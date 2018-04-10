@@ -135,7 +135,7 @@ int main(int argc, char* argv[]) {
                 printf(" %d", cur);
                 cur = d[cur].next;
             }
-            printf(" <br>\n");
+            printf("\n");
         }
     }
 }

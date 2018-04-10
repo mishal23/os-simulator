@@ -44,7 +44,7 @@ function handle_output(output){
     for(var i=0; i<output.length; i++){
         o = output[i].split(' ');
         fname = o[0];
-        size = parseInt(o[1]) + 1;
+        size = parseInt(o[1]);
         fbs  = [];
         for(var j=0; j<size; j++)
             fbs.push(parseInt(o[j+2]));
@@ -64,14 +64,17 @@ function add_file(){
 
     // for(var i = 0; i < file_name.length; ++i)
     //     input += ' 1 ' + file_name[i] + ' ' + sizes[i];
-
-    input += ' 1 ' + fname + ' ' + parseInt(size);// + ' ' + '0';
-    // file_n++;
-    sizes.push(parseInt(size));
-    file_name.push(fname);
-    console.log(file_name);
-    console.log(input);
-    send_request(input);
+    if(file_name.indexOf(fname) === -1) {
+        input += ' 1 ' + fname + ' ' + parseInt(size);// + ' ' + '0';
+        // file_n++;
+        sizes.push(parseInt(size));
+        file_name.push(fname);
+        console.log(file_name);
+        console.log(input);
+        send_request(input);
+    }
+    else
+        Materialize.toast("File name already exists", 2000);
 }
 
 function send_request(input){
@@ -85,11 +88,11 @@ function send_request(input){
         success: function(result){
             console.log(result);
             console.log(result[0]);
-            if((result.includes('File ') || result.includes('All') || result.includes('Not')) && result.length == 1){
-                console.log("Inside");
-                Materialize.toast(output, 1500);
-                return;
-            }
+            // if((result.includes('File ') || result.includes('All') || result.includes('Not')) && result.length == 1){
+            //     console.log("Inside");
+            //     Materialize.toast(output, 1500);
+            //     return;
+            // }
             result = result.split('\n');
             result = result.slice(0, result.length-1);
             console.log(result);

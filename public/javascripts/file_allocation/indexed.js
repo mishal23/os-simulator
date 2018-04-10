@@ -16,7 +16,7 @@ var BLOCK_WIDTH = 100.0/64.0;
 var n_blocks    = 0;
 var color       = ['red', 'deep-purple', 'light-blue', 'teal', 'yellow', 'deep-orange', 'blue-grey', 'pink', 'indigo', 'cyan', 'light-green', 'amber', 'brown', 'purple', 'blue', 'lime', 'orange', 'grey'];
 //var file_n      = 0;
-var file_names  = [];
+//var file_names  = [];
 var file_name = [];
 var sizes = [];
 var input = '';
@@ -26,8 +26,10 @@ function put_file(name, fbs, n){
     $('.file-chips').append(file_chip);
     for(var i=0; i<fbs.length; i++){
         $('#block-'+fbs[i]).attr('class', 'block '+color[n]);
-        if(i==0) $('#file-'+name).append('<div class="col chip block-number ' + color[n] + '">' + fbs[i] + '</div>');
-        else     $('#file-'+name).append('<div class="col chip block-number">' + fbs[i] + '</div>');
+        if(i==0)
+            $('#file-'+name).append('<div class="col chip block-number ' + color[n] + '">' + fbs[i] + '</div>');
+        else
+            $('#file-'+name).append('<div class="col chip block-number">' + fbs[i] + '</div>');
     }
 }
 
@@ -64,14 +66,17 @@ function add_file(){
 
     // for(var i = 0; i < file_name.length; ++i)
     //     input += ' 1 ' + file_name[i] + ' ' + sizes[i];
-
-    input += ' 1 ' + fname + ' ' + parseInt(size);// + ' ' + '0';
-    // file_n++;
-    sizes.push(parseInt(size));
-    file_name.push(fname);
-    console.log(file_name);
-    console.log(input);
-    send_request(input);
+    if(file_name.indexOf(fname) === -1) {
+        input += ' 1 ' + fname + ' ' + parseInt(size);// + ' ' + '0';
+        // file_n++;
+        sizes.push(parseInt(size));
+        file_name.push(fname);
+        console.log(file_name);
+        console.log(input);
+        send_request(input);
+    }
+    else
+        Materialize.toast("File name already exists", 2000);
 }
 
 function send_request(input){
