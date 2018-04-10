@@ -39,7 +39,18 @@ function remove_process(){
 }
 
 function submit() {
-    var tq = $("#time_quantum").value;
+    var tq = S('time_quantum').value;
+    if(!tq || tq.length == 0){
+        Materialize.toast("Please fill the input fields!!", 1500);
+        return;
+    }
+    var t = parseInt(tq);
+    console.log(t);
+    if(t<=0)
+    {
+        Materialize.toast("Invalid input!!", 1500);
+        return;
+    }
     console.log("no of process : "+n_processes);
     var input = n_processes + ' ';
     var input_p = n_processes + ' ';
@@ -50,6 +61,15 @@ function submit() {
         var at = S('p_at'+j).value,
             bt = S('p_bt'+j).value,
             pt = S('p_pt'+j).value;
+        if((!at || !bt || !pt) || at.length==0 || bt.length==0 || pt.length==0){
+            Materialize.toast("Please fill the input fields!!", 1500);
+            return;
+        }
+        if(parseInt(at)<0 || parseInt(bt)<0 || parseInt(pt)<0)
+        {
+            Materialize.toast("Invalid input!!", 1500);
+            return;
+        }
         input += (j+1) + ' ' + at + ' ' + bt + ' ';
         input_p += (j+1) + ' ' + at + ' ' + bt + ' ' + pt + ' ';
     }
@@ -259,3 +279,4 @@ function print_table(output) {
         }
     }
 }
+
