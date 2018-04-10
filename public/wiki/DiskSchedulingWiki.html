@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <title>Disk Scheduling Wiki</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <style>
+        body {font-family: "Times New Roman", Georgia, Serif;}
+        h1,h2,h3,h4,h5,h6 {
+            font-family: "Playfair Display";
+            letter-spacing: 5px;
+        }
+    </style>
+
+<body>
+
+<!-- Navbar (sit on top) -->
+    <div class="w3-top">
+        <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+            <a href="#home" class="w3-bar-item w3-button">Disk Scheduling Wiki Page</a>
+            <!-- Right-sided navbar links. Hide them on small screens -->
+            <div class="w3-right w3-hide-small">
+                <a href="#about" class="w3-bar-item w3-button">About</a>
+                <a href="#menu" class="w3-bar-item w3-button">Types</a>
+            </div>
+        </div>
+    </div>
+
+<!-- Page content -->
+    <div class="w3-content" style="max-width:1100px">
+
+  <!-- About Section -->
+    <div class="w3-row w3-padding-64" id="about">
+        <div class="w3-col m6 w3-padding-large w3-hide-small">
+            <img src="/images/D1.png" class="w3-round w3-image w3-opacity-min" alt="D" width="600" height="750" style = "padding-top: 50px">
+        </div>
+
+        <div class="w3-col m6 w3-padding-large">
+            <h1 class="w3-center">About Disk Scheduling</h1><br>
+            <p class="w3-large">Disk scheduling is is done by operating systems to schedule I/O requests arriving for disk. Disk scheduling is also known as I/O scheduling.<br>
+                                Disk scheduling is important because:<br>
+                                1.Multiple I/O requests may arrive by different processes and only one I/O request can be served at a time by disk controller. Thus other I/O requests need to wait in waiting queue and need to be scheduled.<br>
+                                2.Two or more request may be far from each other so can result in greater disk arm movement.<br>
+                                3.Hard drives are one of the slowest parts of computer system and thus need to be accessed in an efficient manner.<br></p>
+    </div>
+    <hr>
+
+  <!-- Menu Section -->
+    <div class="w3-row w3-padding-64" id="menu">
+        <div class="w3-col l6 w3-padding-large">
+            <h1 class="w3-center">Types of MFT</h1><br>
+            <h4>FCFS</h4>
+            <p class="w3-text-grey">FCFS is the simplest of all the Disk Scheduling Algorithms. In FCFS, the requests are addressed in the order they arrive in the disk queue.</p><br>
+
+            <h4>SSTF</h4>
+            <p class="w3-text-grey">In SSTF (Shortest Seek Time First), requests having shortest seek time are executed first. So, the seek time of every request is calculated in advance in queue and then they are scheduled according to their calculated seek time.
+                                    As a result, the request near the disk arm will get executed first. SSTF is certainly an improvement over FCFS as it decreases the average response time and increases the throughput of system.</p><br>
+
+            <h4>SCAN</h4>
+            <p class="w3-text-grey">In SCAN algorithm the disk arm moves into a particular direction and services the requests coming in its path and after reaching the end of disk, it reverses its direction and again services the request arriving in its path.
+                                    So, this algorithm works like an elevator and hence also known as elevator algorithm. As a result, the requests at the midrange are serviced more and those arriving behind the disk arm will have to wait.</p><br>
+            <h4>CSCAN</h4>
+            <p class="w3-text-grey">In SCAN algorithm, the disk arm again scans the path that has been scanned, after reversing its direction. So, it may be possible that too many requests are waiting at the other end or there may be zero or few requests pending at the scanned area.</p><br>
+            <h4>LOOK</h4>
+            <p class="w3-text-grey">It is similar to the SCAN disk scheduling algorithm except the difference that the disk arm in spite of going to the end of the disk goes only to the last request to be serviced in front of the head and then reverses its direction from there only.
+                                    Thus it prevents the extra delay which occurred due to unnecessary traversal to the end of the disk.</p><br>
+            <h4>CLOOK</h4>
+            <p class="w3-text-grey">As LOOK is similar to SCAN algorithm, in similar way, CLOOK is similar to CSCAN disk scheduling algorithm. In CLOOK, the disk arm inspite of going to the end goes only to the last request to be serviced in front of the head and then from there goes to the other end’s last request.
+                                    Thus, it also prevents the extra delay which occurred due to unnecessary traversal to the end of the disk.</p><br>
+        </div>
+        <div class="w3-col l6 w3-padding-large">
+            <img src="/images/D2.jpg" class="w3-round w3-image w3-opacity-min" alt="D" style="width:100%; padding-top: 150px">
+            <img src="/images/D3.jpg" class="w3-round w3-image w3-opacity-min" alt="D" style="width:100%; padding-top: 150px">
+        </div>
+    </div>
+    <hr>
+
+<!-- End page content -->
+    </div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-32">
+  <p><a href= "#" title="W3.CSS" target="_blank" class="w3-hover-text-green">OS Simulation</a></p>
+</footer>
+
+</body>
+</html>
