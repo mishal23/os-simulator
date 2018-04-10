@@ -6,6 +6,10 @@ $(document).ready(function() {
         $('.left').html(topic);
     });
 
+    particlesJS.load('particles-js', '../particles.json', function() {
+      console.log('particles.json config loaded');
+  });
+
   // Selectors
   var $stepn = $('#step-n');
   var $stepnext = $('#step-next');
