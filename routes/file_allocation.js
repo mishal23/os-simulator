@@ -25,3 +25,15 @@ router.post('/indexed', function(req, res){
 });
 
 module.exports = router;
+
+router.post('/linked', function(req, res){
+    console.log(req.body.input);
+
+    exec(__dirname + '/executables/file_allocation/linked' + req.body.input, function callback(error,stdout,stderr) {
+        console.log("hi" + stdout);
+        console.log(error);
+        res.send(stdout);
+    });
+});
+
+module.exports = router;

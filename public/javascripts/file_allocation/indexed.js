@@ -15,15 +15,11 @@ var SIZE        = 64;
 var BLOCK_WIDTH = 100.0/64.0;
 var n_blocks    = 0;
 var color       = ['red', 'deep-purple', 'light-blue', 'teal', 'yellow', 'deep-orange', 'blue-grey', 'pink', 'indigo', 'cyan', 'light-green', 'amber', 'brown', 'purple', 'blue', 'lime', 'orange', 'grey'];
-var file_n      = 0;
+//var file_n      = 0;
 var file_names  = [];
 var file_name = [];
 var sizes = [];
 var input = '';
-
-function S(id){
-    return document.getElementById(id)
-}
 
 function put_file(name, fbs, n){
     var file_chip = '<div class="row" id="file-' + name + '"><div class="col chip ' + color[n] + '">' + name + '<i class="close material-icons" onclick="delete_file(\'' + name + '\')">close</i></div><div>';
@@ -35,11 +31,11 @@ function put_file(name, fbs, n){
     }
 }
 
-function to_int(output){
-    for(var i=0;i<output.length;i++)
-        output[i] = parseInt(output[i]);
-    return output.slice(0, output.length-1);
-}
+// function to_int(output){
+//     for(var i=0;i<output.length;i++)
+//         output[i] = parseInt(output[i]);
+//     return output.slice(0, output.length-1);
+// }
 
 function handle_output(output){
     put_blocks();
@@ -53,7 +49,7 @@ function handle_output(output){
         for(var j=0; j<size; j++)
             fbs.push(parseInt(o[j+2]));
         put_file(fname, fbs, i);
-        file_names.push(fname);
+        //file_names.push(fname);
     }
 }
 
