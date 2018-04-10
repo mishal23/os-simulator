@@ -11,29 +11,29 @@
 
 
 int main(int argc, char const *argv[])
-{	int filedescriptor = open(argv[3],O_RDWR,S_IRWXU);
+{	int filedescriptor = open(argv[4],O_RDWR,S_IRWXU);
 	int a;
 	if(filedescriptor <0)
 	perror("Error ");
 	
-	if(strcmp(argv[0],"./lseek")==0 && strcmp(argv[2],"SEEK_END")==0)
-	{	a = lseek(filedescriptor,atoi(argv[1]),SEEK_END);
+	if(strcmp(argv[1],"./lseek")==0 && strcmp(argv[3],"SEEK_END")==0)
+	{	a = lseek(filedescriptor,atoi(argv[2]),SEEK_END);
 		if(a<0)
 		perror("Error ");
 		else
 		printf("Position of file pointer set to: %d\n",a);
 	}
-	else if(strcmp(argv[0],"./lseek")==0 && strcmp(argv[2],"SEEK_CUR")==0)
+	else if(strcmp(argv[1],"./lseek")==0 && strcmp(argv[3],"SEEK_CUR")==0)
 	{
-		a = lseek(filedescriptor,atoi(argv[1]),SEEK_CUR);
+		a = lseek(filedescriptor,atoi(argv[2]),SEEK_CUR);
 		if(a<0)
 		perror("Error ");
 		else
 		printf("Position of file pointer set to: %d\n",a);
 	}
-	else if(strcmp(argv[0],"./lseek")==0 && strcmp(argv[2],"SEEK_SET")==0)
+	else if(strcmp(argv[1],"./lseek")==0 && strcmp(argv[3],"SEEK_SET")==0)
 	{
-		a = lseek(filedescriptor,atoi(argv[1]),SEEK_SET);
+		a = lseek(filedescriptor,atoi(argv[2]),SEEK_SET);
 		if(a<0)
 		perror("Error ");
 		else

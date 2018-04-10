@@ -2,35 +2,43 @@
 <html>
 <head>
     <title>Socket Programming</title>
-      <script
-      src="https://code.jquery.com/jquery-3.3.1.min.js"
-      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-      crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="/stylesheets/socket_programming/udp.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,700,900' rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.1.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.7/typed.min.js" type="text/javascript"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.7/typed.min.js" type="text/javascript"></script>
     <script type="text/javascript" src="/javascripts/socket_programming/udp.js"></script>
-    
+    <link rel="stylesheet" href="/stylesheets/socket_programming/udp.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/stylesheets/common.css">
+
 </head>
 <body>
-<!-- To load side and top navbar -->
-<!-- DO NOT CHANGE THIS -->
-<div id="side_top_navbar">
-
-</div>
-
-<!-- Do your changes from here -->
-<!-- Show the simulation here -->
-<div style="margin-left: 65vh; margin-top: 25vh;">
-  <button class="btn-lg btn-default" id="socket"><span style="font-weight: bold;">Socket</span></button>
-  <button class="btn-lg btn-default" id="bind"><span style="font-weight: bold;">Bind</span></button>
-  <button class="btn-lg btn-default" id="send"><span style="font-weight: bold;">Send</span></button>
-  <button class="btn-lg btn-default" id="receive"><span style="font-weight: bold;">Receive</span></button>
-  <button class="btn-lg btn-default" id="close"><span style="font-weight: bold;">Close</span></button>
+    <header>
+        <div class="container" style="margin: 0;">
+          <div class="header-section">
+            <div id="particles-js">
+            </div>
+            <div class="header-font center-align">
+              
+              <span class="topic">UDP Socket Programming</span>
+            </div>
+          </div>
+        </div>
+      </header>
+<div style="margin-left: 55vh; margin-top: 10vh;">
+  <button class="waves-effect waves-light btn-large" id="socket"><span style="font-weight: bold;">Socket</span></button>
+  <button class="waves-effect waves-light btn-large" id="bind"><span style="font-weight: bold;">Bind</span></button>
+  <button class="waves-effect waves-light btn-large" id="send"><span style="font-weight: bold;">Send</span></button>
+  <button class="waves-effect waves-light btn-large" id="receive"><span style="font-weight: bold;">Receive</span></button>
+  <button class="waves-effect waves-light btn-large" id="close"><span style="font-weight: bold;">Close</span></button>
 </div>
 
 <i class="fa fa-telegram" style="font-size: 35px;"></i>

@@ -10,9 +10,9 @@
 // Usage ./unlink path
 int main(int argc, char const *argv[])
 {
-	if(strcmp(argv[0],"./unlink")==0)
+	if(strcmp(argv[1],"./unlink")==0)
 		{
-			int unlinked = unlink(argv[1]);
+			int unlinked = unlink(argv[2]);
 	 		if(unlinked!=0)
 	 			perror("Error");
 			else

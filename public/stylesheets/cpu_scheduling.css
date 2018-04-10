@@ -1,17 +1,6 @@
-
-#particles-js, #particles-js > canvas {
-    position: absolute;
-    width: 100%;
-    height: 140%;
-    background-color: #000;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50% 50%;
-}
 body {
     margin: 0;
     padding: 0;
-    /*background: #ED764D;*/
 }
 .head {
     width: 100%;
@@ -34,31 +23,5 @@ p{
 li{
     text-align: left;
     font-size: medium;
-    font-family: serif;
-}
 
-body1 {
-    /*background:blue;*/
-}
-input[type=text] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    /*border: 1px solid #555;*/
-    outline: none;
-    /*background-color: hsl(290,60%,70%);*/
-}
-
-input[type=text]:focus {
-    background-color: #D6D3CF;
-}
-.panel-body {
-/*background:#925375;*/
-}
-x{
-  /*background-color: #F1E9ED*/
-}
-Y{
-  /*background-color: #D6D3CF*/
 }
