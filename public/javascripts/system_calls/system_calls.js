@@ -46,7 +46,7 @@ function shellexec(){
 	{
 		$.ajax({
         type: "POST",
-        url: "http://localhost:3000/system_calls/access",
+        url: "/system_calls/access",
         data: {input : input},
         success: function(result){
             console.log(result);
@@ -61,7 +61,7 @@ function shellexec(){
 	{
 		$.ajax({
         type: "POST",
-        url: "http://localhost:3000/system_calls/alarm",
+        url: "/system_calls/alarm",
         data: {input : input},
         success: function(result){
             console.log(result);
@@ -76,7 +76,7 @@ function shellexec(){
 	{
 		$.ajax({
         type: "POST",
-        url: "http://localhost:3000/system_calls/creat",
+        url: "/system_calls/creat",
         data: {input : input},
         success: function(result){
             console.log(result);
@@ -91,7 +91,7 @@ function shellexec(){
 	{
 		$.ajax({
         type: "POST",
-        url: "http://localhost:3000/system_calls/dup",
+        url: "/system_calls/dup",
         data: {input : input},
         success: function(result){
             console.log(result);
@@ -106,7 +106,7 @@ function shellexec(){
 	{
 		$.ajax({
         type: "POST",
-        url: "http://localhost:3000/system_calls/exit",
+        url: "/system_calls/exit",
         data: {input : input},
         success: function(result){
             console.log(result);
@@ -121,7 +121,7 @@ function shellexec(){
 	{
 		$.ajax({
         type: "POST",
-        url: "http://localhost:3000/system_calls/fork",
+        url: "/system_calls/fork",
         data: {input : input},
         success: function(result){
             console.log(result);
@@ -136,7 +136,7 @@ function shellexec(){
 	{
 		$.ajax({
         type: "POST",
-        url: "http://localhost:3000/system_calls/getid",
+        url: "/system_calls/getid",
         data: {input : input},
         success: function(result){
             console.log(result);
@@ -151,7 +151,7 @@ function shellexec(){
 	{
 		$.ajax({
         type: "POST",
-        url: "http://localhost:3000/system_calls/kill",
+        url: "/system_calls/kill",
         data: {input : input},
         success: function(result){
             console.log(result);
@@ -166,7 +166,7 @@ function shellexec(){
 	{
 		$.ajax({
         type: "POST",
-        url: "http://localhost:3000/system_calls/link",
+        url: "/system_calls/link",
         data: {input : input},
         success: function(result){
             console.log(result);
@@ -181,7 +181,7 @@ function shellexec(){
 	{
 		$.ajax({
         type: "POST",
-        url: "http://localhost:3000/system_calls/lseek",
+        url: "/system_calls/lseek",
         data: {input : input},
         success: function(result){
             console.log(result);
@@ -196,7 +196,7 @@ function shellexec(){
 	{
 		$.ajax({
         type: "POST",
-        url: "http://localhost:3000/system_calls/open",
+        url: "/system_calls/open",
         data: {input : input},
         success: function(result){
             console.log(result);
@@ -211,7 +211,7 @@ function shellexec(){
 	{
 		$.ajax({
         type: "POST",
-        url: "http://localhost:3000/system_calls/read",
+        url: "/system_calls/read",
         data: {input : input},
         success: function(result){
             console.log(result);
@@ -226,7 +226,7 @@ function shellexec(){
 	{
 		$.ajax({
         type: "POST",
-        url: "http://localhost:3000/system_calls/unlink",
+        url: "/system_calls/unlink",
         data: {input : input},
         success: function(result){
             console.log(result);
@@ -241,7 +241,7 @@ function shellexec(){
 	{
 		$.ajax({
         type: "POST",
-        url: "http://localhost:3000/system_calls/wait",
+        url: "/system_calls/wait",
         data: {input : input},
         success: function(result){
             console.log(result);
