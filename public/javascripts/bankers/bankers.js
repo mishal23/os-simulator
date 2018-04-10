@@ -1,5 +1,8 @@
 $(document).ready(function() {
 
+    particlesJS.load('particles-js', '../particles.json', function() {
+        console.log('callback - particles.js config loaded');
+    });
 
 	var topic = "Bankers";
     $('#side_top_navbar').load('../base.html' , function(){

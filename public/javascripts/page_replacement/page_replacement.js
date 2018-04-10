@@ -33,15 +33,18 @@ $(document).ready(function() {
 	            	document.getElementById("lru_table").innerHTML="<tr></tr>";
 	            	document.getElementById("fifo_table").innerHTML="<tr></tr>";
 	            	document.getElementById("optimal_table").innerHTML="<tr></tr>";
+	            	document.getElementById("second_chance_table").innerHTML="<tr></tr>";
 	            	document.getElementById("lru_hit").innerHTML="Hit Percentage : ";
 	            	document.getElementById("fifo_hit").innerHTML="Hit Percentage : ";
 	            	document.getElementById("optimal_hit").innerHTML="Hit Percentage : ";
+	            	document.getElementById("second_chance_hit").innerHTML="Hit Percentage : ";
 	            	lru=data.split("LRU")[1];
 	            	lru=lru.split("FIFO")[0];
-	            	fifo=data.split("OPTIMAL")[0];
+	            	fifo=data.split("SECOND CHANCE")[0];
 	            	fifo=fifo.split("FIFO")[1];
 	            	optimal=data.split("OPTIMAL")[1];
-
+	            	optimal=optimal.split("SECOND CHANCE")[0];
+	            	second_chance=data.split("SECOND CHANCE")[1];
 	            	var regex = /\|(.*?)\|/g;
 	            	var lru_vals=[];
 					var lru_results=[];
@@ -49,6 +52,8 @@ $(document).ready(function() {
 					var fifo_results=[];
 	            	var optimal_vals=[];
 					var optimal_results=[];
+	            	var sc_vals=[];
+					var sc_results=[];
 
 	            	do {
 					    m = regex.exec(lru);
@@ -62,6 +67,22 @@ $(document).ready(function() {
 					    m = regex.exec(lru);
 					    if (m) {
 					        lru_results.push(m[1]);
+					    }
+					} while (m);
+	            	regex = /\|(.*?)\|/g;
+
+	            	do {
+					    m = regex.exec(second_chance);
+					    if (m) {
+					        sc_vals.push(m[1]);
+					    }
+					} while (m);
+
+	            	regex = /\*(.*?)\|/g;
+	            	do {
+					    m = regex.exec(second_chance);
+					    if (m) {
+					        sc_results.push(m[1]);
 					    }
 					} while (m);
 
@@ -96,25 +117,44 @@ $(document).ready(function() {
 					        optimal_results.push(m[1]);
 					    }
 					} while (m);
+
+
 	            	var nr=$('#number_of_requests').val();
 	            	var nf=$('#number_of_frames').val();
-	            	optimal_hits = optimal.split("hits:")[1];
-	            	optimal_hits=parseInt(optimal_hits);
 
+	            	optimal_hits = optimal.split("hits:")[1];
+	            	optimal_hits=optimal_hits.match(/\d+/)[0]           	
+	            	optimal_hits=parseInt(optimal_hits);
+	            	alert('OP')
+	            	alert(optimal_hits)
 	            	lru_hits = lru.split("hits:")[1];
+	            	lru_hits=lru_hits.split("\n")[0];
 	            	lru_hits=parseInt(lru_hits);
+	            	alert('LRU')
+	            	alert(lru_hits)
 
 	            	fifo_hits = fifo.split("hits:")[1];
+	            	fifo_hits=fifo_hits.split("\n")[0];
 	            	fifo_hits=parseInt(fifo_hits);
 
+	            	alert('FIFO')
+	            	alert(fifo_hits)
 
+	            	sc_hits = second_chance.split("hits:")[1];
+	            	sc_hits=sc_hits.split("\n")[0];
+	            	sc_hits=parseInt(sc_hits);
+
+	            	alert('SC')
+	            	alert(sc_hits)
 	            	$('#lru_hit').append((lru_hits/nr)*100);
 	            	$('#optimal_hit').append((optimal_hits/nr)*100);
 	            	$('#fifo_hit').append((fifo_hits/nr)*100);
+	            	$('#second_chance_hit').append((sc_hits/nr)*100);
 
 	            	$('#lru_hit').append("%");
 	            	$('#optimal_hit').append("%");
 	            	$('#fifo_hit').append("%");
+	            	$('#second_chance_hit').append("%");
 
 	            	var i=0,j=0;
 	            	$('#lru_table').append('<tr  style="font-size:25px;"  id="lruh"><td>Request Number</td></tr>');
@@ -151,6 +191,24 @@ $(document).ready(function() {
 	            			$('#fifo'+j).append('<td style="background-color:red">'+fifo_results[j]+'</td>')
 	            		if(fifo_results[j][0]=='H')
 	            			$('#fifo'+j).append('<td style="background-color:green">'+fifo_results[j]+'</td>')
+	            	}
+
+	            	$('#second_chance_table').append('<tr  style="font-size:25px;"  id="sch"><td>Request Number</td></tr>');
+	            	for(j=0;j<nf;j+=1)
+	            		$('#sch').append('<td>Frame'+j+'</td>');
+	            	$('#sch').append('<td>Hit/Miss</td>');
+            		for(j=0;j<nr;j+=1)
+            		{
+	            		$('#second_chance_table').append('<tr id="sc'+j+'"><td>Request'+j+'</td></tr>');
+	            		for(i in sc_vals[j].split(' '))
+	            		{
+	            			if(sc_vals[j].split(' ')[i].length>=1)
+	            				$('#sc'+j).append('<td>'+sc_vals[j].split(' ')[i]+'</td>')
+	            		}
+	            		if(sc_results[j][0]=='F')
+	            			$('#sc'+j).append('<td style="background-color:red">'+sc_results[j]+'</td>')
+	            		if(sc_results[j][0]=='H')
+	            			$('#sc'+j).append('<td style="background-color:green">'+sc_results[j]+'</td>')
 	            	}
 
 
