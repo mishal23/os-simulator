@@ -7,58 +7,70 @@
       integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
       crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-    <link rel="stylesheet" href="../stylesheets/animate.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,700,900' rel='stylesheet' type='text/css'>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.1.0/particles.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/common.css">
 </head>
-<body id = "bdy" class="animated slideInDown" style="background-color: black;font-family: Montserrat;">
-<div>
-    <h1 class="text-center" style= "color:white;">Disk Scheduling</h1>
-    <h2 class="text-center" style="color:white">>>  Comparison of Disk Scheduling Algorithms  <<</h2>
-    <h3 class="text-center" style= "color:white;padding-top: 25px;">The algorithms being compared are as follows:</h3>
-    <ul class="text-center" style= "color:white;font-size: 25px;">
-    	<li><i>First Come First Serve (FCFS)</i></li>
-    	<li><i>Shortest Seek Time First (SSTF)</i></li>
-    	<li><i>C-LOOK</i></li>
-    	<li><i>C-SCAN</i></li>
-    	<li><i>LOOK</i></li>
-    	<li><i>SCAN</i></li>
+
+
+<header>
+    <div class="container" style="margin: 0;">
+        <div class="header-section">
+        <div id="particles-js">
+        </div>
+        <div class="header-font center-align">   
+            <span class="topic">Disk Scheduling</span>
+        </div>
+        </div>
+    </div>
+</header>
+        
     </ul>
     <div class="row">
-    	<div class="text-center">
+    	<!-- <div class="text-center">
     		<h3  class = "col-sm-4" style="color:white"><b>Cylinder Size</b></h3>
     		<h3  class = "col-sm-4" style="color:white"><b>Current Head Position</b></h3>
     		<h3  class = "col-sm-4" style="color:white"><b>Previous Head Position</b></h3>
-    	</div>
+    	</div> -->
     </div>
     <div class="row">
-    	<div class="input-field col-sm-4 text-center">
-    		<input class="validate" id="csize" type="text" placeholder="Enter size"></input>
+    	<div class="input-field col s4 text-center">
+    		<input class="validate" id="csize" type="text"></input>
+            <label for="head_pos">Enter size</label>
     	</div>
-    	<div class="input-field col-sm-4 text-center">
-    		<input class="validate" id="cur" type="text" placeholder="Enter position"></input>
+    	<div class="input-field col s4 text-center">
+    		<input class="validate" id="cur" type="text"></input>
+            <label for="head_pos">Enter Position</label>
     	</div>
-    	<div class="input-field col-sm-4 text-center">
-    		<input class="validate" id="prev" type="text" placeholder="Enter position"></input>
-    	</div>
+    	<div class="input-field col s4 text-center">
+    		<input class="validate" id="prev" type="text"></input>
+            <label for="head_pos">Enter Position</label>   	
+        </div>
     </div>
     <div class="row text-center">
-    	<div class = "col-sm-6" style="padding-top:10px;font-size: 35px;">
-    	<a  class="btn btn-primary mb1 bg-lime" href="javascript:add_request()">Add Request</a>
-    	</div>
-    	<div id="n_req" style="color:black;">0</div>
-    	<div class = "col-sm-6" style="padding-top:8px;font-size: 35px;">
-    	<a  class="btn btn-primary mb1 bg-lime" href="javascript:remove_request()">Remove Request</a>
-    	</div>
+        <div id="n_req" style="display: none;">0</div>
+        <div class = "col s6" style="padding-top:10px;font-size: 35px;">
+        <a  style="float: right" class="btn btn-primary mb1 bg-lime " href="javascript:add_request()">Add Request</a>
+        </div>
+        <div class = "col s6" style="padding-top:8px;font-size: 35px;">
+        <a  style="float: left" class="btn btn-primary mb1 bg-lime" href="javascript:remove_request()">Remove Request</a>
+        </div>
     </div>
-    <div id="requests">
+    <div class="container">
+        <div class="row" id="requests">
+
+        </div>
+        <div class="row">
+         <a class="waves-effect waves-light btn" onclick="javascript:submit()" href="#charts" style="">Submit</a>
+        </div>
     </div>
-    </div class="Y row" style="padding-bottom: 10px;padding-top:10px;">
-        <a class="btn btn-info text-center" onclick="javascript:submit()" href="#charts">Submit</a>
-    </div>
+
     <div id="charts">
     </div>
     <div id="fcfs">
@@ -76,7 +88,7 @@
     
 </div>
 <script type="text/javascript" src="/javascripts/disk_scheduling/disk_scheduling.js"></script>
-<script src="http://code.highcharts.com/highcharts.js"></script>
-<script src="http://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
 </body>
 </html>
