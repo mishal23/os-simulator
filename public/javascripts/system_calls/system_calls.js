@@ -50,7 +50,7 @@ function shellexec(){
         data: {input : input},
         success: function(result){
             console.log(result);
-            out.innerHTML += '<div class="wd" style="color:red">' + wdt.innerHTML + "</div>" + " $ "+input+"<br>";
+            out.innerHTML += '<div class="wd" style="color:red">' + wdt.innerHTML + "</div>" + " $ "+'<div style="color:red">'+input+'</div>'+"<br>";
 			out.innerHTML += result  + "<br>";
             
         },
@@ -65,8 +65,8 @@ function shellexec(){
         data: {input : input},
         success: function(result){
             console.log(result);
-            out.innerHTML += '<div class="wd" style="color:red">' + wdt.innerHTML + "</div>" + " $ "+input+"<br>";
-			out.innerHTML += result + "<br>";
+            out.innerHTML += '<div class="wd" style="color:red">' + wdt.innerHTML + "</div>" + " $ "+'<div style="color:red">'+input+'</div>'+"<br>";
+			out.innerHTML += '<div style="color:red">'+result + '</div>' + "<br>";
             
         },
         async: false
@@ -80,8 +80,8 @@ function shellexec(){
         data: {input : input},
         success: function(result){
             console.log(result);
-            out.innerHTML += '<div class="wd" style="color:red">' + wdt.innerHTML + "</div>" + " $ "+input+"<br>";
-			out.innerHTML += result + "<br>";
+            out.innerHTML += '<div class="wd" style="color:red">' + wdt.innerHTML + "</div>" + " $ "+'<div style="color:red">'+input+'</div>'+"<br>";
+			out.innerHTML += '<div style="color:red">'+result + '</div>' + "<br>";
             
         },
         async: false
@@ -95,8 +95,8 @@ function shellexec(){
         data: {input : input},
         success: function(result){
             console.log(result);
-            out.innerHTML += '<div class="wd" style="color:red">' + wdt.innerHTML + "</div>" + " $ "+input+"<br>";
-			out.innerHTML += result + "<br>";
+            out.innerHTML += '<div class="wd" style="color:red">' + wdt.innerHTML + "</div>" + " $ "+'<div style="color:red">'+input+'</div>'+"<br>";
+			out.innerHTML += '<div style="color:red">'+result + '</div>' + "<br>";
             
         },
         async: false
@@ -110,8 +110,8 @@ function shellexec(){
         data: {input : input},
         success: function(result){
             console.log(result);
-            out.innerHTML += '<div class="wd" style="color:red">' + wdt.innerHTML + "</div>" + " $ "+input+"<br>";
-			out.innerHTML += result + "<br>";
+            out.innerHTML += '<div class="wd" style="color:red">' + wdt.innerHTML + "</div>" + " $ "+'<div style="color:red">'+input+'</div>'+"<br>";
+			out.innerHTML += '<div style="color:red">'+result + '</div>' + "<br>";
             
         },
         async: false
@@ -125,8 +125,8 @@ function shellexec(){
         data: {input : input},
         success: function(result){
             console.log(result);
-            out.innerHTML += '<div class="wd" style="color:red">' + wdt.innerHTML + "</div>" + " $ "+input+"<br>";
-			out.innerHTML += result + "<br>";
+            out.innerHTML += '<div class="wd" style="color:red">' + wdt.innerHTML + "</div>" + " $ "+'<div style="color:red">'+input+'</div>'+"<br>";
+			out.innerHTML += '<div style="color:red">'+result + '</div>' + "<br>";
             
         },
         async: false
@@ -140,8 +140,8 @@ function shellexec(){
         data: {input : input},
         success: function(result){
             console.log(result);
-            out.innerHTML += '<div class="wd" style="color:red">' + wdt.innerHTML + "</div>" + " $ "+input+"<br>";
-			out.innerHTML += result + "<br>";
+            out.innerHTML += '<div class="wd" style="color:red">' + wdt.innerHTML + "</div>" + " $ "+'<div style="color:red">'+input+'</div>'+"<br>";
+			out.innerHTML += '<div style="color:red">'+result + '</div>' + "<br>";
             
         },
         async: false
@@ -155,8 +155,8 @@ function shellexec(){
         data: {input : input},
         success: function(result){
             console.log(result);
-            out.innerHTML += '<div class="wd" style="color:red">' + wdt.innerHTML + "</div>" + " $ "+input+"<br>";
-			out.innerHTML += result + "<br>";
+            out.innerHTML += '<div class="wd" style="color:red">' + wdt.innerHTML + "</div>" + " $ "+'<div style="color:red">'+input+'</div>'+"<br>";
+			out.innerHTML += '<div style="color:red">'+result + '</div>' + "<br>";
             
         },
         async: false
@@ -170,8 +170,8 @@ function shellexec(){
         data: {input : input},
         success: function(result){
             console.log(result);
-            out.innerHTML += '<div class="wd" style="color:red">' + wdt.innerHTML + "</div>" + " $ "+input+"<br>";
-			out.innerHTML += result + "<br>";
+            out.innerHTML += '<div class="wd" style="color:red">' + wdt.innerHTML + "</div>" + " $ "+'<div style="color:red">'+input+'</div>'+"<br>";
+			out.innerHTML += '<div style="color:red">'+result + '</div>' + "<br>";
             
         },
         async: false
@@ -185,8 +185,8 @@ function shellexec(){
         data: {input : input},
         success: function(result){
             console.log(result);
-            out.innerHTML += '<div class="wd" style="color:red">' + wdt.innerHTML + "</div>" + " $ "+input+"<br>";
-			out.innerHTML += result + "<br>";
+            out.innerHTML += '<div class="wd" style="color:red">' + wdt.innerHTML + "</div>" + " $ "+'<div style="color:red">'+input+'</div>'+"<br>";
+			out.innerHTML += '<div style="color:red">'+result + '</div>' + "<br>";
             
         },
         async: false
@@ -200,8 +200,8 @@ function shellexec(){
         data: {input : input},
         success: function(result){
             console.log(result);
-            out.innerHTML += '<div class="wd" style="color:red">' + wdt.innerHTML + "</div>" + " $ "+input+"<br>";
-			out.innerHTML += result + "<br>";
+            out.innerHTML += '<div class="wd" style="color:red">' + wdt.innerHTML + "</div>" + " $ "+'<div style="color:red">'+input+'</div>'+"<br>";
+			out.innerHTML += '<div style="color:red">'+result + '</div>' + "<br>";
             
         },
         async: false
@@ -215,8 +215,8 @@ function shellexec(){
         data: {input : input},
         success: function(result){
             console.log(result);
-            out.innerHTML += '<div class="wd" style="color:red">' + wdt.innerHTML + "</div>" + " $ "+input+"<br>";
-			out.innerHTML += result + "<br>";
+            out.innerHTML += '<div class="wd" style="color:red">' + wdt.innerHTML + "</div>" + " $ "+'<div style="color:red">'+input+'</div>'+"<br>";
+			out.innerHTML += '<div style="color:red">'+result + '</div>' + "<br>";
             
         },
         async: false
@@ -230,8 +230,8 @@ function shellexec(){
         data: {input : input},
         success: function(result){
             console.log(result);
-            out.innerHTML += '<div class="wd" style="color:red">' + wdt.innerHTML + "</div>" + " $ "+input+"<br>";
-			out.innerHTML += result + "<br>";
+            out.innerHTML += '<div class="wd" style="color:red">' + wdt.innerHTML + "</div>" + " $ "+'<div style="color:red">'+input+'</div>'+"<br>";
+			out.innerHTML += '<div style="color:red">'+result + '</div>' + "<br>";
             
         },
         async: false
@@ -245,8 +245,8 @@ function shellexec(){
         data: {input : input},
         success: function(result){
             console.log(result);
-            out.innerHTML += '<div class="wd" style="color:red">' + wdt.innerHTML + "</div>" + " $ "+input+"<br>";
-			out.innerHTML += result + "<br>";
+            out.innerHTML += '<div class="wd" style="color:red">' + wdt.innerHTML + "</div>" + " $ "+'<div style="color:red">'+input+'</div>'+"<br>";
+			out.innerHTML += '<div style="color:red">'+result + '</div>' + "<br>";
             
         },
         async: false
@@ -260,8 +260,8 @@ function shellexec(){
         data: {input : input},
         success: function(result){
             console.log(result);
-            out.innerHTML += '<div class="wd" style="color:red">' + wdt.innerHTML + "</div>" + " $ "+input+"<br>";
-			out.innerHTML += result + "<br>" + "<br>";
+            out.innerHTML += '<div class="wd" style="color:red">' + wdt.innerHTML + "</div>" + " $ "+'<div style="color:red">'+input+'</div>'+"<br>";
+			out.innerHTML += '<div style="color:red">'+result + '</div>' + "<br>" + "<br>";
             
         },
         async: false
@@ -275,8 +275,8 @@ function shellexec(){
         data: {input : input},
         success: function(result){
             console.log(result);
-            out.innerHTML += '<div class="wd" style="color:red">' + wdt.innerHTML + "</div>" + " $ "+input+"<br>";
-			out.innerHTML += result + "<br>" + "<br>";
+            out.innerHTML += '<div class="wd" style="color:red">' + wdt.innerHTML + "</div>" + " $ "+'<div style="color:red">'+input+'</div>'+"<br>";
+			out.innerHTML += '<div style="color:red">'+result + '</div>' + "<br>" + "<br>";
             
         },
         async: false
