@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <title>Process Synchronization Wiki</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <style>
+        body {font-family: "Times New Roman", Georgia, Serif;}
+        h1,h2,h3,h4,h5,h6 {
+            font-family: "Playfair Display";
+            letter-spacing: 5px;
+        }
+    </style>
+
+<body>
+
+<!-- Navbar (sit on top) -->
+    <div class="w3-top">
+        <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+            <a href="#home" class="w3-bar-item w3-button">Process Synchronization Wiki Page</a>
+            <!-- Right-sided navbar links. Hide them on small screens -->
+            <div class="w3-right w3-hide-small">
+                <a href="#about" class="w3-bar-item w3-button">About</a>
+                <a href="#menu" class="w3-bar-item w3-button">Examples</a>
+            </div>
+        </div>
+    </div>
+
+<!-- Page content -->
+    <div class="w3-content" style="max-width:1100px">
+
+  <!-- About Section -->
+    <div class="w3-row w3-padding-64" id="about">
+        <div class="w3-col m6 w3-padding-large w3-hide-small">
+            <img src="/images/PS1.png" class="w3-round w3-image w3-opacity-min" alt="PS" width="600" height="750" style = "padding-top: 100px">
+            <img src="/images/PS2.png" class="w3-round w3-image w3-opacity-min" alt="PS" width="600" height="750" style = "padding-top: 100px">
+        </div>
+
+        <div class="w3-col m6 w3-padding-large">
+            <h1 class="w3-center">About Process Synchronization</h1><br>
+            <p class="w3-large"><b>Process Synchronization</b> means sharing system resources by processes in a such a way that,
+                                Concurrent access to shared data is handled thereby minimizing the chance of inconsistent data. Maintaining data consistency demands mechanisms to ensure synchronized execution of cooperating processes.</p>
+            <p class="w3-large w3-text-grey w3-hide-medium"><h5><u>Critical Section Problem</u></h5>
+                                                            A Critical Section is a code segment that accesses shared variables and has to be executed as an atomic action. It means that in a group of cooperating processes,
+                                                            at a given point of time, only one process must be executing its critical section. If any other process also wants to execute its critical section, it must wait until the first one finishes.<br>
+                                                            <br><u>Solution</u><br>
+                                                            1.Mutual exclusion<br>
+                                                            Out of a group of cooperating processes, only one process can be in its critical section at a given point of time.<br>
+                                                            ____________________________________________________________________________________<br>
+                                                            2.Progress<br>
+                                                            If no process is in its critical section, and if one or more threads want to execute their critical section then any one of these threads must be allowed to get into its critical section.<br>
+                                                            ____________________________________________________________________________________<br>
+                                                            3.Bounded Waiting<br>
+                                                            After a process makes a request for getting into its critical section, there is a limit for how many other processes can get into their critical section, before this process's request is granted.
+                                                            So after the limit is reached, system must grant the process permission to get into its critical section.</p>
+        </div>
+    </div>
+    <hr>
+
+  <!-- Menu Section -->
+    <div class="w3-row w3-padding-64" id="menu">
+        <div class="w3-col l6 w3-padding-large">
+            <h1 class="w3-center">Examples</h1><br>
+            <h4>Producer Consumer Problem using Semaphores</h4>
+            <p class="w3-text-grey">In computing, the producer–consumer problem (also known as the bounded-buffer problem) is a classic example of a multi-process synchronization problem.
+                                    The problem describes two processes, the producer and the consumer, which share a common, fixed-size buffer used as a queue.<br>
+                                    1.The producer’s job is to generate data, put it into the buffer, and start again.<br>
+                                    2.At the same time, the consumer is consuming the data (i.e. removing it from the buffer), one piece at a time.<br>
+                                    <b>Problem :</b><br>
+                                    To make sure that the producer won’t try to add data into the buffer if it’s full and that the consumer won’t try to remove data from an empty buffer.</p>
+            <h4>Reader Writer Problem</h4>
+            <p class="w3-text-grey">Consider a situation where we have a file shared between many people.<br>
+                                    1.If one of the people tries editing the file, no other person should be reading or writing at the same time, otherwise changes will not be visible to him/her.<br>
+                                    2.However if some person is reading the file, then others may read it at the same time.<br>
+                                    Precisely in OS we call this situation as the <b>readers-writers problem</b>.<br>
+                                    Problem parameters:<br>
+                                    1.One set of data is shared among a number of processes<br>
+                                    2.Once a writer is ready, it performs its write. Only one writer may write at a time.<br>
+                                    3.If a process is writing, no other process can read it.<br>
+                                    4.If at least one reader is reading, no other process can write.<br>
+                                    5.Readers may not write and only read.</p>
+            <h4>Dining Philosophers’ Problem</h4>
+            <p class="w3-text-grey">The Dining Philosopher Problem states that K philosophers seated around a circular table with one chopstick between each pair of philosophers.
+                                    There is one chopstick between each philosopher. A philosopher may eat if he can pick-up the two chopsticks adjacent to him. One chopstick may be picked up by any one of its adjacent followers but not both. </p><br>
+            <h4>Sleeping Barber's Problem</h4>
+            <p class="w3-text-grey">The barber shop has one barber, one barber chair, and'n' chairs for waiting customers, if any, to sit on.  If there are no customers present, the barber sits down in the barber chair and falls asleep, as
+                                    When a customer arrives, he has to wake up the sleeping barber. If additional customers arrive while the barber is cutting a customer's hair, they
+                                    either sit down (if there are empty chairs) or leave the shop (if all chairs are full).The problem is to program the barber and the customers without getting into race conditions. This problem is similar to
+                                    various queueing situations, such as a multiperson helpdesk with a computerized call waiting system for holding a limited number of incoming calls.</p>
+        </div>
+        <div class="w3-col l6 w3-padding-large">
+            <img src="/images/PS3.png" class="w3-round w3-image w3-opacity-min" alt="PS" style="width:100%; padding-top: 150px">
+            <img src="/images/PS4.jpg" class="w3-round w3-image w3-opacity-min" alt="PS" style="width:100%; padding-top: 10px">
+        </div>
+    </div>
+    <hr>
+
+<!-- End page content -->
+    </div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-32">
+  <p><a href= "#" title="W3.CSS" target="_blank" class="w3-hover-text-green">OS Simulation</a></p>
+</footer>
+
+</body>
+</html>
