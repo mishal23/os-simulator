@@ -1,0 +1,99 @@
+#particles-js, #particles-js > canvas {
+	position: absolute;
+	width: 100%;
+	height: 25vh;
+	background-color: #000;
+	background-image: url("");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 50% 50%;
+}
+
+#toast-container {
+  top: auto !important;
+  right: auto !important;
+  bottom: 10%;
+  left:7%;  
+}
+
+.header-section {
+	width: 100%;
+	height: 25vh;
+}
+.btn{ 
+  background-color: #000; 
+}
+.btn:hover{ 
+  background-color: #fff;
+  color: #000; 
+}
+.btn:focus{ 
+  background-color: #fff;
+  color: #000; 
+}
+.btn:unvisited{
+	background-color: #000; 
+}
+
+.input-field input[type=text]:focus + label {
+    color: #000 !important;
+}
+.input-field input[type=text]:focus {
+    border-bottom: 1px solid #000 !important;
+    box-shadow: 0 1px 0 0 #000 !important;
+}
+
+.header-font {
+	width: 100%;
+	color: white;
+	margin: 0;
+	font-size: 6vh;
+	position: absolute;
+	text-shadow: #000 0px 1px 2px;
+	top: 6vh;
+	pointer-events: none;
+}
+
+
+.topic {
+
+	font-size: 7vh;
+}
+.aboutme {
+	color: #1a237e;
+	margin-bottom: 0;
+}
+
+.container > div > div > p {
+	line-height: 1.7;
+	text-align: justify;
+}
+
+
+#terminal {
+	margin-left: 2vw;
+	margin-right: 2vw;
+	border-radius: 10px;
+	position: relative;
+	box-shadow: rgba(0, 0, 0, 0.8) 0px 20px 70px;
+}
+
+#black-screen {
+	border-radius: 10px;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+	position: absolute;
+	top: 25px;
+	width: 100%;
+	height: 100%;
+}
+
+.details {
+	padding: 10px;
+	font-family: 'Inconsolata', monospace;
+	font-size: 1.2em;
+}
+
+.plot{
+	text-align: center;
+}

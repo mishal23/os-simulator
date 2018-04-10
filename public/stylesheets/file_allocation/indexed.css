@@ -1,0 +1,41 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    background: rgb(233, 234, 237);
+}
+
+.head {
+    width: 100%;
+    padding: 2%;
+    padding-bottom: 10%;
+}
+
+.block {
+    display: inline-block;
+    height: 100%;
+}
+
+.blocks {
+    padding: 0;
+    height: 30px;
+    background-color: #ddd;
+}
+
+.size-line {
+    font-size: 50%;
+    margin: 0;
+    padding: 0;
+}
+
+.size-line .col {
+    padding: 0;
+}
+
+.chip {
+    color: white;
+}
+
+.block-number {
+    color: #222;
+}

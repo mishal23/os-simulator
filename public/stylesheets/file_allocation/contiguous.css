@@ -1,0 +1,50 @@
+body {
+			margin: 0;
+			padding: 0;
+			background: rgb(233, 234, 237);
+		}
+
+		.head {
+			width: 100%;
+			padding: 2%;
+			padding-bottom: 10%;
+		}
+
+		#storage {
+			position: relative;
+			width: 100%;
+			height: 50px;
+			background: #dddddd;
+		}
+
+		.size-line {
+			font-size: 50%;
+			margin: 0;
+			padding: 0;
+		}
+
+		.file-block {
+			position: absolute;
+			top: 0;
+			height: 100%;
+			margin: 0;
+			padding: 0;
+			font-size: 50%;
+			cursor: pointer; 
+			cursor: hand;
+		}
+
+		.file-block .size {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+		.file-block .start {
+			position: absolute;
+			top: 0;
+			left: 0;
+			padding: 5px;
+		}
+
