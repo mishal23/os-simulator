@@ -1,4 +1,3 @@
-// Abhilash and Ritwick
 #include<iostream>
 #include<cstdlib>
 #include<cstdio>
