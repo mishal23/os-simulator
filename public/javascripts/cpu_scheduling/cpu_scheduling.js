@@ -3,6 +3,12 @@ $(document).ready(function() {
     $('#side_top_navbar').load('../base.html', function () {
         $('.left').html(topic);
     })
+
+    /*particlesJS.load('particles-js', '../particles.json', function() {
+        console.log('particles.json config loaded');
+    });*/
+
+
 });
 
 var n_processes = 1;
@@ -52,7 +58,7 @@ function submit() {
 
     $.ajax({
         type: "POST",
-        url: "http://localhost:3000/cpu_scheduling/fcfs",
+        url: "/cpu_scheduling/fcfs",
         data: {input : input},
         success: function(result){
             console.log(result);
@@ -66,7 +72,7 @@ function submit() {
     });
     $.ajax({
         type: "POST",
-        url: "http://localhost:3000/cpu_scheduling/sjf-nonpreemptive",
+        url: "/cpu_scheduling/sjf-nonpreemptive",
         data: {input : input},
         success: function(result){
             console.log(result);
@@ -83,7 +89,7 @@ function submit() {
 
     $.ajax({
         type: "POST",
-        url: "http://localhost:3000/cpu_scheduling/sjf-preemptive",
+        url: "/cpu_scheduling/sjf-preemptive",
         data: {input : input},
         success: function(result){
             console.log(result);
@@ -100,7 +106,7 @@ function submit() {
 
     $.ajax({
         type: "POST",
-        url: "http://localhost:3000/cpu_scheduling/priority-nonpreemptive",
+        url: "/cpu_scheduling/priority-nonpreemptive",
         data: {input : input_p},
         success: function(result){
             console.log(result);
@@ -117,7 +123,7 @@ function submit() {
 
     $.ajax({
         type: "POST",
-        url: "http://localhost:3000/cpu_scheduling/priority-preemptive",
+        url: "/cpu_scheduling/priority-preemptive",
         data: {input : input_p},
         success: function(result){
             console.log(result);
@@ -134,7 +140,7 @@ function submit() {
 
     $.ajax({
         type: "POST",
-        url: "http://localhost:3000/cpu_scheduling/priority-aging",
+        url: "/cpu_scheduling/priority-aging",
         data: {input : input_p},
         success: function(result){
             console.log(result);
@@ -151,7 +157,7 @@ function submit() {
 
     $.ajax({
         type: "POST",
-        url: "http://localhost:3000/cpu_scheduling/round_robin",
+        url: "/cpu_scheduling/round_robin",
         data: {input : input_rr},
         success: function(result){
             console.log(result);

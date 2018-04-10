@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8"/>
+  <head>
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../stylesheets/mvt_css/bootstrap.min.css">
+    <link rel="stylesheet" href="../stylesheets/mvt_css/font-awesome.css">
+    <link rel="stylesheet" href="../stylesheets/mvt_css/font-awesome.min.css">
+    <link rel="stylesheet" href="../stylesheets/mvt_css/style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- JavaScript Files -->
+    <script src="../javascripts/mvt_js/jquery-3.1.1.min.js"></script>
+    <script src="../javascripts/mvt_js/bootstrap.min.js"></script>
+    <script src="../javascripts/mvt_js/typeit.js"></script>
+    <script src="../javascripts/mvt_js/MVT.js"></script>
+    <script src="../javascripts/mvt_js/typed.js"></script>
+
+    <title>
+      Multiprogramming with Variable Number of Tasks
+    </title>
+
+  </head>
+
+  <body style="background-color:white; border:black">
+
+    <div class="container-fluid">
+      <div id="page-heading">
+          <h1>MVT <br> </h1>
+      </div>
+      <div id="selection-form">
+          <button type="button" id="first-fit-select" class="btn btn-default">First-Fit</button>
+          <button type="button" id="best-fit-select" class="btn btn-default">Best-Fit</button>
+          <button type="button" id="worst-fit-select" class="btn btn-default">Worst-Fit</button>
+      </div>
+
+      <div id="demo-box">
+          <div class="col-sm-6" id="left-box">
+              <div class="col-sm-6">
+                  <h4>Main Memory</h4>
+                  <div id="block-0">
+                    <div id = "block--1"> </div>
+                  </div>
+              </div>
+              <div class="col-sm-6">
+                  <h4>Input Queue</h4>
+                  <div id="input-q-box">
+                  </div>
+                  <br>
+                  <button class="btn btn-info" id="add-process-button">Add Process</button>
+              </div>
+          </div>
+          <div class="col-sm-6" id="right-box">
+              <div class="row" id="top-box">
+                  <h3>Output Table</h3>
+                  <table class="table table-striped" id="output-table">
+                    <thead>
+                      <tr>
+                        <th>Process No.</th>
+                        <th>Process Size</th>
+                        <th>Allocation Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                  </table>
+              </div>
+              <div class="row" id="bottom-box">
+                <div id="terminal-header" style="text-align: center;">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-6">Terminal - log.txt</div>
+                    <div class="col-sm-3"></div>
+                </div>
+                <div id="terminal-body">
+
+                </div>
+              </div>
+          </div>
+      </div>
+
+  </body>
+
+</html>

@@ -1,0 +1,154 @@
+
+
+.container-fluid{
+    padding: 0;
+}
+
+.form-group{
+
+  margin-left: 300px;
+}
+#formgroup1{
+  margin-left: 500px;
+}
+#page-heading{
+    text-align: center;
+}
+
+#input-data-form{
+    display: none;
+    text-align: center;
+    margin-top: 10%;
+}
+
+#part-2{
+    display: none;
+}
+
+#submit-button{
+    display: none;
+}
+
+#selection-form{
+    text-align: center;
+}
+
+#demo-box{
+    margin-top: 1em;
+    margin-bottom: 1em;
+    width: 100%;
+    height: 600px;
+}
+
+#left-box{
+    height: 100%;
+    text-align: center;
+    border: solid 1px black;
+    width: 50%;
+}
+
+#left-box > .col-sm-6{
+    text-align: center;
+    height: 100%;
+}
+
+#block-0{
+    margin: auto;
+    width: 35%;
+    height: 0%;
+    text-align: center;
+    border: solid 1px black;
+    box-shadow: 10px 10px 5px #888888;
+    background-color: lightgrey;
+}
+
+.memory-block{
+    border-bottom: 1px solid black;
+    width: 100%;
+    height: 0%;
+    background-color: rgba(46, 255, 0, 0.68);
+    transition: height 1s linear;
+    -moz-transition: height 1s linear;
+    -webkit-transition: height 1s linear;
+}
+
+#block--1{
+  height: 0px;
+}
+
+#bottom-box{
+  height: 50%;
+  background-color: black;
+  color: white;
+  font-family: monospace;
+  overflow-y: auto;
+}
+
+
+h4{
+  font-family: cursive;
+  font-weight: lighter;
+}
+
+.block-background{
+    position: relative;
+    max-height: 100%;
+    width: 100%;
+    display: none;
+    background-color: orangered;
+}
+
+
+#input-q-box{
+    margin: auto;
+    margin-top: 15%;
+    width: 35%;
+    height: 0%;
+    text-align: center;
+    margin-bottom: 5px;
+    border: solid 1px black;
+    background-color: lightgrey;
+    box-shadow: 10px 10px 5px #888888;
+}
+
+.input-block{
+    width: 100%;
+    height: 0px;
+    background-color: rgba(57, 98, 255, 0.68);
+    transition: height 0.5s linear;
+    border-bottom: 1px solid red;
+    -moz-transition: height 0.5s linear;
+    -webkit-transition: height 0.5s linear;
+}
+
+#right-box{
+    height: 100%;
+    border: solid 1px black;
+    border-left: none;
+}
+
+#top-box{
+    overflow-y: auto;
+    max-height: 50%;
+    height: 50%;
+    text-align: center;
+    border-bottom: 1px solid black;
+}
+
+.is-hidden{
+    display: none !important;
+}
+
+.fa-check-circle{
+    color: green;
+    -moz-transition: height 0.5s linear;
+    -webkit-transition: height 0.5s linear;
+}
+
+.fa-times-circle{
+    color: red;
+}
+
+th{
+  text-align: center;
+}
