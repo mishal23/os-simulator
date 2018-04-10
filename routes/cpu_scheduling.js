@@ -128,4 +128,23 @@ router.post('/round_robin', function(req,res){
 
 });
 
+
+// Multilevel Queue API call
+router.post('/multilevel_queue', function(req,res){
+	 var input="";
+    console.log(req.body.input);
+	/*for(var i=0;i<req.body.length;i++)
+	{
+		input+=req.body[i]+" ";
+	}
+	console.log(input);
+	*/
+	exec(__dirname + '/executables/cpu_scheduling/multilevel_queue ' + req.body.input , function callback(error,stdout,stderr) {
+		console.log("hi" + stdout);
+		console.log(error);
+		res.send(stdout);
+	});
+
+});
+
 module.exports = router;

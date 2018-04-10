@@ -20,6 +20,9 @@ var file_names  = [];
 var file_name = [];
 var sizes = [];
 var input = '';
+var sum   = 0;
+var k=0;
+var block=0;
 
 function put_file(name, fbs, n){
     var file_chip = '<div class="row" id="file-' + name + '"><div class="col chip ' + color[n] + '">' + name + '<i class="close material-icons" onclick="delete_file(\'' + name + '\')">close</i></div><div>';
@@ -61,10 +64,20 @@ function delete_file(name){
 function add_file(){
     size  = $("#file-size").val();
     fname  = $("#file-name").val();
+    sum= +sum + +size;
+    k++;
+    t=sum/16;
+    if(sum%16!=0)
+        t++;
+    console.log(sum);
 
     // for(var i = 0; i < file_name.length; ++i)
     //     input += ' 1 ' + file_name[i] + ' ' + sizes[i];
-    if(file_name.indexOf(fname) === -1) {
+    if(t>63){
+        Materialize.toast("Memory not available", 2000);
+        sum= +sum - +size;
+    }
+    else if(file_name.indexOf(fname) === -1) {
         input += ' 1 ' + fname + ' ' + parseInt(size);// + ' ' + '0';
         // file_n++;
         sizes.push(parseInt(size));
@@ -73,8 +86,14 @@ function add_file(){
         console.log(input);
         send_request(input);
     }
-    else
+    else if(size<=0){
+         Materialize.toast("Invalid input", 2000);
+         sum= +sum - +size;
+     }
+    else{
         Materialize.toast("File name already exists", 2000);
+         sum= +sum - +size;
+    }
 }
 
 function send_request(input){
