@@ -39,6 +39,8 @@ function remove_process(){
 }
 
 function submit() {
+//    var tq = $("#time_quantum").val();
+
     var tq = S('time_quantum').value;
     if(!tq || tq.length == 0){
         Materialize.toast("Please fill the input fields!!", 1500);
@@ -74,6 +76,8 @@ function submit() {
         input_p += (j+1) + ' ' + at + ' ' + bt + ' ' + pt + ' ';
     }
     input_rr = input + tq;
+    input_q  = input_p +tq;
+    console.log("mq"+input_q);
     console.log(input);
 
     $.ajax({
@@ -191,6 +195,23 @@ function submit() {
         },
         async: false
     });
+
+     $.ajax({
+        type: "POST",
+        url: "/cpu_scheduling/multilevel_queue",
+        data: {input : input_q},
+        success: function(result){
+            console.log(result);
+
+            output[7] = result;
+            result = result.split('\n');
+            var len = result.length;
+            tt[7] = result[len-1];
+            wt[7] = result[len-2];
+
+        },
+        async: false
+    });
     print_table(output);
     draw_graph(tt, wt);
 
@@ -203,7 +224,7 @@ function to_float(output){
 }
 
 function draw_graph(tt, wt) {
-    var algo = ['FCFS','SJF Non-preemptive', 'SJF Preemptive', 'Priority Non-preemptive', 'Priority Preemptive', 'Priority Aging', 'Round Robin'];
+    var algo = ['FCFS','SJF Non-preemptive', 'SJF Preemptive', 'Priority Non-preemptive', 'Priority Preemptive', 'Priority Aging', 'Round Robin', 'Multilevel Queue'];
     tt = to_float(tt);
     wt = to_float(wt);
     console.log(tt);
@@ -257,7 +278,7 @@ function draw_graph(tt, wt) {
 
 function print_table(output) {
     console.log(output);
-    var algo = ['FCFS','SJF Non-preemptive', 'SJF Preemptive', 'Priority Non-preemptive', 'Priority Preemptive', 'Priority Aging', 'Round Robin'];
+    var algo = ['FCFS','SJF Non-preemptive', 'SJF Preemptive', 'Priority Non-preemptive', 'Priority Preemptive', 'Priority Aging', 'Round Robin', 'Multilevel Queue'];
     $("body").append("<div class='container-fluid' id='output'></div>");
     var op = $('#output');
 

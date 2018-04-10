@@ -20,6 +20,8 @@ var color       = ['red', 'deep-purple', 'light-blue', 'teal', 'yellow', 'deep-o
 var file_name = [];
 var sizes = [];
 var input = '';
+var k=0;
+var sum=0;
 
 function put_file(name, fbs, n){
     var file_chip = '<div class="row" id="file-' + name + '"><div class="col chip ' + color[n] + '">' + name + '<i class="close material-icons" onclick="delete_file(\'' + name + '\')">close</i></div><div>';
@@ -63,10 +65,19 @@ function delete_file(name){
 function add_file(){
     size  = $("#file-size").val();
     fname  = $("#file-name").val();
-
+    sum= +sum + +size;
+    k++;
     // for(var i = 0; i < file_name.length; ++i)
     //     input += ' 1 ' + file_name[i] + ' ' + sizes[i];
-    if(file_name.indexOf(fname) === -1) {
+    if(sum+k>64){
+         Materialize.toast("Memory not available", 2000);
+        sum= +sum - +size;
+    }
+    else if(size>10)
+         Materialize.toast("File size too big , Give a smaller file ", 2000);
+    else if(size<=0)
+         Materialize.toast("Invalid input", 2000);
+    else if(file_name.indexOf(fname) === -1) {
         input += ' 1 ' + fname + ' ' + parseInt(size);// + ' ' + '0';
         // file_n++;
         sizes.push(parseInt(size));
