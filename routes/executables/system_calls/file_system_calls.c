@@ -115,7 +115,6 @@ int main(int argc, char const *argv[])
 	*/
 
 	 // unlink() system call
-	 int unlinked = unlink(path2);
 	 if(unlinked!=0)
 	 	perror("error");
 	 else
