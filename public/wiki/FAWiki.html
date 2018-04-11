@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <title>File Allocation Wiki</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <style>
+        body {font-family: "Times New Roman", Georgia, Serif;}
+        h1,h2,h3,h4,h5,h6 {
+            font-family: "Playfair Display";
+            letter-spacing: 5px;
+        }
+    </style>
+
+<body>
+
+<!-- Navbar (sit on top) -->
+    <div class="w3-top">
+        <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+            <a href="#home" class="w3-bar-item w3-button">File Allocation Wiki Page</a>
+            <!-- Right-sided navbar links. Hide them on small screens -->
+            <div class="w3-right w3-hide-small">
+                <a href="#about" class="w3-bar-item w3-button">About</a>
+                <a href="#menu" class="w3-bar-item w3-button">Types</a>
+            </div>
+        </div>
+    </div>
+
+<!-- Page content -->
+    <div class="w3-content" style="max-width:1100px">
+
+  <!-- About Section -->
+    <div class="w3-row w3-padding-64" id="about">
+        <div class="w3-col m6 w3-padding-large w3-hide-small">
+            <img src="/images/FA2.jpg" class="w3-round w3-image w3-opacity-min" alt="PC" width="600" height="750" style = "padding-top: 100px">
+             <img src="/images/FA3.jpg" class="w3-round w3-image w3-opacity-min" alt="PC" width="600" height="750" style = "padding-top: 100px">
+            
+        </div>
+
+        <div class="w3-col m6 w3-padding-large">
+            <h1 class="w3-center">About File Allocation</h1><br>
+            <p class="w3-large"><b>File Allocation Table (FAT)</b> is a computer file system architecture and a family of industry-standard file systems utilizing it. The FAT file system is a continuing standard which borrows source code from the original, legacy file system and proves to be simple and robust. It offers useful performance even in lightweight implementations, but cannot deliver the same performance, reliability and scalability as some modern file systems. It is, however, supported for compatibility reasons by nearly all currently developed operating systems for personal computers and many mobile devices and embedded systems, and thus is a well-suited format for data exchange between computers and devices of almost any type and age from 1981 up to the present.</p>
+            <p class="w3-large w3-text-grey w3-hide-medium">The allocation methods define how the files are stored in the disk blocks. There are three main disk space or file allocation methods.:<br>
+                                                            1.Contiguous File Allocation<br>
+                                                            2.Indexed File Allocation<br>
+                                                            3.Linked File Allocation<br></p>
+            <p class="w3-large">The main idea behind these methods is to provide:<br>
+                                                            1.Efficient disk space utilization.<br>
+                                                            2.Fast access to the file blocks.<br></p>
+        </div>
+    </div>
+    <hr>
+
+  <!-- Menu Section -->
+    <div class="w3-row w3-padding-64" id="menu">
+        <div class="w3-col l6 w3-padding-large">
+            <h1 class="w3-center">Types</h1><br>
+            <h4>Contiguous File Allocation</h4>
+            <p class="w3-text-grey">In this scheme, each file occupies a contiguous set of blocks on the disk. For example, if a file requires n blocks and is given a block b as the starting location, then the blocks assigned to the file will be: b, b+1, b+2,……b+n-1. This means that given the starting block address and the length of the file (in terms of blocks required), we can determine the blocks occupied by the file.The directory entry for a file with contiguous allocation contains addresss of the starting block and the length of the allocated partition.</p><br>
+
+            <h4>Indexed File Allocation</h4>
+            <p class="w3-text-grey">In this scheme, a special block known as the Index block contains the pointers to all the blocks occupied by a file. Each file has its own index block. The ith entry in the index block contains the disk address of the ith file block. The directory entry contains the address of the index block.</p><br>
+
+            <h4>Linked File Allocation</h4>
+            <p class="w3-text-grey">In this scheme, each file is a linked list of disk blocks which need not be contiguous. The disk blocks can be scattered anywhere on the disk.The directory entry contains a pointer to the starting and the ending file block. Each block contains a pointer to the next block occupied by the file.</p><br>
+
+
+        </div>
+        <div class="w3-col l6 w3-padding-large">
+            <!-- <img src="/images/FA3.jpg" class="w3-round w3-image w3-opacity-min" alt="PC" style="width:100%; padding-top: 10px"> -->
+            <img src="/images/FA4.jpg" class="w3-round w3-image w3-opacity-min" alt="PC" style="width:100%; padding-top: 5px">
+        </div>
+    </div>
+    <hr>
+
+<!-- End page content -->
+    </div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-32">
+  <p><a href= "#" title="W3.CSS" target="_blank" class="w3-hover-text-green">OS Simulation</a></p>
+</footer>
+
+</body>
+</html>
