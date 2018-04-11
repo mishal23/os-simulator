@@ -66,6 +66,13 @@ function submit1(){
     //using the number of partitions we have to create appropriate number of text fields to enter partitons block_sizes
     memSize = S("mem_size").value;
     num_part = S("num_part").value;
+
+    if(memSize<0 || num_part<0 || num_part>10 || memSize>5000){
+
+        alert("Input error.Restart!");
+        document.location.reload();
+    }
+
     get_type();
 
     var partitionSizes = S('partition_sizes');
@@ -75,7 +82,7 @@ function submit1(){
                     <input name="third_text" id="p'+i+'" type="text" >\
                     <label for="number_of_frames">Size of partition '+i+'</label>\
                   </div>'
-        
+
     }
 }
 
@@ -85,18 +92,40 @@ function submit2(){
     //get information from number of process and the partitions sizes
     //from the number of processes value create the appropriate number of text fields for entering memory required for each process
     num_proc = S("num_proc").value;
+
+    if(num_proc>9 || num_proc<0){
+
+        alert("Input error.Restart!");
+        document.location.reload();
+    }
+    var sum = 0;
     for(var i=1;i<=num_part;i++){
         var q = S('p' + i).value;
+        sum += parseInt(q);
+        if(q<0){
+
+            alert("Input error.Restart!");
+            document.location.reload();
+        }
+
         partSizes.push(q);
     }
+    console.log(sum);
+    if(sum != memSize){
+
+        alert("Input error. Wrong partition sizes. Restart!");
+        document.location.reload();
+    }
+
     var processSizes = S('mem_req_proc');
+
     processSizes.innerHTML = "";
     for(var i=1;i<=num_proc;i++){
         processSizes.innerHTML+='<div class="input-field col s3">\
                             <input name="third_text" id="pr'+i+'" type="text" >\
                             <label for="number_of_frames">Enter size of processes '+i+'</label>\
                           </div>'
-        
+
     }
 }
 
@@ -108,6 +137,12 @@ function submit3(){
     var temp;
     for(var i=1;i<=num_proc;i++){
         var s = S('pr' + i).value;
+
+        if(s<0 || s>5000){
+
+            alert("Input error.Restart!");
+            document.location.reload();
+        }
         procSizes.push(s);
     }
 
@@ -135,7 +170,7 @@ function submit3(){
                     else
                         externalFrag.push(result[i]);
                 }
-
+                console.log(parId);
                 totalInternal = result[len-2];
                 remainingMem = result[len-1];
             },
@@ -219,8 +254,8 @@ function submit3(){
 
             ch = "NO";
             ch0 = "-";
-            ch1 = "No Mem.";
-            ch2 = "No Mem.";
+            ch1 = "Memory space Exhausted";
+            ch2 = "Memory space Exhausted";
         }
         else{
             ch = "NO";
