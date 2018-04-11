@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <title>Page Replacement Wiki</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <style>
+        body {font-family: "Times New Roman", Georgia, Serif;}
+        h1,h2,h3,h4,h5,h6 {
+            font-family: "Playfair Display";
+            letter-spacing: 5px;
+        }
+    </style>
+
+<body>
+
+<!-- Navbar (sit on top) -->
+    <div class="w3-top">
+        <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+            <a href="#home" class="w3-bar-item w3-button">Page Replacement Wiki Page</a>
+            <!-- Right-sided navbar links. Hide them on small screens -->
+            <div class="w3-right w3-hide-small">
+                <a href="#about" class="w3-bar-item w3-button">About</a>
+                <a href="#menu" class="w3-bar-item w3-button">Types</a>
+            </div>
+        </div>
+    </div>
+
+<!-- Page content -->
+    <div class="w3-content" style="max-width:1100px">
+
+  <!-- About Section -->
+    <div class="w3-row w3-padding-64" id="about">
+        <div class="w3-col m6 w3-padding-large w3-hide-small">
+            <img src="/images/PR1.jpg" class="w3-round w3-image w3-opacity-min" alt="PC" width="600" height="750" style = "padding-top: 100px">
+            
+        </div>
+
+        <div class="w3-col m6 w3-padding-large">
+            <h1 class="w3-center">About Page Replacement</h1><br>
+            <p class="w3-large">In a operating systems that use paging for memory management, page replacement algorithm are needed to decide which page needed to be replaced when new page comes in. Whenever a new page is referred and not present in memory, page fault occurs and Operating System replaces one of the existing pages with newly needed page. Different page replacement algorithms suggest different ways to decide which page to replace. The target for all algorithms is to reduce number of page faults.<br>
+                            <b>Page Fault</b> – A page fault is a type of interrupt, raised by the hardware when a running program accesses a memory page that is mapped into the virtual address space, but not loaded in physical memory.
+        </div>
+    </div>
+    <hr>
+
+  <!-- Menu Section -->
+    <div class="w3-row w3-padding-64" id="menu">
+        <div class="w3-col l6 w3-padding-large">
+            <h1 class="w3-center">Types</h1><br>
+            <h4>First In First Out (FIFO)</h4>
+            <p class="w3-text-grey">This is the simplest page replacement algorithm. In this algorithm, operating system keeps track of all pages in the memory in a queue, oldest page is in the front of the queue. When a page needs to be replaced page in the front of the queue is selected for removal.<br>
+		For example-1, consider page reference string 1, 3, 0, 3, 5, 6 and 3 page slots.<br>
+		Initially all slots are empty, so when 1, 3, 0 came they are allocated to the empty slots —> <b>3 Page Faults</b><br>
+		when 3 comes, it is already in  memory so —><b> 0 Page Faults</b><br>
+		Then 5 comes, it is not available in  memory so it replaces the oldest page slot i.e 1. —><b>1 Page Fault</b><br>
+		Finally 6 comes, it is also not available in memory so it replaces the oldest page slot i.e 3 —><b>1 Page Fault</b><br>
+		Example-2, Let’s have a reference string: a, b, c, d, c, a, d, b, e, b, a, b, c, d and the size of the frame be 4.</p><br>
+
+            <h4>Optimal Page replacement</h4>
+            <p class="w3-text-grey">In this algorithm, pages are replaced which are not used for the longest duration of time in the future.<br>
+
+Let us consider page reference string 7 0 1 2 0 3 0 4 2 3 0 3 2 and 4 page slots.<br>
+
+Initially all slots are empty, so when 7 0 1 2 are allocated to the empty slots —><b> 4 Page faults</b><br>
+0 is already there so —> <b>0 Page fault</b><br>
+when 3 came it will take the place of 7 because it is not used for the longest duration of time in the future.—><b>1 Page fault</b><br>
+0 is already there so —> <b>0 Page fault</b><br>
+4 will takes place of 1 —> <b>1 Page Fault</b><br>
+
+Now for the further page reference string —> <b>0 Page fault</b> because they are already available in the memory.<br>
+	Example-2, Let’s have a reference string: a, b, c, d, c, a, d, b, e, b, a, b, c, d and the size of the frame be 4.</p><br>
+
+            <h4>Least Recently Used</h4>
+            <p class="w3-text-grey">In this algorithm page will be replaced which is least recently used.<br>
+
+Let say the page reference string 7 0 1 2 0 3 0 4 2 3 0 3 2 . Initially we have 4 page slots empty.<br>
+Initially all slots are empty, so when 7 0 1 2 are allocated to the empty slots —><b> 4 Page faults</b><br>
+0 is already their so —> <b>0 Page fault</b><br>
+when 3 came it will take the place of 7 because it is least recently used —><b>1 Page fault</b><br>
+0 is already in memory so —> <b>0 Page fault</b><br>
+4 will takes place of 1 —> <b>1 Page Fault</b><br>
+Now for the further page reference string —><b> 0 Page fault</b> because they are already available in the memory.<br>
+Example-2, Let’s have a reference string: a, b, c, d, c, a, d, b, e, b, a, b, c, d and the size of the frame be 4.</p><br>
+
+
+        </div>
+        <div class="w3-col l6 w3-padding-large">
+            
+            <img src="/images/PR2.png" class="w3-round w3-image w3-opacity-min" alt="D" style="width:100%; padding-top: 150px"><br><br><br><br><br><br><br><br>
+            <img src="/images/PR4.png" class="w3-round w3-image w3-opacity-min" alt="D" style="width:100%; padding-top: 150px"><br><br><br><br><br><br><br><br>
+	    <img src="/images/PR3.png" class="w3-round w3-image w3-opacity-min" alt="D" style="width:100%; padding-top: 150px">
+        </div>
+    </div>
+    <hr>
+
+<!-- End page content -->
+    </div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-32">
+  <p><a href= "#" title="W3.CSS" target="_blank" class="w3-hover-text-green">OS Simulation</a></p>
+</footer>
+
+</body>
+</html>
