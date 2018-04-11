@@ -17,7 +17,7 @@ $(document).ready(function() {
     	$('#c2').append('<span style="font-size:18px;" class="text-center">Enter current allocation matrix</span><br><br>');
     	for(i=0;i<np;i+=1)
     	{
-    		$('#c2').append('<div>P'+i+'<div id="ap'+i+'"</div></div><br><br>');
+    		$('#c2').append('<div class="row">P'+i+'<div id="ap'+i+'"</div></div><br><br>');
     		for(j=0;j<nr;j+=1)
     		{
     			$('#ap'+i).append('<input required style="margin-right:5px;" placeholder="R'+j+'"class="col s2" id="ap'+i+'ar'+j+'"></input>');
@@ -47,7 +47,7 @@ $(document).ready(function() {
     	$('#c3').append('<span style="font-size:18px;" class="text-center">Enter maximum allocation matrix</span><br><br>');
     	for(i=0;i<np;i+=1)
     	{
-    		$('#c3').append('<div>P'+i+'<div id="mp'+i+'"</div></div><br><br>');
+    		$('#c3').append('<div class="row">P'+i+'<div id="mp'+i+'"</div></div><br><br>');
     		for(j=0;j<nr;j+=1)
     		{
     			$('#mp'+i).append('<input required style="margin-right:5px;" placeholder="R'+j+'"class="col s2" id="mp'+i+'mr'+j+'"></input>');
@@ -112,7 +112,7 @@ $(document).ready(function() {
         $.ajax({
             type: 'POST',
             data: {arguments},
-            url: 'http://uos-simulator.herokuapp.com/bankers/safe_sequence',                     
+            url: '/bankers/safe_sequence',                     
             success: function(data) {
                 setTimeout(function() {
                   $('.spec').addClass('fa-spin');
