@@ -42,6 +42,7 @@ var file_n     = 0;
 var file_names = [];
 var input = '';
 var allocated = 0;
+var sum =0;
 
 function S(id){
     return document.getElementById(id)
@@ -88,15 +89,24 @@ function handle_output(out){
 function delete_block(i){
     input += ' 2 '+ file_names[i];
     allocated -= sizes[i];
+    sum=+sum- +sizes[i];
     send_request(input);
 }
 
 function add_file(){
     size  = S('file-size').value;
-    if((allocated + size) > (64 - allocated))
+    sum = +sum + +size;
+    console.log(sum);
+    if(sum>64)
+    {
         Materialize.toast("Memory not available", 2000);
+        sum = sum - size;
+    }
     else if(size <= 0)
+    {
         Materialize.toast("Invalid input", 2000);
+        sum= +sum - +size;
+    }
     else {
         allocated += size;
         input += ' 1 file' + file_n + ' ' + parseInt(size);
