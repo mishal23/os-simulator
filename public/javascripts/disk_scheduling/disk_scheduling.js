@@ -45,8 +45,29 @@ function remove_request(){
 
 function submit() {
     var csize = S('csize').value;
+    let regex = new RegExp(/[^0-9]/, 'g');
     var cur = S('cur').value;
     var prev = S('prev').value;
+    if(parseInt(cur) > parseInt(csize) || parseInt(prev) > parseInt(csize))
+    {
+        alert("Head position cannot be greater than size of cylinder.");
+        return false;
+    }
+    if(cur.match(regex))
+    {
+        alert("Enter integer values only!");
+        return false;
+    }
+    if(prev.match(regex))
+    {
+        alert("Enter integer values only!");
+        return false;
+    }
+    if(csize.match(regex))
+    {
+        alert("Enter integer values only!");
+        return false;
+    }
     console.log("no of requests : "+n_req);
     var input = csize + ' ' + cur + ' ' + prev;
     var totseek = [];
@@ -62,7 +83,14 @@ function submit() {
     }
 
     console.log(input);
-
+    for(var i=0;i<n_req;i++)
+    {
+        if(S('r'+i).value.match(regex))
+        {
+            alert("Enter Integer Values only!");
+            return false;
+        }
+    }
     $.ajax({
         type: "POST",
         url: "/disk_scheduling/dfcfs",
