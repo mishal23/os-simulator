@@ -197,7 +197,7 @@ $(document).ready(function() {
         $.ajax({
             type: 'POST',
             data: {arguments},
-            url: 'http://localhost:3000/bankers/resource_request',  
+            url: '/bankers/resource_request',  
             success: function(data) {
                 $("#ra_res").append(data.split(":")[0]);
                  setTimeout(function() {
