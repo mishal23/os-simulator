@@ -3,8 +3,8 @@ $(document).ready(function() {
 
     $('#side_top_navbar').load('../base.html', function(){
     	$('.left').html(topic);
-    });
-    
+    })
+
      particlesJS.load('particles-js', '../particles.json', function() {
         console.log('particles.json config loaded');
     });
