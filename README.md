@@ -1,4 +1,21 @@
 # OS-Simulator
+User Interface simulating the major concepts of Operating Systems
+
+### Simulations Done
+- System Calls (Terminal based GUI)
+- Socket Programming 
+- CPU Scheduling 
+- Process Synchronization
+- Disk Scheduling
+- Memory Management
+- Page Replacement
+- File Allocation
+
+### Extra Algorithms Simulated
+- Multilevel Queue Scheduling
+- Sleeping Barber Problem
+- Second Chance Page Replacement Algorithm
+
 ### Installation Instructions
 <b>Ubuntu</b>
 - **Step1:-** `sudo apt-get update`
@@ -23,3 +40,15 @@
 - `npm install` (To install all the dependency packages)
 - `npm start`
 - Go to Browser and type http://localhost:3000
+
+### Contributors
+- M. R Ashrit ([@Ashrit26](https://github.com/Ashrit26))
+- Bobby Patil ([@bobbypt05](https://github.com/bobbypt05))
+- Himanshu Nagdive ([@himanshu1708](https://github.com/himanshu1708))
+- Mahir Jain ([@mahirjain25](https://github.com/mahirjain25))
+- Mehnaz Yunus ([@mehnazyunus](https://github.com/mehnazyunus))
+- Mishal Shah ([@mishal23](https://github.com/mishal23))
+- Mohit Bhasi ([@m0bi5](https://github.com/m0bi5))
+- Namrata Ladda ([@Namrata7199](https://github.com/Namrata7199))
+- Nihal Haneef ([@Nihalh55](https://github.com/Nihalh55))
+- Palak Singhal ([@smarty1palak](https://github.com/smarty1palak))
