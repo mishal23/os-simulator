@@ -102,18 +102,18 @@ $(document).ready(function() {
     mutex: 0,
     waiting: 2,
     chair: 'Philosopher #4, #1',
-    status: 'As chopsticks #5 and #4 are already taken by Philosopher #1 and #4, Philosopher #5 can\'t eat.'
+    status: 'As chopsticks #5 and #1 are already taken by Philosopher #1 and #4, Philosopher #5 can\'t eat.'
   },
   {
-    philosophers: [1,0,0,1,0],
+    philosophers: [1,0,0,1,2],
     chopsticks: [1,0,1,1,1],
     mutex: 1,
     waiting: 2,
     chair: 'Philosopher #4, #1',
-    status: 'Philosopher #5 is thinking.'
+    status: 'Philosopher #5 is hungry.'
   },
   {
-    philosophers: [0,0,0,1,0],
+    philosophers: [0,0,0,1,2],
     chopsticks: [1,0,1,1,1],
     mutex: 0,
     waiting: 3,
@@ -121,7 +121,7 @@ $(document).ready(function() {
     status: 'Philosopher #1 finishes eating.'
   },
   {
-    philosophers: [0,0,0,1,0],
+    philosophers: [0,0,0,1,2],
     chopsticks: [0,0,1,1,0],
     mutex: 0,
     waiting: 3,
@@ -129,7 +129,7 @@ $(document).ready(function() {
     status: 'Philosopher #1 releases the chopsticks #1 and #5.'
   },
   {
-    philosophers: [0,0,0,1,0],
+    philosophers: [0,0,0,1,2],
     chopsticks: [0,0,1,1,0],
     mutex: 0,
     waiting: 3,
@@ -137,7 +137,7 @@ $(document).ready(function() {
     status: 'Philosopher #1 is thinking.'
   },
   {
-    philosophers: [0,0,0,0,0],
+    philosophers: [0,0,0,0,2],
     chopsticks: [0,0,1,1,0],
     mutex: 1,
     waiting: 3,
@@ -145,7 +145,7 @@ $(document).ready(function() {
     status: 'Philosopher #4 finishes eating.'
   },
   {
-    philosophers: [0,0,0,0,0],
+    philosophers: [0,0,0,0,2],
     chopsticks: [0,0,0,0,0],
     mutex: 0,
     waiting: 4,
@@ -153,147 +153,187 @@ $(document).ready(function() {
     status: 'Philosopher #4 releases the chopsticks #3 and #4.'
   },
   {
-    philosophers: [0,0,0,0,0],
+    philosophers: [0,0,0,0,2],
     chopsticks: [0,0,0,0,0],
     mutex: 1,
     waiting: 4,
     chair: '',
     status: 'Philosopher #4 is thinking.'
   },
+  // {
+  //   philosophers: [0,2,0,0,0],
+  //   chopsticks: [0,0,0,0,0],
+  //   mutex: 0,
+  //   waiting: 3,
+  //   chair: '',
+  //   status: 'Philosopher #5 y, '
+  // },
   {
-    philosophers: [0,2,0,0,0],
-    chopsticks: [0,0,0,0,0],
+    philosophers: [0,0,0,0,2],
+    chopsticks: [1,0,0,0,1],
     mutex: 0,
     waiting: 3,
     chair: '',
-    status: 'Philosopher #2 feels hungry.'
+    status: 'Philosopher #5 takes chopsticks #1 and #5.'
   },
   {
-    philosophers: [0,2,0,0,0],
-    chopsticks: [1,1,0,0,0],
+    philosophers: [0,0,0,0,1],
+    chopsticks: [1,0,0,0,1],
     mutex: 0,
     waiting: 3,
-    chair: '',
-    status: 'Philosopher #2 takes chopsticks #1 and #2.'
+    chair: 'Philosopher #5',
+    status: 'Philosopher #5 is eating.'
   },
   {
-    philosophers: [0,1,0,0,0],
-    chopsticks: [1,1,0,0,0],
-    mutex: 0,
-    waiting: 3,
-    chair: 'Philosopher #2',
-    status: 'Philosopher #2 is eating.'
-  },
-  {
-   philosophers: [0,1,2,0,0],
-    chopsticks: [1,1,0,0,0],
+   philosophers: [0,0,0,2,1],
+    chopsticks: [1,0,0,0,1],
     mutex: 1,
     waiting: 3,
-    chair: 'Philosopher #2',
-    status: 'Philosopher #3 feels hungry.'
+    chair: 'Philosopher #5',
+    status: 'Philosopher #4 feels hungry.'
   },
   {
-    philosophers: [0,1,2,1,0],
-    chopsticks: [1,1,0,0,0],
+    philosophers: [0,0,0,2,1],
+    chopsticks: [1,0,0,0,1],
     mutex: 0,
     waiting: 4,
-    chair: 'Philosopher #2',
-    status: 'Philosopher #3 tries to take chopsticks #2 and #3.'
+    chair: 'Philosopher #5',
+    status: 'Philosopher #4 tries to take chopsticks #3 and #4.'
   },
   {
-    philosophers: [0,1,2,1,0],
-    chopsticks: [1,1,0,0,0],
+    philosophers: [0,0,0,2,1],
+    chopsticks: [1,0,0,0,1],
     mutex: 1,
     waiting: 4,
-    chair: 'Philosopher #2',
-    status: 'As chopstick #2 is already taken by Philosopher #1, Philosopher #3 can\'t eat.'
+    chair: 'Philosopher #5',
+    status: 'As chopstick #4 is already taken by Philosopher #5, Philosopher #4 can\'t eat.'
   },
   {
-   philosophers: [0,1,0,0,0],
-    chopsticks: [1,1,0,0,0],
+   philosophers: [0,0,0,2,1],
+    chopsticks: [1,0,0,0,1],
     mutex: 0,
     waiting: 5,
-    chair: 'Philosopher #2',
-    status: 'Philosopher #3 is thinking.'
+    chair: 'Philosopher #5',
+    status: 'Philosopher #4 is hungry.'
   },
   {
-    philosophers: [0,0,0,1,0],
-    chopsticks: [1,1,0,0,0],
+    philosophers: [0,0,0,2,0],
+    chopsticks: [1,0,0,0,1],
     customers: ['Philosopher #1', 'Philosopher #2', 'Philosopher #3', 'Philosopher #4', 'Philosopher #5'],
     mutex: 1,
     waiting: 5,
     chair: '',
-    status: 'Philosopher #2 finishes eating.'
+    status: 'Philosopher #5 finishes eating.'
   },
   {
-    philosophers: [0,0,0,1,0],
+    philosophers: [0,0,0,2,0],
     chopsticks: [0,0,0,0,0],
     mutex: 0,
     waiting: 5,
     chair: '',
-    status: 'Philosopher #2 releases chopsticks #1 and #2.'
+    status: 'Philosopher #5 releases chopsticks #1 and #5.'
   },
   {
-    philosophers: [0,0,0,1,0],
+    philosophers: [0,0,0,2,0],
     chopsticks: [0,0,0,0,0],
     mutex: 1,
     waiting: 4,
     chair: '',
-    status: 'Philosopher #2 is thinking.'
+    status: 'Philosopher #5 is thinking.'
   },
+  // {
+  //  philosophers: [0,0,2,1,0],
+  //   chopsticks: [0,0,0,0,0],
+  //   mutex: 0,
+  //   waiting: 4,
+  //   chair: '',
+  //   status: 'Philosopher #3 feels hungry.'
+  // },
+  // {
+  //   philosophers: [0,0,0,2,0],
+  //   chopsticks: [0,0,0,0,0],
+  //   mutex: 0,
+  //   waiting: 4,
+  //   chair: '',
+  //   status: 'Philosopher #4 feels hungry.'
+  // },
   {
-   philosophers: [0,0,2,1,0],
-    chopsticks: [0,0,0,0,0],
+    philosophers: [0,0,0,2,0],
+    chopsticks: [0,0,0,1,1],
     mutex: 0,
     waiting: 4,
     chair: '',
-    status: 'Philosopher #3 feels hungry.'
+    status: 'Philosopher #4 takes chopsticks #3 and #4.'
   },
   {
-    philosophers: [0,0,2,2,0],
+    philosophers: [0,0,0,1,0],
+    chopsticks: [0,0,1,1,0],
+    mutex: 1,
+    waiting: 3,
+    chair: 'Philosopher #4',
+    status: 'Philosopher #4 is eating.'
+  },
+  {
+      philosophers: [0,0,2,1,0],
+       chopsticks: [0,0,1,1,0],
+       mutex: 0,
+       waiting: 4,
+      chair: 'Philosopher #4',
+       status: 'Philosopher #3 feels hungry.'
+  },
+  {
+    philosophers: [0,0,2,1,0],
+    chopsticks: [0,0,1,1,0],
+    waiting: 3,
+    chair: 'Philosopher #4',
+    status: 'Philosopher #3 tries to take chopsticks #2 and #3.'
+  },
+  {
+    philosophers: [0,0,2,1,0],
+    chopsticks: [0,0,1,1,0],
+    mutex: 0,
+    waiting: 3,
+    chair: 'Philosopher #4',
+    status: 'As chopstick #3 is already taken by Philosopher #4, Philosopher #3 can\'t eat.'
+  },
+  {
+    philosophers: [0,0,2,1,0],
+    chopsticks: [0,0,1,1,0],
+    waiting: 3,
+    chair: 'Philosopher #4',
+    status: 'Philosopher #3 is hungry.'
+  },
+  {
+    philosophers: [0,0,2,1,0],
+    chopsticks: [0,0,0,0,0],
+    mutex: 1,
+    waiting: 2,
+    chair: '',
+    status: 'Philosopher #4 releases chopsticks #3 and #4.'
+  },
+  {
+    philosophers: [0,0,2,0,0],
     chopsticks: [0,0,0,0,0],
     mutex: 0,
-    waiting: 4,
+    waiting: 2,
     chair: '',
-    status: 'Philosopher #4 feels hungry.'
+    status: 'Philosopher #4 is thinking.'
   },
   {
-    philosophers: [0,0,2,2,0],
+    philosophers: [0,0,2,0,0],
     chopsticks: [0,1,1,0,0],
     mutex: 0,
-    waiting: 4,
+    waiting: 3,
     chair: '',
     status: 'Philosopher #3 takes chopsticks #2 and #3.'
   },
   {
-    philosophers: [0,0,1,2,0],
-    chopsticks: [0,1,1,0,0],
-    mutex: 1,
-    waiting: 3,
-    chair: 'Philosopher #3',
-    status: 'Philosopher #3 is eating.'
-  },
-  {
-    philosophers: [0,0,1,2,0],
-    chopsticks: [0,1,1,0,0],
-    waiting: 3,
-    chair: 'Philosopher #3',
-    status: 'Philosopher #4 tries to take chopsticks #3 and #4.'
-  },
-  {
-    philosophers: [0,0,1,2,0],
+    philosophers: [0,0,1,0,0],
     chopsticks: [0,1,1,0,0],
     mutex: 0,
     waiting: 3,
     chair: 'Philosopher #3',
-    status: 'As chopstick #3 is already taken by Philosopher #3, Philosopher #4 can\'t eat.'
-  },
-  {
-    philosophers: [0,0,1,0,0],
-    chopsticks: [0,1,1,0,0],
-    waiting: 3,
-    chair: 'Philosopher #3',
-    status: 'Philosopher #4 is thinking.'
+    status: 'Philosopher #3 is eating.'
   },
   {
     philosophers: [0,0,1,0,0],
@@ -310,7 +350,7 @@ $(document).ready(function() {
     waiting: 2,
     chair: '',
     status: 'Philosopher #3 is thinking.'
-  },
+  }
   ]
 
   // Loads the nth step of the simulation
