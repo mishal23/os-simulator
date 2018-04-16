@@ -1,5 +1,7 @@
 # OS-Simulator
-User Interface simulating the major concepts of Operating Systems
+[![HitCount](http://hits.dwyl.com/mishal23/os-simulator.svg)](http://hits.dwyl.com/mishal23/os-simulator)
+
+User Interface simulating the major concepts of Operating Systems.
 
 ### Simulations Done
 - System Calls (Terminal based GUI)
